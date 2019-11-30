@@ -1,48 +1,91 @@
+:root {
+	--text-color: black;
+	--background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text-color: white;
+		--background-color: #191919;
+	}
+}
+
 body {
 	height: 100%;
 	font-family: Roboto, sans-serif;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: stretch;
 	font-size: 16px;
 	margin: 0;
+	color: var(--text-color);
+	background: var(--background-color);
 }
 
 a {
-	color: white;
+	color: inherit;
 	text-decoration: none;
-	border-bottom: 1px white dashed;
 }
 
-.content-main {
-	background: #2196F3;
-	color: white;
-	padding: 1em 7em;
+#content {
+	max-width: 100%;
+	margin: auto;
+	width: 1200px;
+	padding: 0 40px;
+	box-sizing: border-box;
+}
+
+#content__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#credentials {
+	line-height: 1.6em;
+	font-weight: 200;
 	text-align: right;
-	position: relative;
-	box-shadow: 0 0 21px 2px rgba(0,0,0,0.2);
-	z-index: 1;
+	margin-left: auto;
+	margin-right: 40px;
 }
 
-.content-main-wrapper {
-	position: relative;
+.credentials__title {
+
 }
 
-.content-links {
+.credentials__company {
+	font-weight: 500;
+}
+
+#content__main {
+	
+}
+
+#page-title {
+	font-weight: 200;
+	font-size: 51px;
+	margin: 0;
+}
+
+#page-title span:last-child {
+	font-weight: 700;
+}
+
+#main-photo {
+	height: 200px;
+	width: 200px;
+	border: 4px solid var(--text-color);
+	box-sizing: border-box;
+	border-radius: 50%;
+}
+
+#content__links {
 	color: white;
 	padding: 1em;
 	margin-top: 7em;
 	display: flex;
 	justify-content: center;
-}
-
-.statement-major {
-	font-size: 4em;
-}
-
-.statement-minor {
-	font-size: 1em;
-	margin-top: 1em;
 }
 
 .animate-onload {
@@ -87,6 +130,7 @@ a {
 
 .link-button path {
 	transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+	fill: var(--text-color);
 }
 
 .link-button:last-child {
@@ -119,37 +163,4 @@ a {
 
 #link-email:hover path {
 	fill: #d14836;
-}
-
-@keyframes peek-in {
-	from {
-		transform: translateY(90px) scaleX(-1);
-	}
-
-	50% {
-		transform: translateY(-10px) scaleX(-1);
-	}
-
-	to {
-		transform: scaleX(-1);
-	}
-}
-
-#peter-photo {
-	transition: all .3s ease-out;
-	width: 300px;
-	position: absolute;
-	left: 13%;
-	bottom: 97px;
-	z-index: 0;
-	animation-name: peek-in;
-	animation-duration: 1s;
-	animation-delay: 1s;
-	animation-fill-mode: backwards;
-	cursor: pointer;
-	transform: scaleX(-1);
-}
-
-#peter-photo:hover {
-	transform: translateY(-80px) scaleX(-1);
 }
