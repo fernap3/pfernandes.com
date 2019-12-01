@@ -52,6 +52,21 @@ a {
 	text-align: right;
 	margin-left: auto;
 	margin-right: 40px;
+	transform-origin: 463px center;
+	animation-duration: 1.5s;
+	animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes credentials-animate {
+	from {
+		transform: rotate(-6deg);
+		opacity: 0;
+	}
+
+	to {
+		transform: none;
+		opacity: 1;
+	}
 }
 
 .credentials__company {
@@ -66,6 +81,10 @@ a {
 
 #page-title span:last-child {
 	font-weight: 700;
+}
+
+.page-title-line {
+	display: inline-block;
 }
 
 #main-photo img {
@@ -84,16 +103,42 @@ a {
 	justify-content: center;
 }
 
-.animate-onload {
-	animation-name: present-in;
-	animation-duration: 1s;
-	animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-	animation-fill-mode: backwards;
+@media (prefers-reduced-motion: no-preference) and (min-width: 920px) {
+	.animate-onload-fromleft,
+	.animate-onload-frombottom {
+		animation-duration: 1s;
+		animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		animation-fill-mode: backwards;
+	}
+
+	.animate-onload-fromleft {
+		animation-name: present-in-fromleft;
+	}
+
+	.animate-onload-frombottom {
+		animation-name: present-in-frombottom;
+	}
+
+	#credentials {
+		animation-name: credentials-animate;
+	}
 }
 
-@keyframes present-in {
+@keyframes present-in-fromleft {
 	from {
 		transform: translateX(-50px);
+		opacity: 0;
+	}
+
+	to {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+@keyframes present-in-frombottom {
+	from {
+		transform: translateY(50px);
 		opacity: 0;
 	}
 
@@ -133,24 +178,26 @@ a {
 	margin-right: 0;
 }
 
-.link-button:hover {
-	transform: translateY(-10px);
-}
-
-#link-twitter:hover path {
-	fill: #1da1f2;
-}
-
-#link-linkedin:hover path {
-	fill: #0084bf;
-}
-
-#link-github:hover path {
-	fill: #24292e;
-}
-
-#link-email:hover path {
-	fill: #d14836;
+@media (pointer: fine) {
+	.link-button:hover {
+		transform: translateY(-10px);
+	}
+	
+	#link-twitter:hover path {
+		fill: #1da1f2;
+	}
+	
+	#link-linkedin:hover path {
+		fill: #0084bf;
+	}
+	
+	#link-github:hover path {
+		fill: #24292e;
+	}
+	
+	#link-email:hover path {
+		fill: #d14836;
+	}
 }
 
 @media screen and (max-width: 920px) {
