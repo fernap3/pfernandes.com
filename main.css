@@ -34,6 +34,10 @@ a {
 	width: 1200px;
 	padding: 0 40px;
 	box-sizing: border-box;
+	padding-top: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 #content__header {
@@ -137,14 +141,6 @@ a {
 	fill: #1da1f2;
 }
 
-#link-youtube:hover path {
-	fill: #ff0000;
-}
-
-#link-facebook:hover path {
-	fill: #4267b2;
-}
-
 #link-linkedin:hover path {
 	fill: #0084bf;
 }
@@ -177,6 +173,10 @@ a {
 		order: 2;
 		text-align: center;
 		margin: 0;
+	}
+
+	#content__links {
+		margin-top: 2em;
 	}
 }
 
