@@ -50,16 +50,8 @@ a {
 	margin-right: 40px;
 }
 
-.credentials__title {
-
-}
-
 .credentials__company {
 	font-weight: 500;
-}
-
-#content__main {
-	
 }
 
 #page-title {
@@ -72,7 +64,7 @@ a {
 	font-weight: 700;
 }
 
-#main-photo {
+#main-photo img {
 	height: 200px;
 	width: 200px;
 	border: 4px solid var(--text-color);
@@ -163,4 +155,37 @@ a {
 
 #link-email:hover path {
 	fill: #d14836;
+}
+
+@media screen and (max-width: 920px) {
+	#content__header {
+		flex-direction: column;
+	}
+
+	#main-photo {
+		order: 0;
+	}
+
+	#page-title {
+		order: 1;
+		text-align: center;
+		line-height: 1.1em;
+		margin: 0.6em;
+	}
+
+	#credentials {
+		order: 2;
+		text-align: center;
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#credentials {
+		font-size: 14px;
+	}
+
+	.link-button {
+		transform: scale(0.7);
+	}
 }
