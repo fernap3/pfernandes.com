@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<title>Résumé - Peter Fernandes</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+		<meta name="description" content="The résumé of Peter Fernandes">
+		<link rel="canonical" href="https://pfernandes.com" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="og:image" content="https://pfernandes.com/images/peter-headshot.jpg">
+		<meta charset="UTF-8">
+		<style>
+			:root {
+				--text-color: black;
+				--text-color-secondary: #222222;
+				--background-color: white;
+				--page-color: white;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--text-color: rgba(255, 255, 255, 95%);
+					--text-color-secondary: rgba(255, 255, 255, 75%);
+					--background-color: #202124;
+					--page-color: #161616;
+				}
+
+				a {
+					color: var(--text-color);
+				}
+			}
+
+			html,body {
+				background: var(--background-color);
+				display: grid;
+				align-items: center;
+				justify-content: center;
+				color: var(--text-color);
+				font-family: Roboto, sans-serif;
+			}
+
+			.page {
+				width: 600px;
+				aspect-ratio: 8.5 / 11;
+				background: var(--page-color);
+				padding: 2.5em;
+				box-sizing: border-box;
+				display: grid;
+				grid-template-columns: 1fr 4fr;
+				gap: 1.5em;
+				font-size: 10px;
+			}
+
+			.name {
+				font-size: 3em;
+				margin-bottom: 2em;
+			}
+
+			.first-name {
+				font-weight: 300;
+			}
+
+			.last-name {
+				font-weight: 500;
+			}
+			.info-section {
+				font-size: .8em;
+				margin-bottom: 2em;
+				line-height: 1.4em;
+			}
+			h2 {
+				text-transform: uppercase;
+				font-weight: 300;
+				font-size: 1.2em;
+			}
+
+			.section-content {
+				line-height: 1.3em;
+			}
+
+			.experience-heading {
+				font-weight: bold;
+				margin-bottom: .3em;
+			}
+
+			.experience-subheading {
+				color: var(--text-color-secondary);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="page">
+			<div class="col1">
+				<div class="name">
+					<span class="first-name">Peter</span><br>
+					<span class="last-name">Fernandes</span>
+				</div>
+				<div class="info-section">
+					960 3rd St. #404<br>
+					Santa Monica, CA<br>
+					90403
+				</div>
+				<div class="info-section">
+					<a href="mailto:supersonicandtails@gmail.com">supersonicandtails@gmail.com</a><br>
+					<a href="https://pfernandes.com">pfernandes.com</a><br>
+					<a href="tel:+18458673871">(845) 867-3871</a>
+				</div>
+			</div>
+			<div class="col2">
+				<section>
+					<h2>Readme First</h2>
+					<p class="section-content">
+						Design and develop new features for web­based Reporting/BI platform; coordinate dev team and getting builds out the door. I work mainly with C# and Javascript with an emphasis on cross­browser support and consistency (yes, including several legacy versions of IE).
+					</p>
+				</section>
+				<section>
+					<h2>Experience</h2>
+					<div class="experience-heading">VP, Software Engineering, Exago, Inc.</div>
+					<div class="experience-subheading">Kingston, NY — Dec. 2014 ­ Present</div>
+					<p class="section-content">
+						Design and develop new features for web­based Reporting/BI platform; coordinate dev team and getting builds out the door. I work mainly with C# and Javascript with an emphasis on cross­browser support and consistency (yes, including several legacy versions of IE).
+					</p>
+				</section>
+				<section>
+					<h2>Formal Education</h2>
+					Rensselaer Polytechnic Institute (RPI)<br>
+					Troy, NY<br>
+					B.S. Computer Science, 2012<br>
+				</section>
+				<h2>Skills Quick List</h2>
+			</div>
+		</div>
+	</body>
+</html>
