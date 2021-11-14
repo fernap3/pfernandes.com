@@ -10,8 +10,9 @@
 		<style>
 			:root {
 				--text-color: black;
-				--text-color-secondary: #222222;
-				--background-color: white;
+				--text-color-secondary: #333333;
+				--text-color-content: #121212;
+				--background-color: #e9e9e9;
 				--page-color: white;
 			}
 
@@ -19,13 +20,24 @@
 				:root {
 					--text-color: rgba(255, 255, 255, 95%);
 					--text-color-secondary: rgba(255, 255, 255, 75%);
+					--text-color-content: rgba(255, 255, 255, 90%);;
 					--background-color: #202124;
 					--page-color: #161616;
 				}
+			}
 
-				a {
-					color: var(--text-color);
+			@media print {
+				:root {
+					--text-color: black;
+					--text-color-secondary: black;
+					--text-color-content: black;
+					--background-color: white;
+					--page-color: white;
 				}
+			}
+
+			a {
+				color: var(--text-color);
 			}
 
 			html,body {
@@ -38,19 +50,19 @@
 			}
 
 			.page {
-				width: 600px;
+				width: 8.5in;
 				aspect-ratio: 8.5 / 11;
 				background: var(--page-color);
 				padding: 2.5em;
 				box-sizing: border-box;
 				display: grid;
 				grid-template-columns: 1fr 4fr;
-				gap: 1.5em;
-				font-size: 10px;
+				gap: 3.4em;
+				font-size: 10pt;
 			}
 
 			.name {
-				font-size: 3em;
+				font-size: 2.6em;
 				margin-bottom: 2em;
 			}
 
@@ -61,19 +73,31 @@
 			.last-name {
 				font-weight: 500;
 			}
+
 			.info-section {
 				font-size: .8em;
 				margin-bottom: 2em;
-				line-height: 1.4em;
+				line-height: 1.6em;
 			}
+
+			.info-section.links {
+				line-height: 1.8em;
+			}
+			
 			h2 {
 				text-transform: uppercase;
-				font-weight: 300;
+				font-weight: 500;
 				font-size: 1.2em;
+				margin-top: 2.3em;
+			}
+
+			section:first-child h2 {
+				margin-top: .5em;
 			}
 
 			.section-content {
-				line-height: 1.3em;
+				line-height: 1.6em;
+				color: var(--text-color-content);
 			}
 
 			.experience-heading {
@@ -83,6 +107,35 @@
 
 			.experience-subheading {
 				color: var(--text-color-secondary);
+			}
+
+			.experience-heading.secondary {
+				color: var(--text-color-secondary);
+			}
+
+			li {
+				margin-bottom: 0.5em;
+				line-height: 1.4em;
+			}
+
+			@page {
+				margin: 0;
+			}
+
+			@media print {
+				a {
+					text-decoration: none;
+				}
+
+				html, body {
+					margin: 0;
+					height: 11in;
+					display: block;
+				}
+
+				.page {
+					width: 8.2in;
+				}
 			}
 		</style>
 	</head>
@@ -98,7 +151,7 @@
 					Santa Monica, CA<br>
 					90403
 				</div>
-				<div class="info-section">
+				<div class="info-section links">
 					<a href="mailto:supersonicandtails@gmail.com">supersonicandtails@gmail.com</a><br>
 					<a href="https://pfernandes.com">pfernandes.com</a><br>
 					<a href="tel:+18458673871">(845) 867-3871</a>
@@ -114,9 +167,25 @@
 				<section>
 					<h2>Experience</h2>
 					<div class="experience-heading">VP, Software Engineering, Exago, Inc.</div>
-					<div class="experience-subheading">Kingston, NY — Dec. 2014 ­ Present</div>
+					<div class="experience-subheading">Kingston, NY — Jan. 2020 - Present</div>
 					<p class="section-content">
 						Design and develop new features for web­based Reporting/BI platform; coordinate dev team and getting builds out the door. I work mainly with C# and Javascript with an emphasis on cross­browser support and consistency (yes, including several legacy versions of IE).
+					</p>
+					<div class="experience-heading secondary">Director, Software Engineering</div>
+					<div class="experience-subheading">Aug. 2018 - Jan. 2020</div>
+					<p class="section-content">
+					</p>
+					<div class="experience-heading secondary">Manager, Software Engineering</div>
+					<div class="experience-subheading">Jan. 2017 - Sep. 2018</div>
+					<p class="section-content">
+					</p>
+					<div class="experience-heading secondary">Manager, Software Engineering</div>
+					<div class="experience-subheading">Dec. 2014 - Dec. 2016</div>
+					<p class="section-content">
+					</p>
+					<div class="experience-heading secondary">Software Engineer</div>
+					<div class="experience-subheading">Jun. 2012 - Dec. 2014</div>
+					<p class="section-content">
 					</p>
 				</section>
 				<section>
@@ -126,6 +195,12 @@
 					B.S. Computer Science, 2012<br>
 				</section>
 				<h2>Skills Quick List</h2>
+				<ul>
+					<li>Strong understanding object-oriented programming principles (and when to break them)</li>
+					<li>Very strong in TypeScript and modern JavaScript, DOM APIs, and generally JavaScript in the browser</li>
+					<li>Good knowledge of C# and the Microsoft .NET platform</li>
+					<li>Competency with build systems, test frameworks, and using tests to increase velocity (TDD)</li>
+				</ul>
 			</div>
 		</div>
 	</body>
