@@ -42,11 +42,15 @@
 
 			html,body {
 				background: var(--background-color);
+			}
+
+			body {
 				display: grid;
 				align-items: center;
 				justify-content: center;
 				color: var(--text-color);
 				font-family: Roboto, sans-serif;
+				gap: 1em;
 			}
 
 			.page {
@@ -59,6 +63,7 @@
 				grid-template-columns: 1fr 4fr;
 				gap: 3.4em;
 				font-size: 10pt;
+				break-after: page;
 			}
 
 			.name {
@@ -203,5 +208,6 @@
 				</ul>
 			</div>
 		</div>
+		<!-- <div class="page">page 2</div> -->
 	</body>
 </html>
