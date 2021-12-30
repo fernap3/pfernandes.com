@@ -33,5 +33,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Generate PDF using Puppeteer
-        run: node ./resume-to-pdf.mjs
+        run: npm i && node ./resume-to-pdf.mjs
 
