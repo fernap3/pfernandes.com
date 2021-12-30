@@ -39,7 +39,8 @@ jobs:
              cp index.html build &&
              cp resume.html build &&
              cp main.css build &&
-             cp resume.pdf build
+             cp resume.pdf build &&
+             cp -R images build
         
       - name: Publish website
         uses: jakejarvis/s3-sync-action@master
