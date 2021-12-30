@@ -34,6 +34,13 @@ jobs:
       - name: Generate PDF using Puppeteer
         run: npm i && node ./resume-to-pdf.mjs
         
+      - name: Copy public files
+        run: mkdir public
+             cp index.html public
+             cp resume.html public
+             cp main.css public
+             cp resume.pdf public
+        
       - name: Publish website
         uses: jakejarvis/s3-sync-action@master
         with:
