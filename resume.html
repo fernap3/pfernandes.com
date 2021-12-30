@@ -154,12 +154,18 @@
 					margin: 0;
 					height: 11in;
 					display: block;
+					page-break-after: avoid;
+       				page-break-before: avoid;
+				}
+
+				.page {
+					overflow: hidden;
+					height: 11in;
 				}
 			}
 
 			@media screen and (max-width: 8.5in) {
 				.page {
-					overflow: visible;
 					grid-template-columns: auto;
 				}
 
