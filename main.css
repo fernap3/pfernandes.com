@@ -199,6 +199,10 @@ a {
 	#link-email:hover path {
 		fill: #d14836;
 	}
+
+	#link-resume:hover path {
+		fill: #d63693;
+	}
 }
 
 @media screen and (max-width: 920px) {
