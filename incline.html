@@ -15,8 +15,6 @@
 				--text-color-secondary: #222222;
 				--background-color: white;
 				--color-brand: #2bb456;
-
-				counter-reset: tracknum;
 			}
 
 			@media (prefers-color-scheme: dark) {
@@ -204,8 +202,7 @@
 			}
 
 			.track-number::before {
-				counter-increment: tracknum;
-				content: counter(tracknum) ".";
+				content: counter(list-item) ".";
 			}
 
 			.click-text::before {
