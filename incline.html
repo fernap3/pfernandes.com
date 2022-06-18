@@ -2,7 +2,6 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Incline - Peter Fernandes</title>
-		<link rel="stylesheet" href="incline.css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
 		<meta name="description" content="Online store page for Peter's 2022 album, Incline">
 		<link rel="canonical" href="https://pfernandes.com" />
@@ -14,13 +13,16 @@
 				--text-color: black;
 				--text-color-secondary: #222222;
 				--background-color: white;
+				--color-brand: #2bb456;
 			}
 
 			@media (prefers-color-scheme: dark) {
 				:root {
+					--easing-normal: cubic-bezier(0.4, 0.0, 0.2, 1);
 					--text-color: white;
 					--text-color-secondary: #d1d1d1;
 					--background-color: #191919;
+					--color-brand: #2bb456;
 				}
 			}
 
@@ -59,7 +61,6 @@
 				grid-template-columns: auto auto;
 				grid-template-rows: max-content max-content auto;
 				justify-content: flex-start;
-				column-gap: 1em;
 			}
 
 			#tracklist {
@@ -72,6 +73,10 @@
 				margin-top: 0;
 			}
 
+			#tracklist li {
+				list-style-type: none;
+			}
+
 			#tracklist li:nth-child(n+2) {
 				margin-top: 1em;
 			}
@@ -80,6 +85,33 @@
 				height: 400px;
 				width: 400px;
 				background: gray;
+			}
+			.track-title {
+				display: flex;
+				align-items: center;
+				gap: 4px;
+			}
+			.track-title-playing-icon {
+				opacity: 0;
+				height: 16px;
+				width: 16px;
+				background-size: 9px;
+				background-image: url(images/playing-track.svg);
+				background-repeat: no-repeat;
+				background-position: center;
+				transition: opacity .3s var(--easing-normal);
+			}
+			.playing .track-title-playing-icon {
+				opacity: 1;
+			}
+			.track-title-text {
+				transform: translateX(-21px);
+				transition: all .3s var(--easing-normal);
+				cursor: pointer;
+			}
+			.playing .track-title-text {
+				transform: translateX(0);
+				color: var(--color-brand);
 			}
 			.track-personnel {
 				color: var(--text-color-secondary);
@@ -140,6 +172,26 @@
 				cursor: pointer;
 				width: 100%;
 			}
+
+			#playback-track-title {
+				color: var(--text-color-secondary);
+			}
+
+			#playback-track-title.song-loaded {
+				color: var(--text-color);
+			}
+
+			.tracklist-item {
+				display: grid;
+				column-gap: 10px;
+				grid-template-columns: 24px auto;
+				grid-template-rows: auto auto;
+			}
+
+			.track-number {
+				grid-column: 1;
+				grid-row: span 2;
+			}
 		</style>
 	</head>
 	<body>
@@ -151,7 +203,8 @@
 					<ol>
 						<li>
 							<div class="tracklist-item">
-								<div class="track-title">Galaxy</div>
+								<div class="track-number">1.</div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Galaxy</span></div>
 								<div class="track-personnel">
 									<span class="personnel-credit">Guitar solos by <span class="personnel-name">Yuya Komoguchi</span></span>,
 									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
@@ -160,80 +213,104 @@
 							</div>
 						</li>
 						<li>
-							<div class="track-title">日曜日のお使い</div>
-							<div class="track-personnel">
-								<span class="personnel-credit">Guitar solos by <span class="personnel-name">Yuya Komoguchi</span></span>,
-								<span class="personnel-credit">Backing guitars by <span class="personnel-name">Toshi Yanagi</span></span>,
-								<span class="personnel-credit">Trumpet 1 by <span class="personnel-name">Wayne Bergeron</span></span>,
-								<span class="personnel-credit">Trumpet 2 by <span class="personnel-name">Aaron Janik</span></span>,
-								<span class="personnel-credit">Trombone by <span class="personnel-name">Andy Martin</span></span>,
-								<span class="personnel-credit">Tenor sax by <span class="personnel-name">Brandon Fields</span></span>,
-								<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
-								<span class="personnel-credit">Drums by <span class="personnel-name">Joel Rosenblatt</span></span>
+							<div class="tracklist-item">
+								<div class="track-number">2.</div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">日曜日のお使い</span></div>
+								<div class="track-personnel">
+									<span class="personnel-credit">Guitar solos by <span class="personnel-name">Yuya Komoguchi</span></span>,
+									<span class="personnel-credit">Backing guitars by <span class="personnel-name">Toshi Yanagi</span></span>,
+									<span class="personnel-credit">Trumpet 1 by <span class="personnel-name">Wayne Bergeron</span></span>,
+									<span class="personnel-credit">Trumpet 2 by <span class="personnel-name">Aaron Janik</span></span>,
+									<span class="personnel-credit">Trombone by <span class="personnel-name">Andy Martin</span></span>,
+									<span class="personnel-credit">Tenor sax by <span class="personnel-name">Brandon Fields</span></span>,
+									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
+									<span class="personnel-credit">Drums by <span class="personnel-name">Joel Rosenblatt</span></span>
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="track-title">Western Capital</div>
-							<div class="track-personnel">
-								<span class="personnel-credit">EWI by <span class="personnel-name">Peter Fernandes</span></span>,
-								<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
-								<span class="personnel-credit">Drums by <span class="personnel-name">Thomas Lang</span></span>
+							<div class="tracklist-item">
+								<div class="track-number">3.</div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Western Capital</span></div>
+								<div class="track-personnel">
+									<span class="personnel-credit">EWI by <span class="personnel-name">Peter Fernandes</span></span>,
+									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
+									<span class="personnel-credit">Drums by <span class="personnel-name">Thomas Lang</span></span>
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="track-title">Emmy</div>
-							<div class="track-personnel">
-								<span class="personnel-credit">Guitar solo by <span class="personnel-name">Richard Hallebeek</span></span>,
-								<span class="personnel-credit">Soprano sax <span class="personnel-name">Brandon Fields</span></span>,
-								<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
-								<span class="personnel-credit">Drums by <span class="personnel-name">Thomas Lang</span></span>
+							<div class="tracklist-item">
+								<div class="track-number">4.</div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Emmy</span></div>
+								<div class="track-personnel">
+									<span class="personnel-credit">Guitar solo by <span class="personnel-name">Richard Hallebeek</span></span>,
+									<span class="personnel-credit">Soprano sax <span class="personnel-name">Brandon Fields</span></span>,
+									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
+									<span class="personnel-credit">Drums by <span class="personnel-name">Thomas Lang</span></span>
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="track-title">Hemispheres</div>
-							<div class="track-personnel">
-								<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
-								<span class="personnel-credit">Drums by <span class="personnel-name">Joel Rosenblatt</span></span>
+							<div class="tracklist-item">
+								<div class="track-number">5.</div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Hemispheres</span></div>
+								<div class="track-personnel">
+									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
+									<span class="personnel-credit">Drums by <span class="personnel-name">Joel Rosenblatt</span></span>
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="track-title">Incline</div>
-							<div class="track-personnel">
-								<span class="personnel-credit">Vocals by <span class="personnel-name">Woody Mankowski</span></span>,
-								<span class="personnel-credit">Guitar solos by <span class="personnel-name">Toshi Yanagi</span></span>,
-								<span class="personnel-credit">Bass by <span class="personnel-name">Jimmy Johnson</span></span>,
-								<span class="personnel-credit">Drums by <span class="personnel-name">Vinnie Colaiuta</span></span>
+							<div class="tracklist-item">
+								<div class="track-number">6.</div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Incline</span></div>
+								<div class="track-personnel">
+									<span class="personnel-credit">Vocals by <span class="personnel-name">Woody Mankowski</span></span>,
+									<span class="personnel-credit">Guitar solos by <span class="personnel-name">Toshi Yanagi</span></span>,
+									<span class="personnel-credit">Bass by <span class="personnel-name">Jimmy Johnson</span></span>,
+									<span class="personnel-credit">Drums by <span class="personnel-name">Vinnie Colaiuta</span></span>
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="track-title">Decker</div>
-							<div class="track-personnel">
-								<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
-								<span class="personnel-credit">Drums by <span class="personnel-name">Vinnie Colaiuta</span></span>
+							<div class="tracklist-item">
+								<div class="track-number">7.</div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Decker</span></div>
+								<div class="track-personnel">
+									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
+									<span class="personnel-credit">Drums by <span class="personnel-name">Vinnie Colaiuta</span></span>
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="track-title">Keep Climbing</div>
-							<div class="track-personnel">
-								<span class="personnel-credit">Guitar by <span class="personnel-name">Yuya Komoguchi</span></span>,
-								<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
-								<span class="personnel-credit">Drums by <span class="personnel-name">Thomas Lang</span></span>
+							<div class="tracklist-item">
+								<div class="track-number">8.</div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Keep Climbing</span></div>
+								<div class="track-personnel">
+									<span class="personnel-credit">Guitar by <span class="personnel-name">Yuya Komoguchi</span></span>,
+									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
+									<span class="personnel-credit">Drums by <span class="personnel-name">Thomas Lang</span></span>
+								</div>
 							</div>
 						</li>
 						<li>
-							<div class="track-title">Timeline</div>
-							<div class="track-personnel">
-								<span class="personnel-credit">Guitar by <span class="personnel-name">Toshi Yanagi</span></span>,
-								<span class="personnel-credit">Alto sax by <span class="personnel-name">Brandon Fields</span></span>,
-								<span class="personnel-credit">Bass by <span class="personnel-name">Teppei Kawasaki</span></span>,
-								<span class="personnel-credit">Drums by <span class="personnel-name">Joel Rosenblatt</span></span>
+							<div class="tracklist-item">
+								<div class="track-number">9.</div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Timeline</span></div>
+								<div class="track-personnel">
+									<span class="personnel-credit">Guitar by <span class="personnel-name">Toshi Yanagi</span></span>,
+									<span class="personnel-credit">Alto sax by <span class="personnel-name">Brandon Fields</span></span>,
+									<span class="personnel-credit">Bass by <span class="personnel-name">Teppei Kawasaki</span></span>,
+									<span class="personnel-credit">Drums by <span class="personnel-name">Joel Rosenblatt</span></span>
+								</div>
 							</div>
 						</li>
 					</ol>
 				</div>
 				<div id="playback-controls">
 					<button id="play-button" type="button"></button>
-					<div id="track-title">Click track titles to play samples</div>
+					<div id="playback-track-title">Click track titles to play audio samples</div>
 					<div>
 						<progress id="track-progress" value="0"></progress>
 					</div>
@@ -244,34 +321,44 @@
 			</div>
 		</div>
 		<script>
-			const trackList = [{ title: "Galaxy", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" }];
+			const trackList = [
+				{ title: "Galaxy", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
+				{ title: "日曜日のお使い", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
+				{ title: "Western Capital", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
+				{ title: "Emmy", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
+				{ title: "Hemispheres", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
+				{ title: "Incline", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
+				{ title: "Decker", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
+				{ title: "Keep Climbing", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
+				{ title: "Timeline", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
+			];
 			let currentTrackIndex = null;
 
 			const audio = new Audio();
 			const playButton = document.getElementById("play-button");
-			const trackTitleText = document.getElementById("track-title");
+			const trackTitleText = document.getElementById("playback-track-title");
 			const progressBar = document.getElementById("track-progress");
 			progressBar.onclick = evt => onProgressBarClick(evt);
+
+			[...document.querySelectorAll(".track-title-text")].forEach((span, index) => span.onclick = () => playTrack(index));
 
 			playButton.onclick = () => {
 				if (currentTrackIndex == null)
 				{
 					currentTrackIndex = 0;
-					audio.src = trackList[currentTrackIndex].url;
-					audio.ontimeupdate = () => onTimeUpdate();
-					audio.play();
-					trackTitleText.textContent = trackList[currentTrackIndex].title;
-					playButton.style.backgroundImage = `url(images/pause.svg)`;
+					playTrack(currentTrackIndex);
 				}
 				else if (audio.paused)
 				{
 					audio.play();
 					playButton.style.backgroundImage = `url(images/pause.svg)`;
+					indicateTrackPlaying(currentTrackIndex);
 				}
 				else
 				{
 					audio.pause();
 					playButton.style.backgroundImage = `url(images/play.svg)`;
+					indicateNoTrackPlaying();
 				}
 				
 			};
@@ -289,7 +376,34 @@
 				
 				const barRect = progressBar.getBoundingClientRect();
 				const percentage = (evt.clientX - barRect.left) / barRect.width;
-				audio.currentTime = percentage * audio.duration;
+				audio.fastSeek(percentage * audio.duration);
+			}
+
+			function playTrack(index)
+			{
+				audio.src = trackList[index].url;
+				audio.ontimeupdate = () => onTimeUpdate();
+				audio.play();
+				trackTitleText.textContent = trackList[index].title;
+				playButton.style.backgroundImage = `url(images/pause.svg)`;
+				trackTitleText.classList.add("song-loaded");
+				
+				indicateTrackPlaying(index);
+				currentTrackIndex = index;
+			}
+
+			function indicateTrackPlaying(index)
+			{
+				indicateNoTrackPlaying();
+
+				const tracklistItem = document.querySelector(`li:nth-child(${index + 1})`);
+				tracklistItem.classList.add("playing");
+			}
+
+			function indicateNoTrackPlaying()
+			{
+				const currentItem = document.querySelector("li.playing");
+				currentItem?.classList.remove("playing");
 			}
 		</script>
 	</body>
