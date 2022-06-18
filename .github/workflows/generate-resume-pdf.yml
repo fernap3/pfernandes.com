@@ -37,6 +37,7 @@ jobs:
       - name: Copy static files to build directory
         run: mkdir -p build &&
              cp index.html build &&
+             cp incline.html build &&
              cp resume.html build &&
              cp main.css build &&
              cp resume.pdf build &&
