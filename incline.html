@@ -15,6 +15,8 @@
 				--text-color-secondary: #222222;
 				--background-color: white;
 				--color-brand: #2bb456;
+
+				counter-reset: tracknum;
 			}
 
 			@media (prefers-color-scheme: dark) {
@@ -33,7 +35,6 @@
 				font-family: Roboto, sans-serif;
 				display: flex;
 				flex-direction: column;
-				justify-content: center;
 				align-items: stretch;
 				font-size: 16px;
 				margin: 0;
@@ -50,7 +51,7 @@
 				max-width: 100%;
 				margin: auto;
 				width: 1200px;
-				padding: 0 40px;
+				padding: 0 20px;
 				box-sizing: border-box;
 				padding-top: 40px;
 				display: flex;
@@ -64,6 +65,10 @@
 				grid-template-rows: 400px 50px auto;
 				justify-content: flex-start;
 				row-gap: 10px;
+			}
+
+			h1 {
+				font-size: 32px;
 			}
 
 			#tracklist {
@@ -85,8 +90,9 @@
 			}
 
 			#main-cover {
-				height: 400px;
 				width: 400px;
+				aspect-ratio: 1;
+				max-width: calc(100vw - 100px);
 				background: gray;
 			}
 			.track-title {
@@ -194,6 +200,60 @@
 			.track-number {
 				grid-column: 1;
 				grid-row: span 2;
+				text-align: right;
+			}
+
+			.track-number::before {
+				counter-increment: tracknum;
+				content: counter(tracknum) ".";
+			}
+
+			.click-text::before {
+				content: 'touch';
+			}
+
+			@media (pointer: fine) {
+				.click-text::before {
+					content: 'click';
+				}
+			}
+
+			.click-text.capital::before {
+				text-transform: capitalize;
+			}
+
+			@media screen and (max-width: 900px) {
+				h1 {
+					font-size: 24px;
+					text-align: center;
+				}
+
+				#album-info {
+					grid-template-columns: auto;
+					grid-template-rows: auto auto auto auto;
+					justify-items: center;
+					row-gap: 10px;
+				}
+
+				#album-info ol {
+					padding: 0;
+				}
+
+				#buy-options {
+					grid-row: 2;
+				}
+
+				#playback-controls {
+					grid-row: 3;
+					position: relative;
+    				left: -25px;
+					margin-bottom: 20px;
+					margin-top: 10px;
+				}
+
+				#track-progress {
+					width: calc(100vw - 100px);
+				}
 			}
 		</style>
 	</head>
@@ -206,7 +266,7 @@
 					<ol>
 						<li>
 							<div class="tracklist-item">
-								<div class="track-number">1.</div>
+								<div class="track-number"></div>
 								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Galaxy</span></div>
 								<div class="track-personnel">
 									<span class="personnel-credit">Guitar solos by <span class="personnel-name">Yuya Komoguchi</span></span>,
@@ -217,7 +277,7 @@
 						</li>
 						<li>
 							<div class="tracklist-item">
-								<div class="track-number">2.</div>
+								<div class="track-number"></div>
 								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">日曜日のお使い</span></div>
 								<div class="track-personnel">
 									<span class="personnel-credit">Guitar solos by <span class="personnel-name">Yuya Komoguchi</span></span>,
@@ -233,7 +293,7 @@
 						</li>
 						<li>
 							<div class="tracklist-item">
-								<div class="track-number">3.</div>
+								<div class="track-number"></div>
 								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Western Capital</span></div>
 								<div class="track-personnel">
 									<span class="personnel-credit">EWI by <span class="personnel-name">Peter Fernandes</span></span>,
@@ -244,7 +304,7 @@
 						</li>
 						<li>
 							<div class="tracklist-item">
-								<div class="track-number">4.</div>
+								<div class="track-number"></div>
 								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Emmy</span></div>
 								<div class="track-personnel">
 									<span class="personnel-credit">Guitar solo by <span class="personnel-name">Richard Hallebeek</span></span>,
@@ -256,7 +316,7 @@
 						</li>
 						<li>
 							<div class="tracklist-item">
-								<div class="track-number">5.</div>
+								<div class="track-number"></div>
 								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Hemispheres</span></div>
 								<div class="track-personnel">
 									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
@@ -266,7 +326,7 @@
 						</li>
 						<li>
 							<div class="tracklist-item">
-								<div class="track-number">6.</div>
+								<div class="track-number"></div>
 								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Incline</span></div>
 								<div class="track-personnel">
 									<span class="personnel-credit">Vocals by <span class="personnel-name">Woody Mankowski</span></span>,
@@ -278,7 +338,7 @@
 						</li>
 						<li>
 							<div class="tracklist-item">
-								<div class="track-number">7.</div>
+								<div class="track-number"></div>
 								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Decker</span></div>
 								<div class="track-personnel">
 									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
@@ -288,7 +348,7 @@
 						</li>
 						<li>
 							<div class="tracklist-item">
-								<div class="track-number">8.</div>
+								<div class="track-number"></div>
 								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Keep Climbing</span></div>
 								<div class="track-personnel">
 									<span class="personnel-credit">Guitar by <span class="personnel-name">Yuya Komoguchi</span></span>,
@@ -299,7 +359,7 @@
 						</li>
 						<li>
 							<div class="tracklist-item">
-								<div class="track-number">9.</div>
+								<div class="track-number"></div>
 								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Timeline</span></div>
 								<div class="track-personnel">
 									<span class="personnel-credit">Guitar by <span class="personnel-name">Toshi Yanagi</span></span>,
@@ -313,7 +373,7 @@
 				</div>
 				<div id="playback-controls">
 					<button id="play-button" type="button"></button>
-					<div id="playback-track-title">Click track titles to play audio samples</div>
+					<div id="playback-track-title"><span class="click-text capital"></span> track titles to play audio samples</div>
 					<div>
 						<progress id="track-progress" value="0"></progress>
 					</div>
@@ -368,8 +428,13 @@
 
 			function onTimeUpdate()
 			{
-				const percentComplete = audio.currentTime / audio.duration;
-				progressBar.value = percentComplete;
+				if (isNaN(audio.duration))
+					progressBar.value = 0;
+				else
+				{
+					const percentComplete = audio.currentTime / audio.duration;
+					progressBar.value = percentComplete;
+				}
 			}
 
 			function onProgressBarClick(evt)
