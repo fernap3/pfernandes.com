@@ -195,6 +195,10 @@ a {
 	#link-github:hover path {
 		fill: #24292e;
 	}
+
+	#link-youtube:hover path {
+		fill: #d14836;
+	}
 	
 	#link-email:hover path {
 		fill: #d14836;

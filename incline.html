@@ -149,7 +149,7 @@
 				margin-top: 4em;
 				display: grid;
 				grid-template-columns: repeat(auto-fill, 550px);
-				gap: 20px;
+				gap: 40px;
 				margin-bottom: 40px;
 			}
 			.buy-button {
@@ -174,17 +174,19 @@
 			}
 			.buy-option-item {
 				display: grid;
-				grid-template-columns: 150px auto;
+				grid-template-columns: 150px 1fr 1fr;
 				grid-template-rows: 1.5em auto 50px;
 				column-gap: 10px;
 			}
 			.buy-option-title {
 				font-weight: bold;
+				grid-column: 2 / span 2;
 			}
 			.buy-option-desc {
 				font-weight: 300;
 				font-size: 90%;
 				line-height: 1.3em;
+				grid-column: 2 / span 2;
 			}
 			.sample-play-button {
 				background-image: url(images/play.svg);
@@ -417,8 +419,9 @@
 				<div class="buy-option-item">
 					<div id="buy-option-art"></div>
 					<div class="buy-option-title">Physical CD - $20</div>
-					<div class="buy-option-desc">Physical compact disc copy of "Incline." Ships internationally. Available signed, or sealed without signature. Please specify preference when checking out.</div>
-					<button type="button" class="buy-button">Buy now</button>
+					<div class="buy-option-desc">Physical compact disc copy of "Incline." Ships internationally. Available signed, or sealed without signature for the same price.</div>
+					<button type="button" class="buy-button">Buy signed</button>
+					<button type="button" class="buy-button">Buy sealed</button>
 				</div>
 				<div class="buy-option-item">
 					<div id="buy-option-art"></div>
