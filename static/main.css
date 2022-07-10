@@ -179,6 +179,19 @@ a {
 	margin-right: 0;
 }
 
+#lang-select {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	font-size: 130%;
+	filter: grayscale(100%);
+	transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#lang-select:hover {
+	filter: none;
+}
+
 @media (pointer: fine) {
 	.link-button:hover {
 		transform: translateY(-10px);
