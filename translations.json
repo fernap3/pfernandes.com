@@ -1,0 +1,8 @@
+{
+    "index.html": {
+        "peter_firstname": ["Peter", "ピーター"],
+        "peter_lastname": ["Fernandes", "フェルナンデス"],
+        "musician": ["Musician", "ミュージシャン"],
+        "producer": ["Producer", "プロデューサー"]
+    }
+}
