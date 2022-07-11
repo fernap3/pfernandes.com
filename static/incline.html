@@ -46,6 +46,19 @@
 				text-decoration: none;
 			}
 
+			#lang-select {
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				font-size: 130%;
+				filter: grayscale(100%);
+				transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+
+			#lang-select:hover {
+				filter: none;
+			}
+
 			#content {
 				max-width: 100%;
 				margin: auto;
@@ -245,12 +258,12 @@
 			}
 
 			.click-text::before {
-				content: 'touch';
+				content: '{{lang.touch}}';
 			}
 
 			@media (pointer: fine) {
 				.click-text::before {
-					content: 'click';
+					content: '{{lang.click}}';
 				}
 			}
 
@@ -294,8 +307,12 @@
 		</style>
 	</head>
 	<body>
+		<div id="lang-select">
+			<a href="/incline" title="View site in English">🇺🇸</a>
+			<a href="/jp/incline" title="日本語のサイトを見る">🇯🇵</a>
+		</div>
 		<div id="content">
-			<h1>Peter Fernandes - Incline (2022)</h1>
+			<h1>{{lang.album_title}}</h1>
 			<div id="album-info">
 				<div id="main-cover"></div>
 				<div id="tracklist">
@@ -303,105 +320,105 @@
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Galaxy</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_galaxy}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">Guitar solos by <span class="personnel-name">Yuya Komoguchi</span></span>,
-									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
-									<span class="personnel-credit">Drums by <span class="personnel-name">Thomas Lang</span></span>
+									<span class="personnel-credit">{{lang.role_guitar_solos}}<span class="personnel-name">{{lang.player_yuya}}</span></span>,
+									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
+									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_thomas}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">日曜日のお使い</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_sunday_errand}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">Guitar solos by <span class="personnel-name">Yuya Komoguchi</span></span>,
-									<span class="personnel-credit">Backing guitars by <span class="personnel-name">Toshi Yanagi</span></span>,
-									<span class="personnel-credit">Trumpet 1 by <span class="personnel-name">Wayne Bergeron</span></span>,
-									<span class="personnel-credit">Trumpet 2 by <span class="personnel-name">Aaron Janik</span></span>,
-									<span class="personnel-credit">Trombone by <span class="personnel-name">Andy Martin</span></span>,
-									<span class="personnel-credit">Tenor sax by <span class="personnel-name">Brandon Fields</span></span>,
-									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
-									<span class="personnel-credit">Drums by <span class="personnel-name">Joel Rosenblatt</span></span>
+									<span class="personnel-credit">{{lang.role_guitar_solos}}<span class="personnel-name">{{lang.player_yuya}}</span></span>,
+									<span class="personnel-credit">{{lang.role_backing_guitars}}<span class="personnel-name">{{lang.player_toshi}}</span></span>,
+									<span class="personnel-credit">{{lang.role_trumpet1}}<span class="personnel-name">{{lang.player_wayne}}</span></span>,
+									<span class="personnel-credit">{{lang.role_trumpet2}}<span class="personnel-name">{{lang.player_aaron}}</span></span>,
+									<span class="personnel-credit">{{lang.role_trombone}}<span class="personnel-name">{{lang.player_andy}}</span></span>,
+									<span class="personnel-credit">{{lang.role_tenor_sax}} <span class="personnel-name">{{lang.player_brandon}}</span></span>,
+									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
+									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_joel}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Western Capital</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_western_capital}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">EWI by <span class="personnel-name">Peter Fernandes</span></span>,
-									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
-									<span class="personnel-credit">Drums by <span class="personnel-name">Thomas Lang</span></span>
+									<span class="personnel-credit">{{lang.role_ewi}}<span class="personnel-name">{{lang.player_peter}}</span></span>,
+									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
+									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_thomas}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Emmy</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_emmy}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">Guitar solo by <span class="personnel-name">Richard Hallebeek</span></span>,
-									<span class="personnel-credit">Soprano sax <span class="personnel-name">Brandon Fields</span></span>,
-									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
-									<span class="personnel-credit">Drums by <span class="personnel-name">Thomas Lang</span></span>
+									<span class="personnel-credit">{{lang.role_guitar_solo}}<span class="personnel-name">{{lang.player_richard}}</span></span>,
+									<span class="personnel-credit">{{lang.role_soprano_sax}}<span class="personnel-name">{{lang.player_brandon}}</span></span>,
+									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
+									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_thomas}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Hemispheres</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_hemispheres}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
-									<span class="personnel-credit">Drums by <span class="personnel-name">Joel Rosenblatt</span></span>
+									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
+									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_joel}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Incline</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_incline}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">Vocals by <span class="personnel-name">Woody Mankowski</span></span>,
-									<span class="personnel-credit">Guitar solos by <span class="personnel-name">Toshi Yanagi</span></span>,
-									<span class="personnel-credit">Bass by <span class="personnel-name">Jimmy Johnson</span></span>,
-									<span class="personnel-credit">Drums by <span class="personnel-name">Vinnie Colaiuta</span></span>
+									<span class="personnel-credit">{{lang.role_vocals}}<span class="personnel-name">{{lang.player_woody}}</span></span>,
+									<span class="personnel-credit">{{lang.role_guitar_solos}}<span class="personnel-name">{{lang.player_toshi}}</span></span>,
+									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_jimmy}}</span></span>,
+									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_jimmy}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Decker</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_decker}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
-									<span class="personnel-credit">Drums by <span class="personnel-name">Vinnie Colaiuta</span></span>
+									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
+									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_jimmy}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Keep Climbing</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_keep_climbing}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">Guitar by <span class="personnel-name">Yuya Komoguchi</span></span>,
-									<span class="personnel-credit">Bass by <span class="personnel-name">Ric Fierabracci</span></span>,
-									<span class="personnel-credit">Drums by <span class="personnel-name">Thomas Lang</span></span>
+									<span class="personnel-credit">{{lang.role_guitar}}<span class="personnel-name">{{lang.player_yuya}}</span></span>,
+									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
+									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_thomas}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">Timeline</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_timeline}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">Guitar by <span class="personnel-name">Toshi Yanagi</span></span>,
-									<span class="personnel-credit">Alto sax by <span class="personnel-name">Brandon Fields</span></span>,
-									<span class="personnel-credit">Bass by <span class="personnel-name">Teppei Kawasaki</span></span>,
-									<span class="personnel-credit">Drums by <span class="personnel-name">Joel Rosenblatt</span></span>
+									<span class="personnel-credit">{{lang.role_guitar}}<span class="personnel-name">{{lang.player_toshi}}</span></span>,
+									<span class="personnel-credit">{{lang.role_alto_sax}}<span class="personnel-name">{{lang.player_brandon}}</span></span>,
+									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_teppei}</span></span>,
+									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_joel}}</span></span>
 								</div>
 							</div>
 						</li>
@@ -409,7 +426,7 @@
 				</div>
 				<div id="playback-controls">
 					<button id="play-button" type="button"></button>
-					<div id="playback-track-title"><span class="click-text capital"></span> track titles to play audio samples</div>
+					<div id="playback-track-title">{{lang.miniplayer_instructions}}</div>
 					<div>
 						<progress id="track-progress" value="0"></progress>
 					</div>

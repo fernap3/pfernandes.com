@@ -69,15 +69,19 @@ async function translateHtml(fullPath, lang)
 {
 	const fileText = await fs.readFile(fullPath, { encoding: "utf8" });
 	const translationIndex = lang === "jp" ? 1 : 0;
+	const fileName = fullPath.split("/").at(-1);
+	const langObj = translations[fileName];
+
+	if (langObj == null)
+		return fileText;
 
 	return fileText.replace(/\{\{(.+?)\}\}/g, (matchValue, langKey) => {
 		const keyParts = langKey.split(".").slice(1); // Get rid of the "lang." prefix from the key
-		const lang = translations["index.html"];
 
-		if (lang[keyParts[0]] == null)
+		if (langObj[keyParts[0]] == null)
 			return matchValue;
 
-		return lang[keyParts[0]][translationIndex] ?? matchValue;
+		return langObj[keyParts[0]][translationIndex] ?? matchValue;
 	});
 }
 

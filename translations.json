@@ -4,5 +4,85 @@
         "peter_lastname": ["Fernandes", "フェルナンデス"],
         "musician": ["Musician", "ミュージシャン"],
         "producer": ["Producer", "プロデューサー"]
+    },
+    "incline.html": {
+        "album_title": ["Peter Fernandes - Incline (2022)", "ピーター・フェルナンデス - インクライン (2022年)"],
+        "miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
+        "touch": ["touch", "触って"],
+        "click": ["click", "クリックして"],
+        "player_yuya": ["Yuya Komoguchi", "菰口雄矢"],
+        "player_peter": ["Peter Fernandes", "ピーター・フェルナンデス"],
+        "player_ric": ["Ric Fierabracci", "リック・フィエラブラッチ"],
+        "player_thomas": ["Thomas Lang", "ドラムはトーマス・ラング"],
+        "player_woody": ["Woody Mankowski", "ボーカルはウッディ・マンコウスキー"],
+        "player_toshi": ["Toshi Yanagi", "としやなぎ"],
+        "player_jimmy": ["Jimmy Johnson", "ジミー・ジョンソン"],
+        "player_vinnie": ["Vinnie Colaiuta", "ビニー・カリウタ"],
+        "player_wayne": ["Wayne Bergeron", "ウェイン・バージェロン"],
+        "player_aaron": ["Aaron Janik", "アーロン・ジャニック"],
+        "player_andy": ["Andy Martin", "アンディ・マーティン"],
+        "player_brandon": ["Brandon Fields", "ブランドンフィールズ"],
+        "player_joel": ["Joel Rosenblatt", "ジョエル・ローゼンブラット"],
+        "player_richard": ["Richard Hallebeek", "リチャード・ハレべーク"],
+        "player_teppei": ["Teppei Kawasaki", "川崎哲平"],
+        "role_guitar": ["Guitar by ", "ギターは"],
+        "role_guitar_solo": ["Guitar solo by ", "ギターソロは"],
+        "role_guitar_solos": ["Guitar solos by ", "ギターソロは"],
+        "role_backing_guitars": ["Backing guitars by ", "他のギターは"],
+        "role_vocals": ["Vocals by ", "ボーカルは"],
+        "role_bass": ["Bass by ", "ベースは"],
+        "role_drums": ["Drums by ", "ドラムは"],
+        "role_ewi": ["EWI by ", "EWIは"],
+        "role_trumpet1": ["Trumpet 1 by ", "トランペット1は"],
+        "role_trumpet2": ["Trumpet 2 by ", "トランペット2は"],
+        "role_trombone": ["Trombone by ", "トロンボーンは"],
+        "role_tenor_sax": ["Tenor Sax by ", "テナーサックスは"],
+        "role_alto_sax": ["Alto Sax by ", "アルトサックスは"],
+        "role_soprano_sax": ["Soprano Sax by ", "ソプラノサックスは"],
+        "title_galaxy": ["Galaxy", "ギャラクシー"],
+        "players_galaxy": [
+            "Guitar solos by Yuya Komoguchi, Bass by Ric Fierabracci, Drums by Thomas Lang",
+            "ギターソロは菰口雄矢、ベースはリック・フィエラブラッチ、ドラムはトーマス・ラング"
+        ],
+        "title_incline": ["Incline", "坂"],
+        "players_incline": [
+            "Vocals by Woody Mankowski, Guitar solos by Toshi Yanagi, Bass by Jimmy Johnson, Drums by Vinnie Colaiuta", 
+            "ボーカルはウッディ・マンコウスキー、ギターソロはやなぎとし、ベースはジミー・ジョンソン、ドラムはビニー・カリウタ"
+        ],
+        "title_western_capital": ["Western Capital", "西京"],
+        "players_western_capital": [
+            "EWI by Peter Fernandes, Bass by Ric Fierabracci, Drums by Thomas Lang",
+            "イーウイーはピーター・フェルナンデス、ベースはリック・フィエラブラッチ、ドラムはトーマス・ラング"
+        ],
+        "title_sunday_errand": ["日曜日のお使い", "日曜日のお使い"],
+        "players_sunday_errand": [
+            "Guitar solos by Yuya Komoguchi, Backing guitars by Toshi Yanagi, Trumpet 1 by Wayne Bergeron, Trumpet 2 by Aaron Janik, Trombone by Andy Martin, Tenor sax by Brandon Fields, Bass by Ric Fierabracci, Drums by Joel Rosenblatt",
+            "ギターソロは菰口雄矢、他のギターはやなぎとし、トランペットはウェイン・バージェロンとアーロン・ジャニック、トランボンはアンディ・マーティン、サックスはブランドンフィールズ、ベースはリック・フィエラブラッチ、ジョエル・ローゼンブラット"
+        ],
+        "title_emmy": ["Emmy", "エミー"],
+        "players_emmy": [
+            "Guitar solo by Richard Hallebeek, Soprano sax Brandon Fields, Bass by Ric Fierabracci, Drums by Joel Rosenblatt",
+            "ギターソロはリチャード・ハレべーク、サックスはサックスはブランドン・フィールズ、ベースはリック・フィエラブラッチ、ジョエル・ローゼンブラット"
+        ],
+        "title_hemispheres": ["Hemispheres", "半球"],
+        "players_hemispheres": [
+            "Bass by Ric Fierabracci, Drums by Joel Rosenblatt",
+            "ベースはリック・フィエラブラッチ、ジョエル・ローゼンブラット"
+        ],
+        "title_decker": ["Decker", "デッカー"],
+        "players_decker": [
+            "Bass by Ric Fierabracci, Drums by Vinnie Colaiuta",
+            "ベースはリック・フィエラブラッチ、ドラムはビニー・カリウタ"
+        ],
+        "title_keep_climbing": ["Keep Climbing", "頑張り続けて"],
+        "players_keep_climbing": [
+            "Guitar by Yuya Komoguchi, Bass by Ric Fierabracci, Drums by Thomas Lang",
+            "ギターは菰口雄矢、ベースはリック・フィエラブラッチ、ドラムはトーマス・ラング"
+        ],
+        "title_timeline": ["Timeline", "タイムライン"],
+        "players_timeline": [
+            "Guitar by Toshi Yanagi, Alto sax by Brandon Fields, Bass by Teppei Kawasaki, Drums by Joel Rosenblatt",
+            "ギターはやなぎとし、サックスは、ブランドン・フィールズ、ベースは川崎哲平、ドラムはジョエル・ローゼンブラット"
+        ]
     }
 }
