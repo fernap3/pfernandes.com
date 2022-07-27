@@ -3,6 +3,7 @@
     "@aws-sdk/client-s3": "^3.137.0",
     "@aws-sdk/client-ses": "^3.137.0",
     "@aws-sdk/s3-request-presigner": "^3.137.0",
+    "country-code-lookup": "^0.0.20",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "puppeteer": "^13.0.1",
