@@ -26,6 +26,8 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 
+const EMAIL_REGEX = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+
 app.use(bodyParser.json());
 
 app.get("/*", async (req, res) =>
@@ -69,7 +71,6 @@ app.get("/*", async (req, res) =>
 	res.status(200).sendFile(pathOnDisk);
 });
 
-// Match the raw body to content type application/json
 app.post("/webhook", (request, response) =>
 {
 	const event = request.body;
@@ -88,8 +89,8 @@ app.post("/webhook", (request, response) =>
 			console.log(`Unhandled event type ${event.type}`);
 	}
 
-  // Return a 200 response to acknowledge receipt of the event
-  response.status(200).json({received: true});
+	// Return a 200 response to acknowledge receipt of the event
+	response.status(200).json({received: true});
 });
 
 app.post("/create-checkout-session", async (req, res) =>
@@ -143,6 +144,80 @@ app.post("/create-checkout-session", async (req, res) =>
 	});
 
 	res.redirect(303, session.url);
+});
+
+app.post("/mailing-list/subscribe", (request, response) =>
+{
+	const { name, email } = request.body;
+
+	if (name == "" || name == null)
+	{
+		response.status(400).send("'name' property must present");
+		return;
+	}
+
+	if (email == "" || email == null || !EMAIL_REGEX.test(email))
+	{
+		response.status(400).send("'email' property must be a valid email address");
+		return;
+	}
+
+	const client = new SESClient({ region: "us-west-1"});
+
+	const params = {
+		Source: `"Peter Fernandes" <noreply@pfernandes.com>`,
+		Destination: { ToAddresses: ["supersonicandtails@gmail.com"] },
+		Message: {
+			Body: {
+				Text: {
+					Charset: "UTF-8",
+					Data: `${name} (${email}) has subscribed to the Peter Fernandes mailing list.`,
+				}
+			},
+			Subject: {
+				Charset: "UTF-8",
+				Data: `${name} has subscribed to the Peter Fernandes mailing list!`,
+			}
+		}
+	};
+
+	await client.send(new SendEmailCommand(params));
+
+	response.status(200).send();
+});
+
+app.get("/mailing-list/unsubscribe", (request, response) =>
+{
+	const email = req.query.email;
+
+	if (email == "" || email == null || !EMAIL_REGEX.test(email))
+	{
+		response.status(400).send("'email' query parameter must be a valid email address");
+		return;
+	}
+
+	const client = new SESClient({ region: "us-west-1"});
+
+	const params = {
+		Source: `"Peter Fernandes" <noreply@pfernandes.com>`,
+		Destination: { ToAddresses: ["supersonicandtails@gmail.com"] },
+		Message: {
+			Body: {
+				Text: {
+					Charset: "UTF-8",
+					Data: `${email} has requested to be unsubscribed from the Peter Fernandes mailing list. Please remove the user from the list.`,
+				}
+			},
+			Subject: {
+				Charset: "UTF-8",
+				Data: `${email} has requested to be unsubscribed from the Peter Fernandes mailing list!`,
+			}
+		}
+	};
+
+	await client.send(new SendEmailCommand(params));
+
+	response.status(200).send();
 });
 
 
