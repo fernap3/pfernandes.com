@@ -6,6 +6,7 @@
         "producer": ["Producer", "プロデューサー"]
     },
     "incline.html": {
+        "purchase_success": ["Thank you for your purchase! If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships."],
         "album_title": ["Peter Fernandes - Incline (2022)", "ピーター・フェルナンデス - インクライン (2022年)"],
         "miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
         "touch": ["touch", "触って"],

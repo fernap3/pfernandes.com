@@ -48,11 +48,15 @@
 
 			#lang-select {
 				position: absolute;
-				top: 15px;
+				top: 75px;
 				right: 15px;
 				font-size: 130%;
 				filter: grayscale(100%);
 				transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+
+			body:has(#purchase-success-banner[hidden]) #lang-select {
+				top: 15px;
 			}
 
 			#lang-select:hover {
@@ -304,9 +308,41 @@
 					width: calc(100vw - 100px);
 				}
 			}
+			#purchase-success-banner {
+				background-color: var(--color-brand);
+				color: white;
+				min-height: 46px;
+				flex-shrink: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				padding: .5em 74px;
+				line-height: 1.4em;
+			}
+			#purchase-success-banner[hidden] {
+				display: none;
+			}
+			#purchase-banner-close {
+				position: absolute;
+				right: 0;
+				background-image: url(images/close.svg);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-color: transparent;
+				border: none;
+				height: 40px;
+				width: 40px;
+				background-size: 14px;
+				cursor: pointer;
+			}
 		</style>
 	</head>
 	<body>
+		<div id="purchase-success-banner" hidden>
+			<button id="purchase-banner-close"></button>
+			{{lang.purchase_success}}
+		</div>
 		<div id="lang-select">
 			<a href="/incline" title="View site in English">🇺🇸</a>
 			<a href="/jp/incline" title="日本語のサイトを見る">🇯🇵</a>
@@ -555,6 +591,16 @@
 			{
 				const currentItem = document.querySelector("li.playing");
 				currentItem?.classList.remove("playing");
+			}
+
+			const purchaseBanner = document.getElementById("purchase-success-banner");
+			const purchaseBannerCloseButton = document.getElementById("purchase-banner-close");
+			purchaseBannerCloseButton.onclick = () => purchaseBanner.setAttribute("hidden", "");
+
+			const urlSearchParams = new URLSearchParams(window.location.search);
+			if (urlSearchParams.get("purchaseSuccess") != null)
+			{
+				purchaseBanner.removeAttribute("hidden");
 			}
 		</script>
 	</body>

@@ -119,7 +119,7 @@ app.post("/create-checkout-session", async (req, res) =>
 			return;
 	}
 
-	let successUrl = `${req.get("origin")}/purchase-success.html?type=${successType}`;
+	let successUrl = `${req.get("origin")}/incline?purchaseSuccess=${successType}`;
 
 	const session = await stripe.checkout.sessions.create({
 		line_items: [
@@ -131,7 +131,7 @@ app.post("/create-checkout-session", async (req, res) =>
 		],
 		mode: "payment",
 		success_url: successUrl,
-		cancel_url: `${req.get("origin")}/incline.html`,
+		cancel_url: `${req.get("origin")}/incline`,
 		
 	});
 
@@ -149,7 +149,15 @@ async function handleSale(checkoutSession)
 
 	const customerEmail = session.customer_details.email;
 
-	await sendDownloadsEmail(customerEmail);
+	try
+	{
+		await sendDownloadsEmail(customerEmail);
+		await sendPeterEmail(session.customer_details, productId, lineItem.description);
+	}
+	catch(e)
+	{
+		console.log(e);
+	}
 
 	//const customer = await stripe.customers.retrieve(session.customer);
 	
@@ -165,7 +173,7 @@ async function sendDownloadsEmail(toAddress)
 	const client = new SESClient({ region: "us-west-1"});
 
 	const params = {
-		Source: "noreply@pfernandes.com",
+		Source: `"Peter Fernandes" <noreply@pfernandes.com>`,
 		Destination: { ToAddresses: [toAddress] },
 		ReplyToAddresses: ["supersonicandtails@gmail.com"],
 		Message: {
@@ -192,14 +200,37 @@ async function sendDownloadsEmail(toAddress)
 		}
 	};
 
-	try
-	{
-		await client.send(new SendEmailCommand(params));
-	}
-	catch(e)
-	{
-		console.log(e);
-	}
+	await client.send(new SendEmailCommand(params));
+}
+
+async function sendPeterEmail(customer, productId, productDesc)
+{
+	const client = new SESClient({ region: "us-west-1"});
+
+	const params = {
+		Source: `"Peter Fernandes" <noreply@pfernandes.com>`,
+		Destination: { ToAddresses: ["supersonicandtails@gmail.com"] },
+		Message: {
+			Body: {
+				Html: {
+					Charset: "UTF-8",
+					Data: `
+						<p>
+							${customer.name} (${customer.email ?? "no email address"}) has purchased ${productDesc}.
+						</p>
+						<p>Customer's address:</p>
+						<p>${customer.address ?? "No address provided"}</p>
+						`,
+				}
+			},
+			Subject: {
+				Charset: "UTF-8",
+				Data: `Someone purchased ${productDesc}!`,
+			}
+		}
+	};
+
+	await client.send(new SendEmailCommand(params));
 }
 
 
