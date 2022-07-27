@@ -30,7 +30,46 @@ const EMAIL_REGEX = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|
 
 app.use(bodyParser.json());
 
+app.get(/\/(jp\/)?unsubscribe/, async (req, res) =>
+{
+	const email = req.query.email;
+
+	if (email == "" || email == null || !EMAIL_REGEX.test(email))
+	{
+		res.status(400).send("'email' query parameter must be a valid email address");
+		return;
+	}
+
+	const client = new SESClient({ region: "us-west-1"});
+
+	const params = {
+		Source: `"Peter Fernandes" <noreply@pfernandes.com>`,
+		Destination: { ToAddresses: ["supersonicandtails@gmail.com"] },
+		Message: {
+			Body: {
+				Text: {
+					Charset: "UTF-8",
+					Data: `${email} has requested to be unsubscribed from the Peter Fernandes mailing list. Please remove the user from the list.`,
+				}
+			},
+			Subject: {
+				Charset: "UTF-8",
+				Data: `${email} has requested to be unsubscribed from the Peter Fernandes mailing list`,
+			}
+		}
+	};
+
+	await client.send(new SendEmailCommand(params));
+
+	await handleResourceGet(req, res);
+});
+
 app.get("/*", async (req, res) =>
+{
+	await handleResourceGet(req, res);
+});
+
+async function handleResourceGet(req, res)
 {
 	const pageLang = req.path.startsWith("/jp") ? "jp" : "en";
 	let urlPath = req.path.replace("/jp", "");
@@ -43,7 +82,7 @@ app.get("/*", async (req, res) =>
 	let urlPathParts = urlPath.split("/");
 	let pathOnDisk = path.resolve(".", "static", ...urlPathParts);
 
-	const topLevelPages = new Set(["incline", "resume"]);
+	const topLevelPages = new Set(["incline", "resume", "unsubscribe"]);
 
 	if (topLevelPages.has(urlPathParts.at(-1)))
 	{
@@ -69,11 +108,11 @@ app.get("/*", async (req, res) =>
 	}
 
 	res.status(200).sendFile(pathOnDisk);
-});
+}
 
-app.post("/webhook", (request, response) =>
+app.post("/webhook", (req, res) =>
 {
-	const event = request.body;
+	const event = req.body;
 
 	// console.log(event)
 
@@ -90,7 +129,7 @@ app.post("/webhook", (request, response) =>
 	}
 
 	// Return a 200 response to acknowledge receipt of the event
-	response.status(200).json({received: true});
+	res.status(200).json({received: true});
 });
 
 app.post("/create-checkout-session", async (req, res) =>
@@ -146,19 +185,19 @@ app.post("/create-checkout-session", async (req, res) =>
 	res.redirect(303, session.url);
 });
 
-app.post("/mailing-list/subscribe", (request, response) =>
+app.post("/mailing-list/subscribe", async (req, res) =>
 {
-	const { name, email } = request.body;
+	const { name, email } = req.body;
 
 	if (name == "" || name == null)
 	{
-		response.status(400).send("'name' property must present");
+		res.status(400).send("'name' property must present");
 		return;
 	}
 
 	if (email == "" || email == null || !EMAIL_REGEX.test(email))
 	{
-		response.status(400).send("'email' property must be a valid email address");
+		res.status(400).send("'email' property must be a valid email address");
 		return;
 	}
 
@@ -183,41 +222,7 @@ app.post("/mailing-list/subscribe", (request, response) =>
 
 	await client.send(new SendEmailCommand(params));
 
-	response.status(200).send();
-});
-
-app.get("/mailing-list/unsubscribe", (request, response) =>
-{
-	const email = req.query.email;
-
-	if (email == "" || email == null || !EMAIL_REGEX.test(email))
-	{
-		response.status(400).send("'email' query parameter must be a valid email address");
-		return;
-	}
-
-	const client = new SESClient({ region: "us-west-1"});
-
-	const params = {
-		Source: `"Peter Fernandes" <noreply@pfernandes.com>`,
-		Destination: { ToAddresses: ["supersonicandtails@gmail.com"] },
-		Message: {
-			Body: {
-				Text: {
-					Charset: "UTF-8",
-					Data: `${email} has requested to be unsubscribed from the Peter Fernandes mailing list. Please remove the user from the list.`,
-				}
-			},
-			Subject: {
-				Charset: "UTF-8",
-				Data: `${email} has requested to be unsubscribed from the Peter Fernandes mailing list!`,
-			}
-		}
-	};
-
-	await client.send(new SendEmailCommand(params));
-
-	response.status(200).send();
+	res.status(200).send();
 });
 
 
