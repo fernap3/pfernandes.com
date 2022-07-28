@@ -79,6 +79,9 @@
 
 			function showMailinglistModal()
 			{
+				const buttonRect = mailingListButton.getBoundingClientRect();
+				mailinglistDialog.style.top = buttonRect.bottom + 10 + "px";
+				mailinglistDialog.style.left = buttonRect.left + 10 +"px";
 				mailinglistDialog.showModal();
 			}
 

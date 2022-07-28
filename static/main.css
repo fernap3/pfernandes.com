@@ -1,12 +1,14 @@
 :root {
 	--text-color: black;
 	--background-color: white;
+	--background-color-layer2: #EEEEEE;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--text-color: white;
 		--background-color: #191919;
+		--background-color-layer2: #262626;
 	}
 }
 
@@ -223,12 +225,23 @@ a {
 	margin-right: .4em;
 }
 
+@keyframes present-up {
+	from { transform: translateY(8px); opacity: 0; }
+	to { transform: none; opacity: 1; }
+}
+
 #mailinglist-dialog {
 	font-size: 14px;
 	padding-right: 40px;
 	width: 100%;
 	max-width: 400px;
 	line-height: 1.4em;
+	border: none;
+	background-color: var(--background-color-layer2);
+	border-radius: 6px;
+	margin: 0;
+	animation-name: present-up;
+	animation-duration: .3s;
 }
 
 #mailinglist-cancel {
