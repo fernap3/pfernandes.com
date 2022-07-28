@@ -358,6 +358,9 @@ async function replaceVariables(html, req)
 	
 	const vars = {
 		page_path_without_lang_prefix,
+		full_page_url: `${req.get("host")}${req.url == "/" ? "" : req.url}`,
+		full_page_url_en: `${req.get("host")}${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
+		full_page_url_jp: `${req.get("host")}/jp${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
 	};
 	
 	return html.replace(/\{\{(.+?)\}\}/g, (matchValue, propName) => {
