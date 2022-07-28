@@ -67,6 +67,8 @@ a {
 	align-items: center;
 	opacity: .7;
 	transition: opacity .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+	height: 60px;
+	line-height: 59px;
 }
 
 .navbar-link:hover {
