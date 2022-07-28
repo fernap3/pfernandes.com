@@ -103,7 +103,10 @@ async function handleResourceGet(req, res)
 
 	if (urlPath.endsWith(".html"))
 	{
-		res.status(200).send(await translateHtml(pathOnDisk, pageLang));
+		const html = await replaceTemplates(pathOnDisk);
+		
+		const fileName = pathOnDisk.split("/").at(-1);
+		res.status(200).send(await translateHtml(html, fileName, pageLang));
 		return;
 	}
 
@@ -345,17 +348,37 @@ async function getS3DownloadUrl(key)
 	return await getSignedUrl(client, command, { expiresIn: 86400 });
 }
 
-async function translateHtml(fullPath, lang)
+async function replaceTemplates(fullPath)
 {
 	const fileText = await fs.readFile(fullPath, { encoding: "utf8" });
+
+	const templateRegex = /\{\{template=(.+)\}\}/g;
+	const templateHtmls = {};
+	let match;
+
+	while ((match = templateRegex.exec(fileText)) != null)
+	{
+		const templateFilename = match[1];
+		const templateFullPath = path.resolve(".", "static", templateFilename);
+		const templateText = await fs.readFile(templateFullPath, { encoding: "utf8" });
+		templateHtmls[templateFilename] = templateText;
+	}
+	
+	return fileText.replace(templateRegex, (matchValue, templateName) =>
+	{
+		return templateHtmls[templateName];
+	});
+}
+
+async function translateHtml(html, fileName, lang)
+{
 	const translationIndex = lang === "jp" ? 1 : 0;
-	const fileName = fullPath.split("/").at(-1);
 	const langObj = translations[fileName];
 
 	if (langObj == null)
-		return fileText;
+		return html;
 
-	return fileText.replace(/\{\{(.+?)\}\}/g, (matchValue, langKey) => {
+	return html.replace(/\{\{(.+?)\}\}/g, (matchValue, langKey) => {
 		const keyParts = langKey.split(".").slice(1); // Get rid of the "lang." prefix from the key
 
 		if (langObj[keyParts[0]] == null)

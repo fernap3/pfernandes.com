@@ -15,15 +15,7 @@
   		<link rel="alternate" hreflang="x-default" href="https://pfernandes.com" />
 	</head>
 	<body>
-		<div id="navbar">
-			<a href="/" class="navbar-link"><img src="images/home.svg">{{lang.home}}</a>
-			<!-- <a href="/incline" class="navbar-link"><img src="images/musicnote.svg">Releases</a> -->
-			<a href="#" id="mailinglist-link" class="navbar-link"><img src="images/mailinglist.svg">{{lang.mailing_list}}</a>
-			<div id="lang-select">
-				<a href="/" title="View site in English">🇺🇸</a>
-				<a href="/jp" title="日本語のサイトを見る">🇯🇵</a>
-			</div>
-		</div>
+		{{template=navbar.html}}
 		<div id="content">
 			<div id="content__header">
 				<h1 id="page-title"><span class="page-title-line animate-onload-fromleft">{{lang.peter_firstname}}</span><br><span class="page-title-line animate-onload-fromleft">{{lang.peter_lastname}}</span></h1>
