@@ -103,10 +103,12 @@ async function handleResourceGet(req, res)
 
 	if (urlPath.endsWith(".html"))
 	{
-		const html = await replaceTemplates(pathOnDisk, pageLang);
-		
 		const fileName = pathOnDisk.split("/").at(-1);
-		res.status(200).send(await translateHtml(html, fileName, pageLang));
+		let html = await replaceTemplates(pathOnDisk, pageLang)
+		html = await translateHtml(html, fileName, pageLang);
+		html = await replaceVariables(html, req);
+		
+		res.status(200).send(html);
 		return;
 	}
 
@@ -346,6 +348,21 @@ async function getS3DownloadUrl(key)
 	});
 	
 	return await getSignedUrl(client, command, { expiresIn: 86400 });
+}
+
+async function replaceVariables(html, req)
+{
+	let page_path_without_lang_prefix = req.path.replace("/jp", "");
+	if (!page_path_without_lang_prefix.startsWith("/"))
+		page_path_without_lang_prefix = "/" + page_path_without_lang_prefix;
+	
+	const vars = {
+		page_path_without_lang_prefix,
+	};
+	
+	return html.replace(/\{\{(.+?)\}\}/g, (matchValue, propName) => {
+		return vars[propName] ?? matchValue;
+	});
 }
 
 async function replaceTemplates(fullPath, pageLang)
