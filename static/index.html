@@ -17,8 +17,8 @@
 	<body>
 		<div id="navbar">
 			<a href="/" class="navbar-link"><img src="images/home.svg">Home</a>
-			<a href="/incline" class="navbar-link"><img src="images/musicnote.svg">Releases</a>
-			<a href="/" class="navbar-link"><img src="images/mailinglist.svg">Mailing list</a>
+			<!-- <a href="/incline" class="navbar-link"><img src="images/musicnote.svg">Releases</a> -->
+			<a href="#" id="mailinglist-link" class="navbar-link"><img src="images/mailinglist.svg">Mailing list</a>
 			<div id="lang-select">
 				<a href="/" title="View site in English">🇺🇸</a>
 				<a href="/jp" title="日本語のサイトを見る">🇯🇵</a>
@@ -54,5 +54,66 @@
 				</a> -->
 			</div>
 		</div>
+		<dialog id="mailinglist-dialog">
+			<p>Enter your name and email address to sign up for the mailing list. Frequency of communication is only occasional.</p>
+			<form id="mailinglist-form" method="dialog">
+				<input id="mailinglist-name" type="text" autocomplete="name" placeholder="Name">
+				<input id="mailinglist-email" type="email" autocomplete="email" required placeholder="Email address">
+				<button id="mailinglist-cancel" type="button"></button>
+				<button value="default">Submit</button>
+			</form>
+		</dialog>
+		<script>
+			const mailinglistDialog = document.getElementById("mailinglist-dialog");
+			const mailingListButton = document.getElementById("mailinglist-link");
+			const closeDialogButton = document.getElementById("mailinglist-cancel");
+			const mailingListForm = document.getElementById("mailinglist-form");
+			mailingListButton.onclick = () => showMailinglistModal();
+			mailinglistDialog.onmousedown = (evt) => handleDialogClick(evt);
+			closeDialogButton.onclick = () => mailinglistDialog.close();
+			mailingListForm.onsubmit = () => {
+				const name = document.getElementById("mailinglist-name").value;
+				const email = document.getElementById("mailinglist-email").value;
+				mailingListSignup(name, email);
+			};
+
+			function showMailinglistModal()
+			{
+				mailinglistDialog.showModal();
+			}
+
+			function handleDialogClick(evt)
+			{
+				const dialogRect = mailinglistDialog.getBoundingClientRect();
+				if (evt.clientY < dialogRect.top || evt.clientY > dialogRect.bottom || evt.clientX < dialogRect.left || evt.clientX > dialogRect.right)
+					mailinglistDialog.close();
+			}
+
+			async function mailingListSignup(name, email)
+			{
+				mailingListButton.disabled = true;
+
+				try
+				{
+					const response = await fetch("/mailing-list/subscribe", {
+						method: "POST",
+						body: JSON.stringify({name, email}),
+						headers: {
+							"Content-Type": "application/json",
+						}
+					});
+
+					if (!response.ok)
+					{
+						console.log(`${response.status} ${response.statusText}: ${await response.text()}`)
+						return;
+					}
+				}
+				finally
+				{
+					mailingListButton.disabled = false;
+				}
+			}
+		</script>
 	</body>
 </html>
