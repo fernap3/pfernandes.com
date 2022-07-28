@@ -16,9 +16,9 @@
 	</head>
 	<body>
 		<div id="navbar">
-			<a href="/" class="navbar-link"><img src="images/home.svg">Home</a>
+			<a href="/" class="navbar-link"><img src="images/home.svg">{{lang.home}}</a>
 			<!-- <a href="/incline" class="navbar-link"><img src="images/musicnote.svg">Releases</a> -->
-			<a href="#" id="mailinglist-link" class="navbar-link"><img src="images/mailinglist.svg">Mailing list</a>
+			<a href="#" id="mailinglist-link" class="navbar-link"><img src="images/mailinglist.svg">{{lang.mailing_list}}</a>
 			<div id="lang-select">
 				<a href="/" title="View site in English">🇺🇸</a>
 				<a href="/jp" title="日本語のサイトを見る">🇯🇵</a>
@@ -55,12 +55,12 @@
 			</div>
 		</div>
 		<dialog id="mailinglist-dialog">
-			<p>Enter your name and email address to sign up for the mailing list. Frequency of communication is only occasional.</p>
+			<p>{{lang.mailing_list_desc}}</p>
 			<form id="mailinglist-form" method="dialog">
-				<input id="mailinglist-name" type="text" autocomplete="name" placeholder="Name">
-				<input id="mailinglist-email" type="email" autocomplete="email" required placeholder="Email address">
+				<input id="mailinglist-name" type="text" autocomplete="name" placeholder="{{lang.name}}">
+				<input id="mailinglist-email" type="email" autocomplete="email" required placeholder="{{lang.email}}">
 				<button id="mailinglist-cancel" type="button"></button>
-				<button value="default">Submit</button>
+				<button value="default">{{lang.submit}}</button>
 			</form>
 		</dialog>
 		<script>
