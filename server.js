@@ -103,7 +103,7 @@ async function handleResourceGet(req, res)
 
 	if (urlPath.endsWith(".html"))
 	{
-		const html = await replaceTemplates(pathOnDisk);
+		const html = await replaceTemplates(pathOnDisk, pageLang);
 		
 		const fileName = pathOnDisk.split("/").at(-1);
 		res.status(200).send(await translateHtml(html, fileName, pageLang));
@@ -348,7 +348,7 @@ async function getS3DownloadUrl(key)
 	return await getSignedUrl(client, command, { expiresIn: 86400 });
 }
 
-async function replaceTemplates(fullPath)
+async function replaceTemplates(fullPath, pageLang)
 {
 	const fileText = await fs.readFile(fullPath, { encoding: "utf8" });
 
@@ -362,6 +362,11 @@ async function replaceTemplates(fullPath)
 		const templateFullPath = path.resolve(".", "static", templateFilename);
 		const templateText = await fs.readFile(templateFullPath, { encoding: "utf8" });
 		templateHtmls[templateFilename] = templateText;
+	}
+
+	for (const templateFilename of Object.keys(templateHtmls))
+	{
+		templateHtmls[templateFilename] = await translateHtml(templateHtmls[templateFilename], templateFilename, pageLang);
 	}
 	
 	return fileText.replace(templateRegex, (matchValue, templateName) =>

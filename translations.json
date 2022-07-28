@@ -1,11 +1,13 @@
 {
+    "navbar.html": {
+        "home": ["Home", "ホーム"],
+        "mailing_list": ["Mailing list", "メーリングリスト"]
+    },
     "index.html": {
         "peter_firstname": ["Peter", "ピーター"],
         "peter_lastname": ["Fernandes", "フェルナンデス"],
         "musician": ["Musician", "ミュージシャン"],
         "producer": ["Tech guy", "テクが好きな男"],
-        "home": ["Home", "ホーム"],
-        "mailing_list": ["Mailing list", "メーリングリスト"],
         "name": ["Name", "お名前"],
         "email": ["Email address", "メールアドレス"],
         "submit": ["Submit", "行く"],
