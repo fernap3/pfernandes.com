@@ -355,12 +355,14 @@ async function replaceVariables(html, req)
 	let page_path_without_lang_prefix = req.path.replace("/jp", "");
 	if (!page_path_without_lang_prefix.startsWith("/"))
 		page_path_without_lang_prefix = "/" + page_path_without_lang_prefix;
+
+	const origin = (req.secure ? "https://" : "https://") + req.get("host").replace("api.", "");
 	
 	const vars = {
 		page_path_without_lang_prefix,
-		full_page_url: `${req.get("host")}${req.url == "/" ? "" : req.url}`,
-		full_page_url_en: `${req.get("host")}${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
-		full_page_url_jp: `${req.get("host")}/jp${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
+		full_page_url: `${origin}${req.url == "/" ? "" : req.url}`,
+		full_page_url_en: `${origin}${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
+		full_page_url_jp: `${origin}/jp${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
 	};
 	
 	return html.replace(/\{\{(.+?)\}\}/g, (matchValue, propName) => {
