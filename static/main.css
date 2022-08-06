@@ -169,3 +169,24 @@ button.navbar-link {
 	justify-self: center;
 	color: var(--text-color);
 }
+
+#hamburger-button {
+	display: none;
+	border: none;
+	height: 60px;
+	width: 60px;
+	background: transparent;
+	background-image: url(images/hamburger.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 26px;
+}
+
+@media screen and (max-width: 920px) {
+	.navbar-link {
+		display: none;
+	}
+	#hamburger-button {
+		display: block;
+	}
+}
