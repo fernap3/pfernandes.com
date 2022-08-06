@@ -3,11 +3,7 @@
         "home": ["Home", "ホーム"],
         "mailing_list": ["Mailing list", "メーリングリスト"]
     },
-    "index.html": {
-        "peter_firstname": ["Peter", "ピーター"],
-        "peter_lastname": ["Fernandes", "フェルナンデス"],
-        "musician": ["Musician", "ミュージシャン"],
-        "producer": ["Tech guy", "テクが好きな男"],
+    "mailinglist_dialog.html": {
         "name": ["Name", "お名前"],
         "email": ["Email address", "メールアドレス"],
         "submit": ["Submit", "行く"],
@@ -15,6 +11,12 @@
             "Enter your name and email address to sign up for the mailing list. Frequency of communication is only occasional.",
             "メーリングリスト加入のためにお名前とメールアドレスを入力してください。メールはたまです。"
         ]
+    },
+    "index.html": {
+        "peter_firstname": ["Peter", "ピーター"],
+        "peter_lastname": ["Fernandes", "フェルナンデス"],
+        "musician": ["Musician", "ミュージシャン"],
+        "producer": ["Tech guy", "テクが好きな男"]
     },
     "incline.html": {
         "purchase_success": ["Thank you for your purchase! If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships."],
