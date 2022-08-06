@@ -94,7 +94,7 @@ async function handleResourceGet(req, res)
 	if (urlPath.endsWith(".html"))
 	{
 		if (pageLang === "jp")
-			res.set("Content-Language", "jp");
+			res.set("Content-Language", "ja");
 	}
 	
 	try
@@ -356,7 +356,7 @@ async function getS3DownloadUrl(key)
 	return await getSignedUrl(client, command, { expiresIn: 86400 });
 }
 
-async function replaceVariables(html, req, page_lang)
+async function replaceVariables(html, req, pageLang)
 {
 	let page_path_without_lang_prefix = req.path.replace("/jp", "");
 	if (!page_path_without_lang_prefix.startsWith("/"))
@@ -365,7 +365,7 @@ async function replaceVariables(html, req, page_lang)
 	const origin = (req.secure ? "https://" : "https://") + req.get("host").replace("api.", "");
 	
 	const vars = {
-		page_lang,
+		page_lang: pageLang === "jp" ? "ja" : "en",
 		page_path_without_lang_prefix,
 		full_page_url: `${origin}${req.url == "/" ? "" : req.url}`,
 		full_page_url_en: `${origin}${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
