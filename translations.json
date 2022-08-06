@@ -1,7 +1,8 @@
 {
     "navbar.html": {
         "home": ["Home", "ホーム"],
-        "mailing_list": ["Mailing list", "メーリングリスト"]
+        "mailing_list": ["Mailing list", "メーリングリスト"],
+        "works": ["Listen / Buy", "聞く・買う"]
     },
     "mailinglist_dialog.html": {
         "name": ["Name", "お名前"],

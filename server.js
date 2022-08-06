@@ -82,7 +82,7 @@ async function handleResourceGet(req, res)
 	let urlPathParts = urlPath.split("/");
 	let pathOnDisk = path.resolve(".", "static", ...urlPathParts);
 
-	const topLevelPages = new Set(["incline", "resume", "unsubscribe"]);
+	const topLevelPages = new Set(["incline", "resume", "unsubscribe", "works"]);
 
 	if (topLevelPages.has(urlPathParts.at(-1)))
 	{
@@ -366,6 +366,8 @@ async function replaceVariables(html, req, pageLang)
 	
 	const vars = {
 		page_lang: pageLang === "jp" ? "ja" : "en",
+		site_root: pageLang === "jp" ? "/jp" : "/",
+		lang_prefix: pageLang === "jp" ? "/jp/" : "/",
 		page_path_without_lang_prefix,
 		full_page_url: `${origin}${req.url == "/" ? "" : req.url}`,
 		full_page_url_en: `${origin}${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
