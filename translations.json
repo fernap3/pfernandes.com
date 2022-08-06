@@ -63,5 +63,8 @@
         "title_decker": ["Decker", "デッカー"],
         "title_keep_climbing": ["Keep Climbing", "頑張り続けて"],
         "title_timeline": ["Timeline", "タイムライン"]
+    },
+    "works.html": {
+        "title": ["Listen / Buy", "聞く・買う"]
     }
 }
