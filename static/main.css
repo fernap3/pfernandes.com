@@ -73,10 +73,15 @@ input:where([type=text], [type=email]) {
 .navbar-link {
 	display: flex;
 	align-items: center;
-	opacity: .7;
 	transition: opacity .3s cubic-bezier(0.39, 0.575, 0.565, 1);
 	height: 60px;
 	line-height: 59px;
+}
+
+@media (pointer: fine) {
+	.navbar-link {
+		opacity: .7;
+	}
 }
 
 .navbar-link:hover {
@@ -87,6 +92,12 @@ input:where([type=text], [type=email]) {
 	height: .9em;
 	width: .9em;
 	margin-right: .4em;
+}
+
+@media (prefers-color-scheme: light) {
+	.navbar-link img {
+		filter: brightness(0);
+	}
 }
 
 button.navbar-link {
