@@ -8,21 +8,91 @@
 			body {
 				height: 100%;
 				font-family: Roboto, sans-serif;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: stretch;
 				font-size: 16px;
 				margin: 0;
 				color: var(--text-color);
 				background: var(--background-color);
+			}
+			#page-title {
+				margin-bottom: 1.5em;
+			}
+			h2 {
+				font-size: 20px;
+				margin-top: 3em;
+			}
+			#categories-list {
+			}
+			.works-category {
+			}
+			.works-list {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, 200px);
+				gap: 30px;
+			}
+			.works-item-img {
+				height: 200px;
+				width: 200px;
+				object-fit: contain;
+				object-position: center;
+				margin-bottom: 1em;
 			}
 		</style>
 	</head>
 	<body>
 		{{template=navbar.html}}
 		<div id="content">
-			
+			<h1 id="page-title">Listen / Buy</h1>
+			<div id="categories-list">
+				<div class="works-category">
+					<h2>Solo Albums</h2>
+					<div class="works-list">
+						<!-- <div class="works-item">
+							<img class="works-item-img" src="">
+							<div class="works-item-title">Incline (2022)</div>
+						</div> -->
+						<a class="works-item" href="https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb">
+							<img class="works-item-img" src="images/qed.webp">
+							<div class="works-item-title">Q.E.D. (2014)</div>
+						</a>
+						<a class="works-item" href="https://open.spotify.com/album/3d1UlXDORvBjskRlZjuxGD">
+							<img class="works-item-img" src="images/thenewme.jpg">
+							<div class="works-item-title">The New Me (2011)</div>
+						</a>
+					</div>
+				</div>
+				<div class="works-category">
+					<h2>Selection of Singles</h2>
+					<div class="works-list">
+						<a class="works-item" href="https://www.youtube.com/watch?v=tEx0hvOXR3M">
+							<img class="works-item-img" src="images/breakout2022.jpg">
+							<div class="works-item-title">Break Out 2022 (2022)</div>
+						</a>
+						<a class="works-item" href="https://www.youtube.com/watch?v=bh0WgDF91tM">
+							<img class="works-item-img" src="images/redbarrageaquarium.jpg">
+							<div class="works-item-title">Red Barrage Aquarium (2015)</div>
+						</a>
+						<a class="works-item" href="https://www.youtube.com/watch?v=k9tiXn_OpAA">
+							<img class="works-item-img" src="images/twohands.jpg">
+							<div class="works-item-title">Two Hands (2013)</div>
+						</a>
+					</div>
+				</div>
+				<div class="works-category">
+					<h2>Writing Credits / Guest Appearances</h2>
+					<div class="works-list">
+						<a class="works-item" href="https://www.youtube.com/watch?v=F_jn6NOtT2s">
+							<img class="works-item-img" src="images/bittersuitesfromtheredroom.jpg">
+							<div class="works-item-title">Tales from a Fantastic Lumbar (2015)</div>
+							<div class="works-item-subtitle">on Bitter Suites from the Red Room by Shane Gaalaas</div>
+						</a>
+						<a class="works-item" href="https://www.richardhallebeek.com/release/richard-hallebeek-one-voice">
+							<img class="works-item-img" src="images/onevoice.jpg">
+							<div class="works-item-title">Hemispheres (2017)</div>
+							<div class="works-item-subtitle">on One Voice by Richard Hallebeek</div>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 		{{template=mailinglist_dialog.html}}
 	</body>

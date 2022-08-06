@@ -21,16 +21,18 @@
 				top: 15px;
 			}
 
+			#content {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
 			#album-info {
 				display: grid;
 				grid-template-columns: auto auto;
 				grid-template-rows: 400px 50px auto;
 				justify-content: flex-start;
 				row-gap: 10px;
-			}
-
-			h1 {
-				font-size: 32px;
 			}
 
 			#tracklist {
@@ -291,7 +293,7 @@
 		</div>
 		{{template=navbar.html}}
 		<div id="content">
-			<h1>{{lang.album_title}}</h1>
+			<h1 id="page-title">{{lang.album_title}}</h1>
 			<div id="album-info">
 				<div id="main-cover"></div>
 				<div id="tracklist">
