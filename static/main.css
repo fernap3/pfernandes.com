@@ -81,6 +81,14 @@ a {
 	margin-right: .4em;
 }
 
+button.navbar-link {
+	background: transparent;
+	font-family: inherit;
+	font-size: inherit;
+	border: none;
+	cursor: pointer;
+}
+
 @keyframes present-up {
 	from { transform: translateY(8px); opacity: 0; }
 	to { transform: none; opacity: 1; }
