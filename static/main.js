@@ -15,7 +15,12 @@ function showMailinglistModal()
 {
 	const buttonRect = mailingListButton.getBoundingClientRect();
 	mailinglistDialog.style.top = buttonRect.bottom + 10 + "px";
-	mailinglistDialog.style.left = buttonRect.left + 10 +"px";
+
+	if (window.innerWidth > 410)
+		mailinglistDialog.style.left = buttonRect.left + 10 +"px";
+	else
+		mailinglistDialog.style.left = "10px";
+	
 	mailinglistDialog.showModal();
 }
 

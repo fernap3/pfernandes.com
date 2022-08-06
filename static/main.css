@@ -19,9 +19,17 @@
 	}
 }
 
+* {
+	box-sizing: border-box;
+}
+
 a {
 	color: inherit;
 	text-decoration: none;
+}
+
+input:where([type=text], [type=email]) {
+	padding: 0.5em 0.4em;
 }
 
 #content {
@@ -96,9 +104,8 @@ button.navbar-link {
 
 #mailinglist-dialog {
 	font-size: 14px;
-	padding-right: 40px;
-	width: 100%;
-	max-width: 400px;
+	max-width: calc(100vw - 20px);
+	width: 430px;
 	line-height: 1.4em;
 	border: none;
 	background-color: var(--background-color-layer2);
@@ -106,6 +113,10 @@ button.navbar-link {
 	margin: 0;
 	animation-name: present-up;
 	animation-duration: .3s;
+}
+
+#mailinglist-desc {
+	margin-right: 40px;
 }
 
 #mailinglist-cancel {
@@ -121,4 +132,16 @@ button.navbar-link {
 	position: absolute;
 	top: 0;
 	right: 0;
+}
+
+#mailinglist-form {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px;
+}
+
+#mailinglist-form-submit {
+	height: 40px;
+	width: 140px;
+	justify-self: center;
 }
