@@ -106,6 +106,7 @@ button.navbar-link {
 	font-size: inherit;
 	border: none;
 	cursor: pointer;
+	color: var(--text-color);
 }
 
 @keyframes present-up {
@@ -119,6 +120,7 @@ button.navbar-link {
 	width: 430px;
 	line-height: 1.4em;
 	border: none;
+	color: var(--text-color);
 	background-color: var(--background-color-layer2);
 	border-radius: 6px;
 	margin: 0;
@@ -155,4 +157,5 @@ button.navbar-link {
 	height: 40px;
 	width: 140px;
 	justify-self: center;
+	color: var(--text-color);
 }
