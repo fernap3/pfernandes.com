@@ -4,6 +4,10 @@
         "mailing_list": ["Mailing list", "メーリングリスト"],
         "works": ["Listen / Buy", "聞く・買う"]
     },
+    "footer.html": {
+        "home": ["Home", "ホーム"],
+        "works": ["Listen / Buy", "聞く・買う"]
+    },
     "mailinglist_dialog.html": {
         "name": ["Name", "お名前"],
         "email": ["Email address", "メールアドレス"],

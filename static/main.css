@@ -109,6 +109,16 @@ button.navbar-link {
 	color: var(--text-color);
 }
 
+#footer {
+	display: flex;
+    justify-content: center;
+	align-items: center;
+    gap: 0.5em;
+    font-size: 14px;
+    color: var(--text-color-secondary);
+	height: 80px;
+}
+
 @keyframes present-up {
 	from { transform: translateY(8px); opacity: 0; }
 	to { transform: none; opacity: 1; }
