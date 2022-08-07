@@ -45,11 +45,27 @@
 			.works-item-title {
 				font-weight: bold;
 			}
+			.works-item-title::after {
+				content: "";
+				display: inline-block;
+				height: 1em;
+				width: 1em;
+				background-image: url(images/external.svg);
+				background-size: .8em;
+				background-position: center;
+				background-repeat: no-repeat;
+				position: relative;
+				top: 2px;
+				margin-left: 4px;
+				opacity: 0;
+			}
+			.works-item:hover .works-item-title::after {
+				opacity: .8;
+			}
 			.works-item-info {
 				font-weight: 300;
 			}
 			.inline-credit {
-				font-weight: bold;
 			}
 
 			@media screen and (max-width: 520px) {
@@ -113,15 +129,15 @@
 				<div class="works-category">
 					<h2>Writing Credits / Guest Appearances</h2>
 					<div class="works-list">
-						<a class="works-item" href="https://www.youtube.com/watch?v=F_jn6NOtT2s">
-							<img class="works-item-img" src="images/bittersuitesfromtheredroom.jpg">
-							<div class="works-item-title">Tales from a Fantastic Lumbar</div>
-							<div class="works-item-info">on <span class="inline-credit">Bitter Suites from the Red Room</span><br>by <span class="inline-credit">Shane Gaalaas</span></div>
-						</a>
 						<a class="works-item" href="https://www.richardhallebeek.com/release/richard-hallebeek-one-voice">
 							<img class="works-item-img" src="images/onevoice.jpg">
 							<div class="works-item-title">Hemispheres</div>
-							<div class="works-item-info">on <span class="inline-credit">One Voice</span><br>by <span class="inline-credit">Richard Hallebeek</span></div>
+							<div class="works-item-info"><span class="inline-credit">Richard Hallebeek, 2018</span><br>Composition</div>
+						</a>
+						<a class="works-item" href="https://www.youtube.com/watch?v=F_jn6NOtT2s">
+							<img class="works-item-img" src="images/bittersuitesfromtheredroom.jpg">
+							<div class="works-item-title">Tales from a Fantastic Lumbar</div>
+							<div class="works-item-info"><span class="inline-credit">Shane Gaalaas, 2015</span><br>Composition, keyboards</span></div>
 						</a>
 					</div>
 				</div>
