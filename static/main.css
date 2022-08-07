@@ -55,7 +55,7 @@ input:where([type=text], [type=email]) {
 
 body.menu-shown #content {
 	opacity: .5;
-	transform: translateX(10px);
+	transform: translateX(50vw);
 }
 
 #navbar {
@@ -241,7 +241,7 @@ button.sidebar-link {
 	width: 50vw;
 	height: 100vh;
 	max-height: 100vh;
-	background-color: var(--background-color-layer2);
+	background-color: var(--background-color);
 	position: fixed;
 	inset: 0;
 	border: 0;
