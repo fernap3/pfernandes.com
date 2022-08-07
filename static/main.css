@@ -222,10 +222,32 @@ button.sidebar-link {
 	height: 60px;
 	width: 60px;
 	background: transparent;
-	background-image: url(images/hamburger.svg);
+	/* background-image: url(images/hamburger.svg);
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 26px;
+	background-size: 26px; */
+}
+
+#hamburger-button svg {
+	height: 26px;
+	width: 26px;
+}
+
+#hamburger-button svg line {
+	transition: all .3s var(--easing-normal);
+	transform-origin: center;
+}
+
+.menu-shown #hamburger-button svg line:nth-child(1) {
+	transform: rotateZ(-45deg) translateY(calc(50% - 49px));
+}
+
+.menu-shown #hamburger-button svg line:nth-child(2) {
+	opacity: 0;
+}
+
+.menu-shown #hamburger-button svg line:nth-child(3) {
+	transform: rotateZ(45deg) translateY(calc(-50% + 49px));
 }
 
 @media screen and (max-width: 520px) {
