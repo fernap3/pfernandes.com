@@ -65,7 +65,7 @@ let menuShown = false;
 function toggleMenu()
 {
 	sideMenu.show();
-	sideMenu.animate([
+	const animation = sideMenu.animate([
 		{
 			transform: menuShown ? "none" : "translateX(-50vw)",
 		},
@@ -81,6 +81,12 @@ function toggleMenu()
 	);
 
 	menuShown = !menuShown;
+
+	animation.onfinish = () => {
+		if (!menuShown)
+			sideMenu.close();
+	};
+
 
 	const content = document.getElementById("content");
 
