@@ -228,7 +228,7 @@ button.sidebar-link {
 	background-size: 26px;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 520px) {
 	.navbar-link {
 		display: none;
 	}
