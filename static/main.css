@@ -130,6 +130,10 @@ button.navbar-link {
 	height: 43px;
 }
 
+.sidebar-link:focus {
+	outline: none;
+}
+
 .sidebar-link img {
 	height: .9em;
 	width: .9em;
@@ -245,4 +249,5 @@ button.sidebar-link {
 	z-index: 8;
 	padding-top: 60px;
 	padding-left: 21px;
+	color: var(--text-color);
 }
