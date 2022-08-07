@@ -172,8 +172,8 @@ button.sidebar-link {
 
 #mailinglist-dialog {
 	font-size: 14px;
-	max-width: calc(100vw - 20px);
-	width: 430px;
+	width: calc(100vw - 20px);
+	max-width: 520px;
 	line-height: 1.4em;
 	border: none;
 	color: var(--text-color);
@@ -214,6 +214,10 @@ button.sidebar-link {
 	width: 140px;
 	justify-self: center;
 	color: var(--text-color);
+}
+
+.sidebar-link.mailinglist-button {
+	padding-left: 0;
 }
 
 #hamburger-button {

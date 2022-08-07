@@ -1,8 +1,9 @@
 const mailinglistDialog = document.getElementById("mailinglist-dialog");
-const mailingListButton = document.getElementById("mailinglist-link");
+const mailingListButtons = document.querySelectorAll(".mailinglist-button");
 const closeDialogButton = document.getElementById("mailinglist-cancel");
 const mailingListForm = document.getElementById("mailinglist-form");
-mailingListButton.onclick = () => showMailinglistModal();
+mailingListButtons[0].onclick = evt => showMailinglistModal(evt);
+mailingListButtons[1].onclick = evt => showMailinglistModal(evt);
 mailinglistDialog.onmousedown = (evt) => handleDialogClick(evt);
 closeDialogButton.onclick = () => mailinglistDialog.close();
 mailingListForm.onsubmit = () => {
@@ -11,15 +12,20 @@ mailingListForm.onsubmit = () => {
 	mailingListSignup(name, email);
 };
 
-function showMailinglistModal()
+function showMailinglistModal(evt)
 {
-	const buttonRect = mailingListButton.getBoundingClientRect();
-	mailinglistDialog.style.top = buttonRect.bottom + 10 + "px";
+	const buttonRect = evt.target.getBoundingClientRect();
 
-	if (window.innerWidth > 410)
+	if (window.innerWidth > 520)
+	{
 		mailinglistDialog.style.left = buttonRect.left + 10 +"px";
+		mailinglistDialog.style.top = buttonRect.bottom + 10 + "px";
+	}
 	else
+	{
 		mailinglistDialog.style.left = "10px";
+		mailinglistDialog.style.top = "70px";
+	}
 	
 	mailinglistDialog.showModal();
 }
@@ -33,7 +39,8 @@ function handleDialogClick(evt)
 
 async function mailingListSignup(name, email)
 {
-	mailingListButton.disabled = true;
+	mailingListButtons[0].disabled = true;
+	mailingListButtons[1].disabled = true;
 
 	try
 	{
@@ -53,7 +60,8 @@ async function mailingListSignup(name, email)
 	}
 	finally
 	{
-		mailingListButton.disabled = false;
+		mailingListButtons[0].disabled = false;
+		mailingListButtons[1].disabled = false;
 	}
 }
 
