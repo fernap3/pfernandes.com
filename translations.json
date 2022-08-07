@@ -69,6 +69,9 @@
         "title_timeline": ["Timeline", "タイムライン"]
     },
     "works.html": {
-        "title": ["Listen / Buy", "聞く・買う"]
+        "title": ["Listen / Buy", "聞く・買う"],
+        "solo_albums": ["Solo Albums", "ソロアルバム"],
+        "singles": ["Selection of Singles", "シングル"],
+        "writing_credits": ["Writing Credits / Guest Appearances", "曲作り・ゲーストプレイ"]
     }
 }
