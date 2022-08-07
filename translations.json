@@ -18,12 +18,22 @@
         ]
     },
     "index.html": {
+        "meta_title": ["Peter Fernandes - Musician, Tech guy", "ピーター・フェルナンデス - ミュージシャン・テクが好きな男"],
+        "meta_description": [
+            "The personal website of Peter Fernandes, musician and software person.", 
+            "ミュージシャン、ソフトウェアが好きな人であるピーター・フェルナンデスのサイト。"
+        ],
         "peter_firstname": ["Peter", "ピーター"],
         "peter_lastname": ["Fernandes", "フェルナンデス"],
         "musician": ["Musician", "ミュージシャン"],
         "producer": ["Tech guy", "テクが好きな男"]
     },
     "incline.html": {
+        "meta_title": ["Incline | Peter Fernandes", "インクライン | ピーター・フェルナンデス"],
+        "meta_description": [
+            "Online store page for Peter Fernandes' 2022 album, Incline", 
+            "「インクライン」というピーター・フェルナンデスの2022年のアルバムのウェブストア"
+        ],
         "purchase_success": ["Thank you for your purchase! If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships."],
         "album_title": ["Peter Fernandes - Incline (2022)", "ピーター・フェルナンデス - インクライン (2022年)"],
         "miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
@@ -59,7 +69,7 @@
         "role_alto_sax": ["Alto Sax by ", "アルトサックスは"],
         "role_soprano_sax": ["Soprano Sax by ", "ソプラノサックスは"],
         "title_galaxy": ["Galaxy", "ギャラクシー"],
-        "title_incline": ["Incline", "坂"],
+        "title_incline": ["Incline", "インクライン"],
         "title_western_capital": ["Western Capital", "西京"],
         "title_sunday_errand": ["日曜日のお使い", "日曜日のお使い"],
         "title_emmy": ["Emmy", "エミー"],
@@ -69,6 +79,11 @@
         "title_timeline": ["Timeline", "タイムライン"]
     },
     "works.html": {
+        "meta_title": ["Works | Peter Fernandes", "音楽 | ピーター・フェルナンデス"],
+        "meta_description": [
+            "Releases by musician, Peter Fernandes", 
+            "ミュージシャンであるピーター・フェルナンデスの音楽"
+        ],
         "title": ["Listen / Buy", "聞く・買う"],
         "solo_albums": ["Solo Albums", "ソロアルバム"],
         "singles": ["Selection of Singles", "シングル"],
