@@ -56,3 +56,54 @@ async function mailingListSignup(name, email)
 		mailingListButton.disabled = false;
 	}
 }
+
+const hamburgerButton = document.getElementById("hamburger-button");
+const sideMenu = document.getElementById("side-menu");
+hamburgerButton.onclick = () => toggleMenu();
+let menuShown = false;
+
+function toggleMenu()
+{
+	sideMenu.show();
+	sideMenu.animate([
+		{
+			transform: menuShown ? "none" : "translateX(-50vw)",
+		},
+		{
+			transform: menuShown ? "translateX(-50vw)" : "none",
+		}
+	],
+		{
+			duration: 300,
+			easing: "cubic-bezier(0.4, 0.0, 0.2, 1)",
+			fill: "both",
+		}
+	);
+
+	menuShown = !menuShown;
+
+	const content = document.getElementById("content");
+
+	if (menuShown)
+	{
+		requestAnimationFrame(() => requestAnimationFrame(() => {
+			document.onclick = evt => {
+				if (evt.clientX > window.innerWidth / 2)
+					toggleMenu();
+			};
+		}));
+		
+		document.body.classList.add("menu-shown");
+		
+		if (content)
+			content.inert = true;
+	}
+	else
+	{
+		document.onclick = null;
+		document.body.classList.remove("menu-shown");
+
+		if (content)
+			content.inert = false;
+	}
+}
