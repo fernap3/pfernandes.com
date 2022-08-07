@@ -29,7 +29,7 @@
         "producer": ["Tech guy", "テクが好きな男"]
     },
     "incline.html": {
-        "meta_title": ["Incline | Peter Fernandes", "インクライン | ピーター・フェルナンデス"],
+        "meta_title": ["Incline - Peter Fernandes", "インクライン - ピーター・フェルナンデス"],
         "meta_description": [
             "Online store page for Peter Fernandes' 2022 album, Incline", 
             "「インクライン」というピーター・フェルナンデスの2022年のアルバムのウェブストア"
@@ -79,7 +79,7 @@
         "title_timeline": ["Timeline", "タイムライン"]
     },
     "works.html": {
-        "meta_title": ["Works | Peter Fernandes", "音楽 | ピーター・フェルナンデス"],
+        "meta_title": ["Works - Peter Fernandes", "音楽 - ピーター・フェルナンデス"],
         "meta_description": [
             "Releases by musician, Peter Fernandes", 
             "ミュージシャンであるピーター・フェルナンデスの音楽"
