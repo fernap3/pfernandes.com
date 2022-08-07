@@ -72,6 +72,9 @@
         "title": ["Listen / Buy", "聞く・買う"],
         "solo_albums": ["Solo Albums", "ソロアルバム"],
         "singles": ["Selection of Singles", "シングル"],
-        "writing_credits": ["Writing Credits / Guest Appearances", "曲作り・ゲーストプレイ"]
+        "writing_credits": ["Writing Credits / Guest Appearances", "曲作り・ゲーストプレイ"],
+        "composition": ["Composition", "曲作り"],
+        "composition_keys": ["Composition, keyboards", "曲作り・キーボード"],
+        "year_suffix": ["", "年"]
     }
 }
