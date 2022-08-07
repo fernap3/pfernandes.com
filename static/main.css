@@ -23,6 +23,10 @@
 	box-sizing: border-box;
 }
 
+body {
+	overflow-x: hidden;
+}
+
 body.menu-shown {
 	overflow: hidden;
 }
@@ -46,11 +50,12 @@ input:where([type=text], [type=email]) {
 	width: 1200px;
 	padding: 60px 40px 0 40px;
 	box-sizing: border-box;
-	transition: opacity .3s var(--easing-normal);
+	transition: opacity .3s var(--easing-normal), transform .3s var(--easing-normal);
 }
 
 body.menu-shown #content {
 	opacity: .5;
+	transform: translateX(10px);
 }
 
 #navbar {
