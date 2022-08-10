@@ -508,40 +508,40 @@
 				</div>
 			</div>
 			<div id="buy-options">
-				<h2 id="buy-options-title">How to listen</h2>
+				<h2 id="buy-options-title">{{lang.buy_options_title}}</h2>
 				<div class="buy-option-item">
 					<div id="buy-option-art"></div>
-					<div class="buy-option-title">Physical CD - $20</div>
-					<div class="buy-option-desc">Physical compact disc copy of "Incline." Ships internationally. Available signed, or sealed without signature for the same price.</div>
+					<div class="buy-option-title">{{lang.product_physical_cd_title}}</div>
+					<div class="buy-option-desc">{{lang.product_physical_cd_desc}}</div>
 					<form action="/create-checkout-session?productId=album-signed" method="POST">
-						<button type="submit" class="buy-button">Buy signed</button>
+						<button type="submit" class="buy-button">{{lang.buy_signed}}</button>
 					</form>
 					<form action="/create-checkout-session?productId=album-sealed" method="POST">
-						<button type="submit" class="buy-button">Buy sealed</button>
+						<button type="submit" class="buy-button">{{lang.buy_sealed}}</button>
 					</form>
 				</div>
 				<div class="buy-option-item">
 					<div id="buy-option-art"></div>
-					<div class="buy-option-title">Album download - $10</div>
-					<div class="buy-option-desc">Your choice of MP3, WAV, or FLAC files for each song. Available to download immediately after payment.</div>
+					<div class="buy-option-title">{{lang.product_album_download_title}}</div>
+					<div class="buy-option-desc">{{lang.product_album_download_desc}}</div>
 					<form action="/create-checkout-session?productId=album-download" method="POST">
-						<button type="submit" class="buy-button">Buy now</button>
+						<button type="submit" class="buy-button">{{lang.buy_now}}</button>
 					</form>
 				</div>
 				<div class="buy-option-item">
 					<div id="buy-option-art"></div>
-					<div class="buy-option-title">"Minus one" Package - $10</div>
-					<div class="buy-option-desc">WAV and MP3 versions of each song for each of "minus guitar," "minus bass," "minus drums," and "minus keys."</div>
+					<div class="buy-option-title">{{lang.product_minusone_title}}</div>
+					<div class="buy-option-desc">{{lang.product_minusone_desc}}</div>
 					<form action="/create-checkout-session?productId=minus-one" method="POST">
-						<button type="submit" class="buy-button">Buy now</button>
+						<button type="submit" class="buy-button">{{lang.buy_now}}</button>
 					</form>
 				</div>
 				<div class="buy-option-item">
 					<div id="buy-option-art"></div>
-					<div class="buy-option-title">Sheet music Package - $10</div>
-					<div class="buy-option-desc">Lead sheets for each song, in PDF format</div>
+					<div class="buy-option-title">{{lang.product_sheetmusic_title}}</div>
+					<div class="buy-option-desc">{{lang.product_sheetmusic_desc}}</div>
 					<form action="/create-checkout-session?productId=pdf" method="POST">
-						<button type="submit" class="buy-button">Buy now</button>
+						<button type="submit" class="buy-button">{{lang.buy_now}}</button>
 					</form>
 				</div>
 			</div>

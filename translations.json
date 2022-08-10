@@ -35,6 +35,30 @@
             "Online store page for Peter Fernandes' 2022 album, Incline", 
             "「インクライン」というピーター・フェルナンデスの2022年のアルバムのウェブストア"
         ],
+        "buy_options_title": ["How to listen", "聞く方法"],
+        "buy_signed": ["Buy signed", "サイン入るで買う"],
+        "buy_sealed": ["Buy sealed", "サインなしで買う"],
+        "buy_now": ["Buy now", "買う"],
+        "product_physical_cd_title": ["Physical CD - $20", ""],
+        "product_physical_cd_desc": [
+            "Physical compact disc copy of &lquot;Incline.&rquot; Ships internationally. Available signed, or sealed without signature for the same price.",
+            ""
+        ],
+        "product_album_download_title": ["Album download - $10", ""],
+        "product_album_download_desc": [
+            "Your choice of MP3, WAV, or FLAC files for each song. Available to download immediately after payment.",
+            ""
+        ],
+        "product_minusone_title": ["&lquot;Minus one&rquot; Package - $10", ""],
+        "product_minusone_desc": [
+            "WAV and MP3 versions of each song for each of &lquot;minus guitar,&rquot; &lquot;minus bass,&rquot; &lquot;minus drums,&rquot; and &lquot;minus keys.&rquot;",
+            ""
+        ],
+        "product_sheetmusic_title": ["Sheet music Package - $10", ""],
+        "product_sheetmusic_desc": [
+            "Lead sheets for each song, in PDF format",
+            ""
+        ],
         "available_on": [
             "Also available on <a class='nowrap' href='#'>Spotify</a>, <a class='nowrap' href='#'>Apple Music</a>, and other services.",
             "<a class='nowrap' href='#'>スポティファイ</a>や<a class='nowrap' href='#'>アップルミュージック</a>などでも配信中です。"
