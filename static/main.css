@@ -3,7 +3,7 @@
 	--text-color-secondary: #222222;
 	--background-color: white;
 	--background-color-layer2: #EEEEEE;
-	--color-frosted-background: rgba(255, 255, 255, .8);
+	--color-frosted-background: rgba(255, 255, 255, .7);
 	--color-brand: #2bb456;
 	--color-brand-hover: #2fc15d;
 }
@@ -16,7 +16,7 @@
 		--text-color-secondary: #d1d1d1;
 		--background-color: #000000;
 		--background-color-layer2: #262626;
-		--color-frosted-background: rgba(0, 0, 0, .8);
+		--color-frosted-background: rgba(0, 0, 0, .7);
 		--color-brand: #2bb456;
 	}
 }
