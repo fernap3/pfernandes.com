@@ -42,6 +42,7 @@ input:where([type=text], [type=email]) {
 
 #page-title {
 	font-size: 32px;
+	margin-top: 2em;
 }
 
 #content {
@@ -288,4 +289,11 @@ button.sidebar-link {
 	padding-top: 60px;
 	padding-left: 21px;
 	color: var(--text-color);
+}
+
+body {
+	/* background-image: url(images/peter-keys.webp); */
+	/* background-repeat: no-repeat; */
+	/* background-size: 100%; */
+	/* background-position: top right; */
 }

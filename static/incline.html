@@ -14,7 +14,7 @@
 				font-size: 16px;
 				margin: 0;
 				color: var(--text-color);
-				background: var(--background-color);
+				background-color: var(--background-color);
 			}
 
 			body:has(#purchase-success-banner[hidden]) #lang-select {
@@ -113,7 +113,7 @@
 			#buy-options {
 				margin-top: 4em;
 				display: grid;
-				grid-template-columns: repeat(auto-fill, 550px);
+				grid-template-columns: repeat(auto-fill, 46%);
 				gap: 40px;
 				margin-bottom: 40px;
 			}
@@ -127,6 +127,7 @@
 				padding: 0.4em 0.7em;
 				font-weight: bold;
 				max-width: 200px;
+				white-space: nowrap;
 			}
 			.buy-button:hover {
 				background-color: var(--color-brand-hover);
@@ -139,9 +140,14 @@
 			}
 			.buy-option-item {
 				display: grid;
-				grid-template-columns: 150px 1fr 1fr;
-				grid-template-rows: 1.5em auto 50px;
+				grid-template-columns: 150px min-content auto;
+				grid-template-rows: 1.5em auto 1fr;
 				column-gap: 10px;
+				row-gap: .2em;
+			}
+			.buy-option-item form {
+				margin: 0;
+				align-self: center;
 			}
 			.buy-option-title {
 				font-weight: bold;
@@ -242,6 +248,7 @@
 
 				#buy-options {
 					grid-row: 2;
+					grid-template-columns: auto;
 				}
 
 				#playback-controls {
@@ -284,6 +291,30 @@
 				background-size: 14px;
 				cursor: pointer;
 			}
+
+			#additional-buy-options {
+				margin: 4em 0;
+				text-align: center;
+				line-height: 1.4;
+			}
+
+			#additional-buy-options a {
+				font-weight: bold;
+			}
+
+			#additional-buy-options a::after {
+				content: "";
+				display: inline-block;
+				height: 1em;
+				width: 1em;
+				background-image: url(images/external.svg);
+				background-size: .8em;
+				background-position: center;
+				background-repeat: no-repeat;
+				position: relative;
+				top: 2px;
+				margin-left: 4px;
+			}
 		</style>
 	</head>
 	<body>
@@ -295,7 +326,8 @@
 		<div id="content">
 			<h1 id="page-title">{{lang.album_title}}</h1>
 			<div id="album-info">
-				<div id="main-cover"></div>
+				<!-- <div id="main-cover"></div> -->
+				<img id="main-cover" src="images/incline-draft.png">
 				<div id="tracklist">
 					<ol>
 						<li>
@@ -419,8 +451,12 @@
 					<div id="buy-option-art"></div>
 					<div class="buy-option-title">Physical CD - $20</div>
 					<div class="buy-option-desc">Physical compact disc copy of "Incline." Ships internationally. Available signed, or sealed without signature for the same price.</div>
-					<button type="button" class="buy-button">Buy signed</button>
-					<button type="button" class="buy-button">Buy sealed</button>
+					<form action="/create-checkout-session?productId=album-signed" method="POST">
+						<button type="submit" class="buy-button">Buy signed</button>
+					</form>
+					<form action="/create-checkout-session?productId=album-sealed" method="POST">
+						<button type="submit" class="buy-button">Buy sealed</button>
+					</form>
 				</div>
 				<div class="buy-option-item">
 					<div id="buy-option-art"></div>
@@ -434,14 +470,21 @@
 					<div id="buy-option-art"></div>
 					<div class="buy-option-title">"Minus one" Package - $10</div>
 					<div class="buy-option-desc">WAV and MP3 versions of each song for each of "minus guitar," "minus bass," "minus drums," and "minus keys."</div>
-					<button type="button" class="buy-button">Buy now</button>
+					<form action="/create-checkout-session?productId=minus-one" method="POST">
+						<button type="submit" class="buy-button">Buy now</button>
+					</form>
 				</div>
 				<div class="buy-option-item">
 					<div id="buy-option-art"></div>
 					<div class="buy-option-title">Sheet music Package - $10</div>
 					<div class="buy-option-desc">Lead sheets for each song, in PDF format</div>
-					<button type="button" class="buy-button">Buy now</button>
+					<form action="/create-checkout-session?productId=pdf" method="POST">
+						<button type="submit" class="buy-button">Buy now</button>
+					</form>
 				</div>
+			</div>
+			<div id="additional-buy-options">
+				{{lang.available_on}}
 			</div>
 		</div>
 		{{template=footer.html}}
