@@ -36,8 +36,8 @@
             "「インクライン」というピーター・フェルナンデスの2022年のアルバムのウェブストア"
         ],
         "available_on": [
-            "Also available on <a href='#'>Spotify</a>, <a href='#'>Apple Music</a>, and other services.",
-            "<a href='#'>スポティファイ</a>や<a href='#'>アップルミュージック</a>などでも配信中です。"
+            "Also available on <a class='nowrap' href='#'>Spotify</a>, <a class='nowrap' href='#'>Apple Music</a>, and other services.",
+            "<a class='nowrap' href='#'>スポティファイ</a>や<a class='nowrap' href='#'>アップルミュージック</a>などでも配信中です。"
         ],
         "purchase_success": ["Thank you for your purchase! If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships."],
         "album_title": ["Incline (2022)", "インクライン (2022年)"],

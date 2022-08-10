@@ -25,6 +25,10 @@
 
 body {
 	overflow-x: hidden;
+	background-image: url(images/peter-keys.webp);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	/* background-position: top right; */
 }
 
 body.menu-shown {
@@ -34,6 +38,10 @@ body.menu-shown {
 a {
 	color: inherit;
 	text-decoration: none;
+}
+
+.nowrap {
+	white-space: nowrap;
 }
 
 input:where([type=text], [type=email]) {
@@ -289,11 +297,4 @@ button.sidebar-link {
 	padding-top: 60px;
 	padding-left: 21px;
 	color: var(--text-color);
-}
-
-body {
-	background-image: url(images/peter-keys.webp);
-	background-repeat: no-repeat;
-	background-size: 100%;
-	/* background-position: top right; */
 }
