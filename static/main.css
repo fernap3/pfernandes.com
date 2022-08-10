@@ -11,7 +11,7 @@
 	:root {
 		accent-color: var(--color-brand);
 		--easing-normal: cubic-bezier(0.4, 0.0, 0.2, 1);
-		--text-color: white;
+		--text-color: #e0e0e0;
 		--text-color-secondary: #d1d1d1;
 		--background-color: #191919;
 		--background-color-layer2: #262626;
@@ -97,6 +97,11 @@ body.menu-shown #content {
 	.navbar-link {
 		opacity: .7;
 	}
+}
+
+.home-logo-button {
+	font-weight: bold;
+	opacity: .5;
 }
 
 .navbar-link:hover {
@@ -253,6 +258,12 @@ button.sidebar-link {
 
 .menu-shown #hamburger-button svg line:nth-child(3) {
 	transform: rotateZ(45deg) translateY(calc(-50% + 49px));
+}
+
+@media screen and (max-width: 630px) {
+	.home-logo-button {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 520px) {
