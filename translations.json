@@ -2,7 +2,8 @@
     "navbar.html": {
         "home": ["Home", "ホーム"],
         "mailing_list": ["Mailing list", "メーリングリスト"],
-        "works": ["Listen / Buy", "聞く・買う"]
+        "works": ["Listen / Buy", "聞く・買う"],
+        "peter_name": ["Peter Fernandes", "ピーター・フェルナンデス"]
     },
     "footer.html": {
         "home": ["Home", "ホーム"],
@@ -33,6 +34,10 @@
         "meta_description": [
             "Online store page for Peter Fernandes' 2022 album, Incline", 
             "「インクライン」というピーター・フェルナンデスの2022年のアルバムのウェブストア"
+        ],
+        "available_on": [
+            "Also available on <a href='#'>Spotify</a>, <a href='#'>Apple Music</a>, and other services.",
+            "<a href='#'>スポティファイ</a>や<a href='#'>アップルミュージック</a>などでも配信中です。"
         ],
         "purchase_success": ["Thank you for your purchase! If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships."],
         "album_title": ["Incline (2022)", "インクライン (2022年)"],
