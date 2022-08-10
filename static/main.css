@@ -13,7 +13,7 @@
 		--easing-normal: cubic-bezier(0.4, 0.0, 0.2, 1);
 		--text-color: #e0e0e0;
 		--text-color-secondary: #d1d1d1;
-		--background-color: #191919;
+		--background-color: #000000;
 		--background-color-layer2: #262626;
 		--color-brand: #2bb456;
 	}
@@ -292,8 +292,8 @@ button.sidebar-link {
 }
 
 body {
-	/* background-image: url(images/peter-keys.webp); */
-	/* background-repeat: no-repeat; */
-	/* background-size: 100%; */
+	background-image: url(images/peter-keys.webp);
+	background-repeat: no-repeat;
+	background-size: 100%;
 	/* background-position: top right; */
 }
