@@ -27,13 +27,25 @@
 
 body {
 	overflow-x: hidden;
-	/* background-image: url(images/peter-keys.webp); */
+	background-image: url(images/peter-keys.webp);
 	background-image: -webkit-image-set(url(images/peter-keys.avif) 1x, url(images/peter-keys.webp) 1x);
 	background-image: image-set(url(images/peter-keys.webp) type(image/webp), url(images/peter-keys.avif) type(image/avif));
 	background-image: image-set(url(images/peter-keys.webp) 1x, url(images/peter-keys.avif) 1x);
 	background-repeat: no-repeat;
 	background-size: 100%;
 	/* background-position: top right; */
+}
+
+@media screen and (max-width: 1024px) {
+	body {
+		background-image: url(images/peter-keys-medium.webp);
+	}
+}
+
+@media screen and (max-width: 512px) {
+	body {
+		background-image: url(images/peter-keys-mobile.webp);
+	}
 }
 
 body.menu-shown {
