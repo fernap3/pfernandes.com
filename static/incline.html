@@ -133,10 +133,9 @@
 				background-color: var(--color-brand-hover);
 			}
 			#buy-option-art {
-				height: 150px;
-				width: 150px;
 				background: gray;
 				grid-row: 1 / span 3;
+				aspect-ratio: 1;
 			}
 			.buy-option-item {
 				display: grid;
@@ -158,6 +157,24 @@
 				font-size: 90%;
 				line-height: 1.3em;
 				grid-column: 2 / span 2;
+				margin-bottom: .4em;
+			}
+			@media screen and (max-width: 520px) {
+				#buy-options {
+					padding-left: 34px;
+				}
+				.buy-option-item {
+					grid-template-columns: min-content auto;
+				}
+				#buy-option-art {
+					display: none;
+				}
+				.buy-option-title {
+					grid-column: 1 / span 2;
+				}
+				.buy-option-desc {
+					grid-column: 1 / span 2;
+				}
 			}
 			.sample-play-button {
 				background-image: url(images/play.svg);
