@@ -280,7 +280,7 @@ button.sidebar-link {
 	width: 50vw;
 	height: 100vh;
 	max-height: 100vh;
-	background-color: var(--background-color);
+	background-color: transparent;
 	position: fixed;
 	inset: 0;
 	border: 0;
