@@ -163,6 +163,7 @@ button.sidebar-link {
     font-size: 14px;
     color: var(--text-color-secondary);
 	height: 80px;
+	flex-shrink: 0;
 }
 
 @keyframes present-up {
