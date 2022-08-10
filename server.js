@@ -118,6 +118,8 @@ async function handleResourceGet(req, res)
 		return;
 	}
 
+	res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+
 	res.status(200).sendFile(pathOnDisk);
 }
 
