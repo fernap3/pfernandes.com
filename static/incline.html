@@ -513,10 +513,10 @@
 					<div id="buy-option-art"></div>
 					<div class="buy-option-title">{{lang.product_physical_cd_title}}</div>
 					<div class="buy-option-desc">{{lang.product_physical_cd_desc}}</div>
-					<form action="/create-checkout-session?productId=album-signed" method="POST">
+					<form action="{{api_root}}/create-checkout-session?productId=album-signed" method="POST">
 						<button type="submit" class="buy-button">{{lang.buy_signed}}</button>
 					</form>
-					<form action="/create-checkout-session?productId=album-sealed" method="POST">
+					<form action="{{api_root}}/create-checkout-session?productId=album-sealed" method="POST">
 						<button type="submit" class="buy-button">{{lang.buy_sealed}}</button>
 					</form>
 				</div>
@@ -524,7 +524,7 @@
 					<div id="buy-option-art"></div>
 					<div class="buy-option-title">{{lang.product_album_download_title}}</div>
 					<div class="buy-option-desc">{{lang.product_album_download_desc}}</div>
-					<form action="/create-checkout-session?productId=album-download" method="POST">
+					<form action="{{api_root}}/create-checkout-session?productId=album-download" method="POST">
 						<button type="submit" class="buy-button">{{lang.buy_now}}</button>
 					</form>
 				</div>
@@ -532,7 +532,7 @@
 					<div id="buy-option-art"></div>
 					<div class="buy-option-title">{{lang.product_minusone_title}}</div>
 					<div class="buy-option-desc">{{lang.product_minusone_desc}}</div>
-					<form action="/create-checkout-session?productId=minus-one" method="POST">
+					<form action="{{api_root}}/create-checkout-session?productId=minus-one" method="POST">
 						<button type="submit" class="buy-button">{{lang.buy_now}}</button>
 					</form>
 				</div>
@@ -540,7 +540,7 @@
 					<div id="buy-option-art"></div>
 					<div class="buy-option-title">{{lang.product_sheetmusic_title}}</div>
 					<div class="buy-option-desc">{{lang.product_sheetmusic_desc}}</div>
-					<form action="/create-checkout-session?productId=pdf" method="POST">
+					<form action="{{api_root}}/create-checkout-session?productId=pdf" method="POST">
 						<button type="submit" class="buy-button">{{lang.buy_now}}</button>
 					</form>
 				</div>

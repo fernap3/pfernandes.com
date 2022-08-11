@@ -380,7 +380,8 @@ async function replaceVariables(html, req, pageLang)
 	if (!page_path_without_lang_prefix.startsWith("/"))
 		page_path_without_lang_prefix = "/" + page_path_without_lang_prefix;
 
-	const origin = (req.secure ? "https://" : "https://") + req.get("host").replace("api.", "");
+	const origin = (req.secure ? "https://" : "https://") + req.get("host");
+	const webPageOrigin = origin.replace("api.", "");
 	
 	const vars = {
 		page_lang: pageLang === "jp" ? "ja" : "en",
@@ -388,9 +389,10 @@ async function replaceVariables(html, req, pageLang)
 		lang_prefix: pageLang === "jp" ? "/jp/" : "/",
 		page_path: req.path,
 		page_path_without_lang_prefix,
-		full_page_url: `${origin}${req.url == "/" ? "" : req.url}`,
-		full_page_url_en: `${origin}${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
-		full_page_url_jp: `${origin}/jp${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
+		full_page_url: `${webPageOrigin}${req.url == "/" ? "" : req.url}`,
+		full_page_url_en: `${webPageOrigin}${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
+		full_page_url_jp: `${webPageOrigin}/jp${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
+		api_root: origin,
 	};
 	
 	return html.replace(/\{\{(.+?)\}\}/g, (matchValue, propName) => {
