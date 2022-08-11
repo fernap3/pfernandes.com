@@ -611,8 +611,22 @@
 
 			function playTrack(index)
 			{
+				progressBar.value = 0;
 				audio.src = trackList[index].url;
 				audio.ontimeupdate = () => onTimeUpdate();
+				audio.onended = () => {
+					if (index < trackList.length - 1)
+						playTrack(index + 1);
+					else
+					{
+						indicateNoTrackPlaying();
+						trackTitleText.classList.remove("song-loaded");
+						trackTitleText.innerHTML = "{{lang.miniplayer_instructions}}";
+						playButton.style.backgroundImage = `url(images/play.svg)`;
+						progressBar.value = 0;
+						currentTrackIndex = null;
+					}
+				}
 				audio.play();
 				trackTitleText.textContent = trackList[index].title;
 				playButton.style.backgroundImage = `url(images/pause.svg)`;
