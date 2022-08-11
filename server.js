@@ -82,7 +82,7 @@ async function handleResourceGet(req, res)
 	let urlPathParts = urlPath.split("/");
 	let pathOnDisk = path.resolve(".", "static", ...urlPathParts);
 
-	const topLevelPages = new Set(["incline", "resume", "unsubscribe", "works"]);
+	const topLevelPages = new Set(["incline", "qed", "resume", "unsubscribe", "works"]);
 
 	if (topLevelPages.has(urlPathParts.at(-1)))
 	{
