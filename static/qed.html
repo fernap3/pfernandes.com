@@ -17,10 +17,6 @@
 				background-color: var(--background-color);
 			}
 
-			body:has(#purchase-success-banner[hidden]) #lang-select {
-				top: 15px;
-			}
-
 			#content {
 				display: flex;
 				flex-direction: column;
@@ -322,34 +318,6 @@
 					width: calc(100vw - 170px);
 				}
 			}
-			#purchase-success-banner {
-				background-color: var(--color-brand);
-				color: white;
-				min-height: 46px;
-				flex-shrink: 0;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				text-align: center;
-				padding: .5em 74px;
-				line-height: 1.4em;
-			}
-			#purchase-success-banner[hidden] {
-				display: none;
-			}
-			#purchase-banner-close {
-				position: absolute;
-				right: 0;
-				background-image: url(images/close.svg);
-				background-position: center;
-				background-repeat: no-repeat;
-				background-color: transparent;
-				border: none;
-				height: 40px;
-				width: 40px;
-				background-size: 14px;
-				cursor: pointer;
-			}
 
 			#additional-buy-options {
 				margin: 4em 0;
@@ -374,13 +342,39 @@
 				top: 2px;
 				margin-left: 4px;
 			}
+			#purchase-success-dialog {
+				max-width: 800px;
+				line-height: 1.4em;
+				border: none;
+			}
+			#purchase-success-dialog p {
+				margin-top: 0;
+				margin-bottom: .5em;
+			}
+			#purchase-success-close {
+				position: absolute;
+				top: 0;
+				right: 0;
+				background-image: url(images/close.svg);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-color: transparent;
+				border: none;
+				height: 40px;
+				width: 40px;
+				background-size: 14px;
+				cursor: pointer;
+			}
+			#purchase-success-close:focus {
+				outline: none;
+			}
 		</style>
 	</head>
 	<body>
-		<div id="purchase-success-banner" hidden>
-			<button id="purchase-banner-close"></button>
+		<dialog id="purchase-success-dialog">
 			{{lang.purchase_success}}
-		</div>
+			<button id="purchase-success-close"></button>
+		</dialog>
 		{{template=navbar.html}}
 		<div id="content">
 			<h1 id="page-title">{{lang.album_title}}</h1>
@@ -642,14 +636,19 @@
 				currentItem?.classList.remove("playing");
 			}
 
-			const purchaseBanner = document.getElementById("purchase-success-banner");
-			const purchaseBannerCloseButton = document.getElementById("purchase-banner-close");
-			purchaseBannerCloseButton.onclick = () => purchaseBanner.setAttribute("hidden", "");
+			const purchaseSuccessDialog = document.getElementById("purchase-success-dialog");
+			const purchaseSuccessCloseButton = document.getElementById("purchase-success-close");
+			purchaseSuccessCloseButton.onclick = () => purchaseSuccessDialog.close();
 
 			const urlSearchParams = new URLSearchParams(window.location.search);
 			if (urlSearchParams.get("purchaseSuccess") != null)
 			{
-				purchaseBanner.removeAttribute("hidden");
+				purchaseSuccessDialog.showModal();
+				purchaseSuccessDialog.onmousedown = (evt) => {
+				const dialogRect = purchaseSuccessDialog.getBoundingClientRect();
+					if (evt.clientY < dialogRect.top || evt.clientY > dialogRect.bottom || evt.clientX < dialogRect.left || evt.clientX > dialogRect.right)
+						purchaseSuccessDialog.close();
+				};
 			}
 
 			const scrollHeader = document.getElementById("scroll-header");

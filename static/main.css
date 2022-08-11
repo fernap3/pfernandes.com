@@ -52,6 +52,11 @@ body.menu-shown {
 	overflow: hidden;
 }
 
+dialog {
+	background-color: var(--background-color-layer2);
+	color: var(--text-color);
+}
+
 a {
 	color: inherit;
 	text-decoration: none;

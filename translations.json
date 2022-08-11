@@ -63,7 +63,10 @@
             "Also available on <a class='nowrap' href='#'>Spotify</a>, <a class='nowrap' href='#'>Apple Music</a>, and other services.",
             "<a class='nowrap' href='#'>スポティファイ</a>や<a class='nowrap' href='#'>アップルミュージック</a>などでも配信中です。"
         ],
-        "purchase_success": ["Thank you for your purchase! If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships."],
+        "purchase_success": [
+            "<p>Thank you for your purchase!</p> <p>If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships.</p>",
+            ""
+        ],
         "album_title": ["Incline (2022)", "インクライン (2022年)"],
         "miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
         "touch": ["touch", "触って"],
@@ -124,7 +127,10 @@
             "Also available on <a class='nowrap' href='https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb?si=A80KOVpWTGawXxHNWmjNlg'>Spotify</a>, <a class='nowrap' href='https://music.apple.com/us/album/q-e-d/898109831'>Apple Music</a>, and other services.",
             "<a class='nowrap' href='https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb?si=A80KOVpWTGawXxHNWmjNlg'>スポティファイ</a>や<a class='nowrap' href='https://music.apple.com/us/album/q-e-d/898109831'>アップルミュージック</a>などでも配信中です。"
         ],
-        "purchase_success": ["Thank you for your purchase! If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships."],
+        "purchase_success": [
+            "<p style='font-weight:bold'>Thank you for your purchase!</p> <p>If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships.</p>",
+            ""
+        ],
         "album_title": ["Q.E.D. (2014)", "Q.E.D. (2014年)"],
         "miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
         "touch": ["touch", "触って"],
