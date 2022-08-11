@@ -39,25 +39,25 @@
         "buy_signed": ["Buy signed", "サイン入るで買う"],
         "buy_sealed": ["Buy sealed", "サインなしで買う"],
         "buy_now": ["Buy now", "買う"],
-        "product_physical_cd_title": ["Physical CD - $20", ""],
+        "product_physical_cd_title": ["Physical CD - $20", "CD - $20"],
         "product_physical_cd_desc": [
-            "Physical compact disc copy of &lquot;Incline.&rquot; Ships internationally. Available signed, or sealed without signature for the same price.",
-            ""
+            "Physical compact disc copy of &ldquo;Incline.&rdquo; Ships internationally. Available signed, or sealed without signature for the same price.",
+            "「インクライン」のCDです。国際で発送できます。サイン入るでもサインなしでも同じ値段です。"
         ],
-        "product_album_download_title": ["Album download - $10", ""],
+        "product_album_download_title": ["Album download - $10", "アルバムダウンロード - $10"],
         "product_album_download_desc": [
             "Your choice of MP3, WAV, or FLAC files for each song. Available to download immediately after payment.",
-            ""
+            "MP3とWAVとFLACでそれぞれの曲。支払い後で、すぐダウンロードできます。"
         ],
-        "product_minusone_title": ["&lquot;Minus one&rquot; Package - $10", ""],
+        "product_minusone_title": ["&ldquo;Minus one&rdquo; Package - $10", "「マイナス・ワン」のパッケージ - $10"],
         "product_minusone_desc": [
-            "WAV and MP3 versions of each song for each of &lquot;minus guitar,&rquot; &lquot;minus bass,&rquot; &lquot;minus drums,&rquot; and &lquot;minus keys.&rquot;",
-            ""
+            "WAV and MP3 versions of each song for each of &ldquo;minus guitar,&rdquo; &ldquo;minus bass,&rdquo; &ldquo;minus drums,&rdquo; and &ldquo;minus keys.&rdquo;",
+            "WAVとMP3でそれぞれの曲の「マイナスギター」と「マイナス・ベース」と「マイナス・ドラム」と「マイナス・キーボード」"
         ],
-        "product_sheetmusic_title": ["Sheet music Package - $10", ""],
+        "product_sheetmusic_title": ["Sheet music Package - $10", "楽譜のパッケージ - $10"],
         "product_sheetmusic_desc": [
             "Lead sheets for each song, in PDF format",
-            ""
+            "PDFでそれぞれの曲のリード・シート"
         ],
         "available_on": [
             "Also available on <a class='nowrap' href='#'>Spotify</a>, <a class='nowrap' href='#'>Apple Music</a>, and other services.",
