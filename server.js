@@ -156,9 +156,11 @@ app.post("/create-checkout-session", async (req, res) =>
 
 	switch (productId)
 	{
-		case "prod_MEAHxXduaaES5e": // Q.E.D. album download
+		case "prod_MEAHxXduaaES5e": // Q.E.D. album download (test mode)
+		case "prod_MEBsv27zZcp8Wm": // Q.E.D. album download
 			successType = "download";
-			priceId = "price_1LVhxEE4w3gmRKqxxeJUDt7S";
+			// priceId = "price_1LVhxEE4w3gmRKqxxeJUDt7S"; // priceId for test mode
+			priceId = "price_1LVjUaE4w3gmRKqxCv2eeycM";
 			successUrl = `${req.get("origin")}/qed?purchaseSuccess=${successType}`;
 			cancelUrl = `${req.get("origin")}/qed`;
 			break;
@@ -271,17 +273,17 @@ async function sendDownloadsEmail(toAddress, productId)
 	let wavDownloadUrl;
 	let productName;
 
-	if (productId === "prod_MEAHxXduaaES5e")
+	switch (productId)
 	{
-		// QED Album download
-		productName = "Q.E.D.";
-		mp3DownloadUrl = await getS3DownloadUrl("track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (mp3_256).zip");
-		flacDownloadUrl = await getS3DownloadUrl("track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (flac).zip");
-		wavDownloadUrl = await getS3DownloadUrl("track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (wav).zip");
-	}
-	else
-	{
-		console.error(`Unhandled product ID when sending downloads email ${productId}`);
+		case "prod_MEAHxXduaaES5e": // Q.E.D. album download (test mode)
+		case "prod_MEBsv27zZcp8Wm": // Q.E.D. album download
+			productName = "Q.E.D.";
+			mp3DownloadUrl = await getS3DownloadUrl("track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (mp3_256).zip");
+			flacDownloadUrl = await getS3DownloadUrl("track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (flac).zip");
+			wavDownloadUrl = await getS3DownloadUrl("track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (wav).zip");
+			break;
+		default:
+			console.error(`Unhandled product ID when sending downloads email ${productId}`);
 	}
 	
 	const client = new SESClient({ region: "us-west-1"});
