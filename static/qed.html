@@ -385,9 +385,9 @@
 		<div id="content">
 			<h1 id="page-title">{{lang.album_title}}</h1>
 			<div id="album-info">
-				<img id="main-cover" src="images/incline-draft.png">
+				<img id="main-cover" src="images/qed-cover.jpg">
 				<div id="scroll-header" style="display: none">
-					<img id="main-cover-stuck" src="images/incline-draft.png">
+					<img id="main-cover-stuck" src="images/qed-cover.jpg">
 				</div>
 				<div id="tracklist">
 					<ol>
@@ -499,7 +499,7 @@
 								<div class="track-number"></div>
 								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_qed_intro}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">{{lang.role_g10_solo}}<span class="personnel-name">{{lang.player_richard}}</span></span>,
+									<span class="personnel-credit">{{lang.role_g10_solo}}<span class="personnel-name">{{lang.player_richard}}</span></span>
 								</div>
 							</div>
 						</li>
@@ -548,15 +548,16 @@
 			document.body.onscroll = evt => onPageScroll(evt);
 
 			const trackList = [
-				{ title: "Galaxy", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
-				{ title: "日曜日のお使い", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
-				{ title: "Western Capital", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
-				{ title: "Emmy", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
-				{ title: "Hemispheres", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
-				{ title: "Incline", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
-				{ title: "Decker", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
-				{ title: "Keep Climbing", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
-				{ title: "Timeline", url: "https://s3.amazonaws.com/pfernandes.com/Dimension+Song+Demo.mp3" },
+				{ title: "Destiny Controller", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/01-destiny-controller-sample.mp3" },
+				{ title: "Nightbird", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/02-nightbird-sample.mp3" },
+				{ title: "Grown Ups", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/03-grown-ups-sample.mp3" },
+				{ title: "Sheffield Songo", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/04-sheffield-songo-sample.mp3" },
+				{ title: "Your Truth", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/05-your-truth-sample.mp3" },
+				{ title: "Dorothy", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/06-dorothy-sample.mp3" },
+				{ title: "Market Street", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/07-market-street-sample.mp3" },
+				{ title: "Flight to Rio", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/08-flight-to-rio-sample.mp3" },
+				{ title: "Q.E.D. Intro", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/09-qed-intro-sample.mp3" },
+				{ title: "Quod Erat Demonstrandum", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/10-quod-erat-demonstrandum-sample.mp3" },
 			];
 			let currentTrackIndex = null;
 
