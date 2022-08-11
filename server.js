@@ -148,51 +148,51 @@ app.post("/webhook", (req, res) =>
 app.post("/create-checkout-session", async (req, res) =>
 {
 	let successType = null;
+	let priceId = null;
+	let successUrl = null;
+	let cancelUrl = null;
 
 	const productId = req.query.productId;
 
 	switch (productId)
 	{
-		case "signed-cd":
-			successType = "physical";
-			break;
-		case "sealed-cd":
-			successType = "physical";
-			break;
-		case "album-download":
+		case "prod_MEAHxXduaaES5e": // Q.E.D. album download
 			successType = "download";
+			priceId = "price_1LVhxEE4w3gmRKqxxeJUDt7S";
+			successUrl = `${req.get("origin")}/qed?purchaseSuccess=${successType}`;
+			cancelUrl = `${req.get("origin")}/qed`;
 			break;
-		case "minus-one":
-			successType = "download";
-			break;
-		case "sheet-music":
-			successType = "download";
-			break;
+		// case "signed-cd":
+		// 	successType = "physical";
+		// 	break;
+		// case "sealed-cd":
+		// 	successType = "physical";
+		// 	break;
+		// case "album-download":
+		// 	successType = "download";
+		// 	break;
+		// case "minus-one":
+		// 	successType = "download";
+		// 	break;
+		// case "sheet-music":
+		// 	successType = "download";
+		// 	break;
 		default:
 			res.status(400).send(`Bad product ID, ${productId}`)
 			return;
 	}
 
-	let successUrl = `${req.get("origin")}/incline?purchaseSuccess=${successType}`;
-
 	const session = await stripe.checkout.sessions.create({
-		line_items: [
-			{
-				// Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-				price: "price_1L1D7lE4w3gmRKqxan8Azghf",
-				quantity: 1,
-			},
-		],
+		line_items: [{ price: priceId, quantity: 1 }],
 		mode: "payment",
 		success_url: successUrl,
-		cancel_url: `${req.get("origin")}/incline`,
-		shipping_address_collection: {
-			allowed_countries: ["AC", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CV", "CW", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MK", "ML", "MM", "MN", "MO", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SZ", "TA", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VN", "VU", "WF", "WS", "XK", "YE", "YT", "ZA", "ZM", "ZW", "ZZ"]
-		},
-		shipping_options: {
-			shipping_rate: "ID_HERE"
-		}
-		
+		cancel_url: cancelUrl,
+		// shipping_address_collection: {
+		// 	allowed_countries: ["AC", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CV", "CW", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MK", "ML", "MM", "MN", "MO", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SZ", "TA", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VN", "VU", "WF", "WS", "XK", "YE", "YT", "ZA", "ZM", "ZW", "ZZ"]
+		// },
+		// shipping_options: {
+		// 	shipping_rate: "ID_HERE"
+		// }
 	});
 
 	res.redirect(303, session.url);
@@ -243,7 +243,7 @@ async function handleSale(checkoutSession)
 {
 	const session = await stripe.checkout.sessions.retrieve(checkoutSession.id, { expand: ["line_items"] });
 	const lineItem = session.line_items.data[0];
-	const productId = lineItem.id;
+	const productId = lineItem.price.product;
 
 	console.log("FULL SESSION:", session)
 
@@ -251,7 +251,7 @@ async function handleSale(checkoutSession)
 
 	try
 	{
-		await sendDownloadsEmail(customerEmail);
+		await sendDownloadsEmail(customerEmail, productId);
 		await sendPeterEmail(session.customer_details, session.shipping, productId, lineItem.description);
 	}
 	catch(e)
@@ -264,11 +264,25 @@ async function handleSale(checkoutSession)
 	// const downloadUrl = await getS3DownloadUrl();
 }
 
-async function sendDownloadsEmail(toAddress)
+async function sendDownloadsEmail(toAddress, productId)
 {
-	const mp3DownloadUrl = await getS3DownloadUrl("incline-mp3");
-	const flacDownloadUrl = await getS3DownloadUrl("incline-flac");
-	const wavDownloadUrl = await getS3DownloadUrl("incline-wav");
+	let mp3DownloadUrl;
+	let flacDownloadUrl;
+	let wavDownloadUrl;
+	let productName;
+
+	if (productId === "prod_MEAHxXduaaES5e")
+	{
+		// QED Album download
+		productName = "Q.E.D.";
+		mp3DownloadUrl = await getS3DownloadUrl("track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (mp3_256).zip");
+		flacDownloadUrl = await getS3DownloadUrl("track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (flac).zip");
+		wavDownloadUrl = await getS3DownloadUrl("track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (wav).zip");
+	}
+	else
+	{
+		console.error(`Unhandled product ID when sending downloads email ${productId}`);
+	}
 	
 	const client = new SESClient({ region: "us-west-1"});
 
@@ -282,7 +296,7 @@ async function sendDownloadsEmail(toAddress)
 					Charset: "UTF-8",
 					Data: `
 						<p>
-							Thank you for purchasing “Incline!”  Links to download the album are below. 
+							Thank you for purchasing ${productName}!  Links to download the album are below. 
 							The links will work for 24 hours from the time this email was sent.  
 							If you have any issues, just reply to this email and I’ll help you out.
 						</p>
@@ -295,7 +309,7 @@ async function sendDownloadsEmail(toAddress)
 			},
 			Subject: {
 				Charset: "UTF-8",
-				Data: `Your "Incline" downloads`,
+				Data: `Your "${productName}" downloads`,
 			}
 		}
 	};
@@ -329,10 +343,10 @@ async function sendPeterEmail(customer, shipping, productId, productDesc)
 					Charset: "UTF-8",
 					Data: `
 						<p>
-							${customer.name} (${customer.email ?? "no email address"}) has purchased ${productDesc}.
+							${customer.name} (${customer.email ?? "no email address"}) has purchased ${productDesc} (${productId}).
 						</p>
 						<p>Customer's address:</p>
-						<p>${customer.address ?? "No address provided"}</p>
+						<p>${shippingAddressFormatted ?? "No address provided"}</p>
 						`,
 				}
 			},
@@ -352,7 +366,7 @@ async function getS3DownloadUrl(key)
 	const client = new S3Client({region: "us-east-1"});
 	const command = new GetObjectCommand({
 		Bucket: "pfernandes.com",
-		Key: `incline-downloads/${key}`,
+		Key: `${key}`,
 	});
 	
 	return await getSignedUrl(client, command, { expiresIn: 86400 });
@@ -370,6 +384,7 @@ async function replaceVariables(html, req, pageLang)
 		page_lang: pageLang === "jp" ? "ja" : "en",
 		site_root: pageLang === "jp" ? "/jp" : "/",
 		lang_prefix: pageLang === "jp" ? "/jp/" : "/",
+		page_path: req.path,
 		page_path_without_lang_prefix,
 		full_page_url: `${origin}${req.url == "/" ? "" : req.url}`,
 		full_page_url_en: `${origin}${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
