@@ -1,7 +1,7 @@
 :root {
 	--text-color: black;
 	--text-color-secondary: #222222;
-	--background-color: #d9d9d9;
+	--background-color: #ffffff;
 	--background-color-layer2: #EEEEEE;
 	--color-frosted-background: rgba(255, 255, 255, .7);
 	--color-brand: #2bb456;
@@ -332,4 +332,26 @@ button.sidebar-link {
 	padding-top: 60px;
 	padding-left: 21px;
 	color: var(--text-color);
+}
+
+.external-link::after {
+	content: "";
+	display: inline-block;
+	height: 1em;
+	width: 1em;
+	background-image: url(images/external.svg);
+	filter: brightness(0);
+	background-size: .8em;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	top: 2px;
+	margin-left: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+	.external-link::after {
+		filter: none;
+
+	}
 }
