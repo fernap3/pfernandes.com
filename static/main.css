@@ -447,6 +447,16 @@ body.menu-shown #content {
 	filter: none;
 }
 
+@media screen and (max-width: 520px) {
+	#lang-select {
+		font-size: 150%;
+	}
+
+	#lang-select a:first-child {
+		margin-right: 5px;
+	}
+}
+
 #navbar > a {
 	padding: 0 1.5em;
 }
