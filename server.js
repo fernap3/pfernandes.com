@@ -402,7 +402,7 @@ async function replaceVariables(html, req, pageLang)
 	if (!page_path_without_lang_prefix.startsWith("/"))
 		page_path_without_lang_prefix = "/" + page_path_without_lang_prefix;
 
-	const origin = req.headers["x-forwarded-proto"] ?? (TEST_MODE ? "http" : "https") + "://" + req.get("host");
+	const origin = (req.headers["x-forwarded-proto"] ?? (TEST_MODE ? "http" : "https")) + "://" + req.get("host");
 	const webPageOrigin = origin.replace("api.", "");
 	
 	const vars = {
