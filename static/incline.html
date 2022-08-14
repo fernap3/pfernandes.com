@@ -670,7 +670,7 @@
 			{
 				const originalSize = albumCover.offsetWidth;
 				const targetSize = 80;
-				const scrollTop = document.body.scrollTop;
+				const scrollTop = document.scrollingElement.scrollTop;
 				const scrollWait = 163;
 				const scaleEnd = 350;
 				const minScale = targetSize / originalSize;
