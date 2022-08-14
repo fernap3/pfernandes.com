@@ -6,7 +6,7 @@ const fs = require("fs").promises;
 const translations = require("./translations.json");
 const countryCodes = require("country-code-lookup");
 
-const TEST_MODE = process.env.LIVE_MODE == null || process.env.LIVE_MODE != "";
+const TEST_MODE = process.env.LIVE_MODE == null || process.env.LIVE_MODE == "";
 
 const PRODUCTS = [
 	{
