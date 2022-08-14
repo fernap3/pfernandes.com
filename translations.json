@@ -51,8 +51,8 @@
         ],
         "product_minusone_title": ["&ldquo;Minus one&rdquo; Package - $10", "「マイナス・ワン」のパッケージ - $10"],
         "product_minusone_desc": [
-            "WAV and MP3 versions of each song for each of &ldquo;minus guitar,&rdquo; &ldquo;minus bass,&rdquo; &ldquo;minus drums,&rdquo; and &ldquo;minus keys.&rdquo;",
-            "WAVとMP3でそれぞれの曲の「マイナスギター」と「マイナス・ベース」と「マイナス・ドラム」と「マイナス・キーボード」"
+            "WAV and MP3 play-along versions of each song for drums, bass, solos, etc.",
+            "WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など"
         ],
         "product_sheetmusic_title": ["Sheet music Package - $10", "楽譜のパッケージ - $10"],
         "product_sheetmusic_desc": [
@@ -122,6 +122,11 @@
         "product_album_download_desc": [
             "Your choice of MP3, WAV, or FLAC files for each song. Available to download immediately after payment.",
             "MP3とWAVとFLACでそれぞれの曲。支払い後で、すぐダウンロードできます。"
+        ],
+        "product_minusone_title": ["&ldquo;Minus one&rdquo; Package - $10", "「マイナス・ワン」のパッケージ - $10"],
+        "product_minusone_desc": [
+            "WAV and MP3 play-along versions of each song for drums, bass, solos, etc.",
+            "WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など"
         ],
         "available_on": [
             "Also available on <a class='nowrap' href='https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb?si=A80KOVpWTGawXxHNWmjNlg'>Spotify</a>, <a class='nowrap' href='https://music.apple.com/us/album/q-e-d/898109831'>Apple Music</a>, and other services.",

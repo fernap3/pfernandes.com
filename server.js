@@ -6,6 +6,49 @@ const fs = require("fs").promises;
 const translations = require("./translations.json");
 const countryCodes = require("country-code-lookup");
 
+const TEST_MODE = process.env.LIVE_MODE == null || process.env.LIVE_MODE != "";
+
+const PRODUCTS = [
+	{
+		title: "Q.E.D.",
+		id: "12f33901-a02c-408d-95ca-2457cb176cb1",
+		productId: TEST_MODE ? "prod_MEAHxXduaaES5e" : "prod_MEBsv27zZcp8Wm",
+		priceId: TEST_MODE ? "price_1LVhxEE4w3gmRKqxxeJUDt7S" : "price_1LVjUaE4w3gmRKqxCv2eeycM",
+		pageUrl: "/qed",
+		downloads: [
+			{
+				s3Key: "track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (mp3_256).zip",
+				linkTitle: "Download as MP3"
+			},
+			{
+				s3Key: "track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (flac).zip",
+				linkTitle: "Download as FLAC"
+			},
+			{
+				s3Key: "track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (wav).zip",
+				linkTitle: "Download as WAV"
+			},
+		]
+	},
+	{
+		title: `Q.E.D. 'Minus one' package`,
+		id: "07d5fee4-2f61-42de-847d-6dd60a5c6d2b",
+		productId: TEST_MODE ? "prod_MEzdF6HCfs3O8l" : "prod_MF0XYEkGfapAk6",
+		priceId: TEST_MODE ? "price_1LWVeAE4w3gmRKqxgYItRW61" : "price_1LWWWZE4w3gmRKqxxCroiYG0",
+		pageUrl: "/qed",
+		downloads: [
+			{
+				s3Key: "track-downloads/qed/minus-one/qed-minusone-mp3.zip",
+				linkTitle: "Download as MP3"
+			},
+			{
+				s3Key: "track-downloads/qed/minus-one/qed-minusone-wav.zip",
+				linkTitle: "Download as WAV"
+			},
+		]
+	},
+];
+
 const STRIPE_KEY = process.env.STRIPE_KEY;
 
 if (!STRIPE_KEY)
@@ -134,11 +177,11 @@ app.post("/webhook", (req, res) =>
 	{
 		case "checkout.session.completed":
 			const checkoutSession = event.data.object;
-			handleSale(checkoutSession);
+			handleSale(checkoutSession).catch(e => console.error(e));
 			break;
 		// ... handle other event types
-		default:
-			console.log(`Unhandled event type ${event.type}`);
+		// default:
+			// console.log(`Unhandled event type ${event.type}`);
 	}
 
 	// Return a 200 response to acknowledge receipt of the event
@@ -154,35 +197,18 @@ app.post("/create-checkout-session", async (req, res) =>
 
 	const productId = req.query.productId;
 
-	switch (productId)
+	const product = PRODUCTS.find(p => p.id === productId);
+
+	if (product == null)
 	{
-		case "prod_MEAHxXduaaES5e": // Q.E.D. album download (test mode)
-		case "prod_MEBsv27zZcp8Wm": // Q.E.D. album download
-			successType = "download";
-			// priceId = "price_1LVhxEE4w3gmRKqxxeJUDt7S"; // priceId for test mode
-			priceId = "price_1LVjUaE4w3gmRKqxCv2eeycM";
-			successUrl = `${req.get("origin")}/qed?purchaseSuccess=${successType}`;
-			cancelUrl = `${req.get("origin")}/qed`;
-			break;
-		// case "signed-cd":
-		// 	successType = "physical";
-		// 	break;
-		// case "sealed-cd":
-		// 	successType = "physical";
-		// 	break;
-		// case "album-download":
-		// 	successType = "download";
-		// 	break;
-		// case "minus-one":
-		// 	successType = "download";
-		// 	break;
-		// case "sheet-music":
-		// 	successType = "download";
-		// 	break;
-		default:
-			res.status(400).send(`Bad product ID, ${productId}`)
-			return;
+		res.status(400).send(`Bad product ID, ${productId}`)
+		return;
 	}
+
+	successType = "download";
+	priceId = product.priceId;
+	successUrl = `${req.get("origin")}${product.pageUrl}?purchaseSuccess=${successType}`;
+	cancelUrl = `${req.get("origin")}${product.pageUrl}`;
 
 	const session = await stripe.checkout.sessions.create({
 		line_items: [{ price: priceId, quantity: 1 }],
@@ -247,14 +273,19 @@ async function handleSale(checkoutSession)
 	const lineItem = session.line_items.data[0];
 	const productId = lineItem.price.product;
 
-	console.log("FULL SESSION:", session)
+	console.log("FULL SESSION:", session);
 
 	const customerEmail = session.customer_details.email;
 
+	const product = PRODUCTS.find(p => p.productId === productId);
+
+	if (product == null)
+		throw `Bad product ID when handling completed checkout session: ${productId}`;
+
 	try
 	{
-		await sendDownloadsEmail(customerEmail, productId);
-		await sendPeterEmail(session.customer_details, session.shipping, productId, lineItem.description);
+		await sendDownloadsEmail(customerEmail, product);
+		await sendPeterEmail(session.customer_details, session.shipping, product, lineItem.description);
 	}
 	catch(e)
 	{
@@ -266,24 +297,16 @@ async function handleSale(checkoutSession)
 	// const downloadUrl = await getS3DownloadUrl();
 }
 
-async function sendDownloadsEmail(toAddress, productId)
+async function sendDownloadsEmail(toAddress, product)
 {
-	let mp3DownloadUrl;
-	let flacDownloadUrl;
-	let wavDownloadUrl;
-	let productName;
+	const downloads = [];
 
-	switch (productId)
+	for (const download of product.downloads)
 	{
-		case "prod_MEAHxXduaaES5e": // Q.E.D. album download (test mode)
-		case "prod_MEBsv27zZcp8Wm": // Q.E.D. album download
-			productName = "Q.E.D.";
-			mp3DownloadUrl = await getS3DownloadUrl("track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (mp3_256).zip");
-			flacDownloadUrl = await getS3DownloadUrl("track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (flac).zip");
-			wavDownloadUrl = await getS3DownloadUrl("track-downloads/qed/full-album/Peter Fernandes - Q.E.D. (wav).zip");
-			break;
-		default:
-			console.error(`Unhandled product ID when sending downloads email ${productId}`);
+		downloads.push({
+			linkTitle: download.linkTitle,
+			signedUrl: await getS3DownloadUrl(download.s3Key),
+		});
 	}
 	
 	const client = new SESClient({ region: "us-west-1"});
@@ -298,20 +321,18 @@ async function sendDownloadsEmail(toAddress, productId)
 					Charset: "UTF-8",
 					Data: `
 						<p>
-							Thank you for purchasing ${productName}!  Links to download the album are below. 
+							Thank you for purchasing ${product.title}!  Links to download are below. 
 							The links will work for 24 hours from the time this email was sent.  
 							If you have any issues, just reply to this email and I’ll help you out.
 						</p>
 						<p>Peter</p>
-						<p><a href="${mp3DownloadUrl}">Download as MP3</a></p>
-						<p><a href="${flacDownloadUrl}">Download as FLAC</a></p>
-						<p><a href="${wavDownloadUrl}">Download as WAV</a></p>
-						`,
+						${downloads.map(d => `<p><a href="${d.signedUrl}">${d.linkTitle}</a></p>`).join("")}
+					`,
 				}
 			},
 			Subject: {
 				Charset: "UTF-8",
-				Data: `Your "${productName}" downloads`,
+				Data: `Your "${product.title}" downloads`,
 			}
 		}
 	};
@@ -319,7 +340,7 @@ async function sendDownloadsEmail(toAddress, productId)
 	await client.send(new SendEmailCommand(params));
 }
 
-async function sendPeterEmail(customer, shipping, productId, productDesc)
+async function sendPeterEmail(customer, shipping, product, productDesc)
 {
 	const client = new SESClient({ region: "us-west-1"});
 
@@ -345,7 +366,7 @@ async function sendPeterEmail(customer, shipping, productId, productDesc)
 					Charset: "UTF-8",
 					Data: `
 						<p>
-							${customer.name} (${customer.email ?? "no email address"}) has purchased ${productDesc} (${productId}).
+							${customer.name} (${customer.email ?? "no email address"}) has purchased ${productDesc} (${product.id}).
 						</p>
 						<p>Customer's address:</p>
 						<p>${shippingAddressFormatted ?? "No address provided"}</p>
@@ -380,7 +401,7 @@ async function replaceVariables(html, req, pageLang)
 	if (!page_path_without_lang_prefix.startsWith("/"))
 		page_path_without_lang_prefix = "/" + page_path_without_lang_prefix;
 
-	const origin = (req.secure ? "https://" : "https://") + req.get("host");
+	const origin = (req.secure ? "https://" : "http://") + req.get("host");
 	const webPageOrigin = origin.replace("api.", "");
 	
 	const vars = {
