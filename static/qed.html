@@ -98,7 +98,7 @@
 				height: 16px;
 				width: 16px;
 				background-size: 9px;
-				background-image: url(images/playing-track.svg);
+				background-image: url(/images/playing-track.svg);
 				background-repeat: no-repeat;
 				background-position: center;
 				transition: opacity .3s var(--easing-normal);
@@ -219,7 +219,7 @@
 				}
 			}
 			.sample-play-button {
-				background-image: url(images/play.svg);
+				background-image: url(/images/play.svg);
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: 20px;
@@ -234,7 +234,7 @@
 				height: 50px;
 				width: 50px;
 				border-radius: 25px;
-				background-image: url(images/play.svg);
+				background-image: url(/images/play.svg);
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: 20px;
@@ -348,7 +348,7 @@
 				position: absolute;
 				top: 0;
 				right: 0;
-				background-image: url(images/close.svg);
+				background-image: url(/images/close.svg);
 				background-position: center;
 				background-repeat: no-repeat;
 				background-color: transparent;
@@ -372,9 +372,9 @@
 		<div id="content">
 			<h1 id="page-title">{{lang.album_title}}</h1>
 			<div id="album-info">
-				<img id="main-cover" src="images/qed-cover.jpg">
+				<img id="main-cover" src="/images/qed-cover.jpg">
 				<div id="scroll-header" style="display: none">
-					<img id="main-cover-stuck" src="images/qed-cover.jpg">
+					<img id="main-cover-stuck" src="/images/qed-cover.jpg">
 				</div>
 				<div id="tracklist">
 					<ol>
@@ -516,7 +516,7 @@
 			<div id="buy-options">
 				<h2 id="buy-options-title">{{lang.buy_options_title}}</h2>
 				<div class="buy-option-item">
-					<img id="buy-option-art" src="images/qed-cover.jpg"></img>
+					<img id="buy-option-art" src="/images/qed-cover.jpg"></img>
 					<div class="buy-option-title">{{lang.product_album_download_title}}</div>
 					<div class="buy-option-desc">{{lang.product_album_download_desc}}</div>
 					<form action="{{api_root}}/create-checkout-session?productId=12f33901-a02c-408d-95ca-2457cb176cb1" method="POST">
@@ -524,7 +524,7 @@
 					</form>
 				</div>
 				<div class="buy-option-item">
-					<img id="buy-option-art" src="images/qed-cover.jpg"></img>
+					<img id="buy-option-art" src="/images/qed-cover.jpg"></img>
 					<div class="buy-option-title">{{lang.product_minusone_title}}</div>
 					<div class="buy-option-desc">{{lang.product_minusone_desc}}</div>
 					<form action="{{api_root}}/create-checkout-session?productId=07d5fee4-2f61-42de-847d-6dd60a5c6d2b" method="POST">
@@ -573,13 +573,13 @@
 				else if (audio.paused)
 				{
 					audio.play();
-					playButton.style.backgroundImage = `url(images/pause.svg)`;
+					playButton.style.backgroundImage = `url(/images/pause.svg)`;
 					indicateTrackPlaying(currentTrackIndex);
 				}
 				else
 				{
 					audio.pause();
-					playButton.style.backgroundImage = `url(images/play.svg)`;
+					playButton.style.backgroundImage = `url(/images/play.svg)`;
 					indicateNoTrackPlaying();
 				}
 				
@@ -623,14 +623,14 @@
 						indicateNoTrackPlaying();
 						trackTitleText.classList.remove("song-loaded");
 						trackTitleText.innerHTML = "{{lang.miniplayer_instructions}}";
-						playButton.style.backgroundImage = `url(images/play.svg)`;
+						playButton.style.backgroundImage = `url(/images/play.svg)`;
 						progressBar.value = 0;
 						currentTrackIndex = null;
 					}
 				}
 				audio.play();
 				trackTitleText.textContent = trackList[index].title;
-				playButton.style.backgroundImage = `url(images/pause.svg)`;
+				playButton.style.backgroundImage = `url(/images/pause.svg)`;
 				trackTitleText.classList.add("song-loaded");
 				
 				indicateTrackPlaying(index);

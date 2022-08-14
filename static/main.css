@@ -28,10 +28,10 @@
 
 body {
 	overflow-x: hidden;
-	background-image: url(images/peter-keys.webp);
-	background-image: -webkit-image-set(url(images/peter-keys.avif) 1x, url(images/peter-keys.webp) 1x);
-	background-image: image-set(url(images/peter-keys.webp) type(image/webp), url(images/peter-keys.avif) type(image/avif));
-	background-image: image-set(url(images/peter-keys.webp) 1x, url(images/peter-keys.avif) 1x);
+	background-image: url(/images/peter-keys.webp);
+	background-image: -webkit-image-set(url(/images/peter-keys.avif) 1x, url(/images/peter-keys.webp) 1x);
+	background-image: image-set(url(/images/peter-keys.webp) type(image/webp), url(/images/peter-keys.avif) type(image/avif));
+	background-image: image-set(url(/images/peter-keys.webp) 1x, url(/images/peter-keys.avif) 1x);
 	background-repeat: no-repeat;
 	background-size: 100%;
 	/* background-position: top right; */
@@ -39,13 +39,13 @@ body {
 
 @media screen and (max-width: 1024px) {
 	body {
-		background-image: url(images/peter-keys-medium.webp);
+		background-image: url(/images/peter-keys-medium.webp);
 	}
 }
 
 @media screen and (max-width: 512px) {
 	body {
-		background-image: url(images/peter-keys-mobile.webp);
+		background-image: url(/images/peter-keys-mobile.webp);
 	}
 }
 
@@ -252,7 +252,7 @@ button.sidebar-link {
 #mailinglist-cancel {
 	border: none;
 	background: transparent;
-	background-image: url(images/close.svg);
+	background-image: url(/images/close.svg);
 	background-size: 14px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -287,7 +287,7 @@ button.sidebar-link {
 	height: 60px;
 	width: 60px;
 	background: transparent;
-	/* background-image: url(images/hamburger.svg);
+	/* background-image: url(/images/hamburger.svg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 26px; */
@@ -350,7 +350,7 @@ button.sidebar-link {
 	display: inline-block;
 	height: 1em;
 	width: 1em;
-	background-image: url(images/external.svg);
+	background-image: url(/images/external.svg);
 	filter: brightness(0);
 	background-size: .8em;
 	background-position: center;

@@ -101,7 +101,7 @@
 				height: 16px;
 				width: 16px;
 				background-size: 9px;
-				background-image: url(images/playing-track.svg);
+				background-image: url(/images/playing-track.svg);
 				background-repeat: no-repeat;
 				background-position: center;
 				transition: opacity .3s var(--easing-normal);
@@ -221,7 +221,7 @@
 				}
 			}
 			.sample-play-button {
-				background-image: url(images/play.svg);
+				background-image: url(/images/play.svg);
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: 20px;
@@ -236,7 +236,7 @@
 				height: 50px;
 				width: 50px;
 				border-radius: 25px;
-				background-image: url(images/play.svg);
+				background-image: url(/images/play.svg);
 				background-repeat: no-repeat;
 				background-position: center;
 				background-size: 20px;
@@ -342,7 +342,7 @@
 			#purchase-banner-close {
 				position: absolute;
 				right: 0;
-				background-image: url(images/close.svg);
+				background-image: url(/images/close.svg);
 				background-position: center;
 				background-repeat: no-repeat;
 				background-color: transparent;
@@ -368,7 +368,7 @@
 				display: inline-block;
 				height: 1em;
 				width: 1em;
-				background-image: url(images/external.svg);
+				background-image: url(/images/external.svg);
 				background-size: .8em;
 				background-position: center;
 				background-repeat: no-repeat;
@@ -387,9 +387,9 @@
 		<div id="content">
 			<h1 id="page-title">{{lang.album_title}}</h1>
 			<div id="album-info">
-				<img id="main-cover" src="images/incline-draft.png">
+				<img id="main-cover" src="/images/incline-draft.png">
 				<div id="scroll-header" style="display: none">
-					<img id="main-cover-stuck" src="images/incline-draft.png">
+					<img id="main-cover-stuck" src="/images/incline-draft.png">
 				</div>
 				<div id="tracklist">
 					<ol>
@@ -587,13 +587,13 @@
 				else if (audio.paused)
 				{
 					audio.play();
-					playButton.style.backgroundImage = `url(images/pause.svg)`;
+					playButton.style.backgroundImage = `url(/images/pause.svg)`;
 					indicateTrackPlaying(currentTrackIndex);
 				}
 				else
 				{
 					audio.pause();
-					playButton.style.backgroundImage = `url(images/play.svg)`;
+					playButton.style.backgroundImage = `url(/images/play.svg)`;
 					indicateNoTrackPlaying();
 				}
 				
@@ -630,7 +630,7 @@
 				audio.ontimeupdate = () => onTimeUpdate();
 				audio.play();
 				trackTitleText.textContent = trackList[index].title;
-				playButton.style.backgroundImage = `url(images/pause.svg)`;
+				playButton.style.backgroundImage = `url(/images/pause.svg)`;
 				trackTitleText.classList.add("song-loaded");
 				
 				indicateTrackPlaying(index);
