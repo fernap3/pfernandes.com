@@ -445,7 +445,10 @@ async function replaceTemplates(fullPath, pageLang)
 	
 	return fileText.replace(templateRegex, (matchValue, templateName) =>
 	{
-		return templateHtmls[templateName];
+		if (templateName.endsWith(".css"))
+			return `<style>${templateHtmls[templateName]}</style>`;
+		else
+			return templateHtmls[templateName];
 	});
 }
 
