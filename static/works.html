@@ -55,9 +55,13 @@
 				font-weight: bold;
 			}
 			.works-item-title.external-link::after {
-				opacity: 0;
 				top: 2px;
 				margin-left: 4px;
+			}
+			@media (hover: hover) {
+				.works-item-title.external-link::after {
+					opacity: 0;
+				}
 			}
 			.works-item:hover .works-item-title::after {
 				opacity: .8;
