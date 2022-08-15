@@ -86,7 +86,7 @@ app.get(/\/(jp\/)?unsubscribe/, async (req, res) =>
 		return;
 	}
 
-	const client = new SESClient({ region: "us-west-1"});
+	const client = new SESClient({ region: "us-east-1"});
 
 	const params = {
 		Source: `"Peter Fernandes" <noreply@pfernandes.com>`,
@@ -245,7 +245,7 @@ app.post("/mailing-list/subscribe", async (req, res) =>
 		return;
 	}
 
-	const client = new SESClient({ region: "us-west-1"});
+	const client = new SESClient({ region: "us-east-1"});
 
 	const params = {
 		Source: `"Peter Fernandes" <noreply@pfernandes.com>`,
@@ -312,7 +312,7 @@ async function sendDownloadsEmail(toAddress, product)
 		});
 	}
 	
-	const client = new SESClient({ region: "us-west-1"});
+	const client = new SESClient({ region: "us-east-1"});
 
 	const params = {
 		Source: `"Peter Fernandes" <noreply@pfernandes.com>`,
@@ -345,7 +345,7 @@ async function sendDownloadsEmail(toAddress, product)
 
 async function sendPeterEmail(customer, shipping, product, productDesc)
 {
-	const client = new SESClient({ region: "us-west-1"});
+	const client = new SESClient({ region: "us-east-1"});
 
 	let shippingAddressFormatted = null;
 
