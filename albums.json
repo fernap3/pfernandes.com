@@ -1,6 +1,6 @@
 [
 {
-	"page": "qed.hbs",
+	"page": "qed",
 	"metaTitleLangId": "qed_meta_title",
 	"metaDescLangId": "qed_meta_description",
 	"titleLangId": "qed_album_title",
@@ -260,6 +260,226 @@
 				{
 					"roleLangId": "qed_role_drums",
 					"playerLangId": "qed_player_virgil"
+				}
+			]
+		}
+	]
+},
+{
+	"page": "incline",
+	"metaTitleLangId": "incline_meta_title",
+	"metaDescLangId": "incline_meta_description",
+	"titleLangId": "incline_album_title",
+	"releaseYear": 2022,
+	"coverUrl": "/images/qed-cover.jpg",
+	"spotifyUrl": "https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb?si=A80KOVpWTGawXxHNWmjNlg",
+	"appleMusicUrl": "https://music.apple.com/us/album/q-e-d/898109831",
+	"products": [
+		{
+			"id": "427c90d3-ed8a-4ff7-b368-fafacc8a0aaf",
+			"titleLangId": "incline_product_physical_cd_title",
+			"descLangId": "incline_product_physical_cd_desc",
+			"price": 10
+		}
+	],
+	"tracks": [
+		{
+			"titleLangId": "incline_title_galaxy",
+			"sampleMp3Url": "",
+			"personnel": [
+				{
+					"roleLangId": "incline_role_guitar_solos",
+					"playerLangId": "incline_player_yuya"
+				},
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_ric"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_thomas"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_title_sunday_errand",
+			"sampleMp3Url": "",
+			"personnel": [
+				{
+					"roleLangId": "incline_role_guitar_solos",
+					"playerLangId": "incline_player_yuya"
+				},
+				{
+					"roleLangId": "incline_role_backing_guitars",
+					"playerLangId": "incline_player_toshi"
+				},
+				{
+					"roleLangId": "incline_role_trumpet1",
+					"playerLangId": "incline_player_wayne"
+				},
+				{
+					"roleLangId": "incline_role_trumpet2",
+					"playerLangId": "incline_player_aaron"
+				},
+				{
+					"roleLangId": "incline_role_trombone",
+					"playerLangId": "incline_player_andy"
+				},
+				{
+					"roleLangId": "incline_role_tenor_sax",
+					"playerLangId": "incline_player_brandon"
+				},
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_ric"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_joel"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_title_western_capital",
+			"sampleMp3Url": "",
+			"personnel": [
+				{
+					"roleLangId": "incline_role_ewi",
+					"playerLangId": "incline_player_peter"
+				},
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_ric"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_thomas"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_title_emmy",
+			"sampleMp3Url": "",
+			"personnel": [
+				{
+					"roleLangId": "incline_role_guitar_solo",
+					"playerLangId": "incline_player_richard"
+				},
+				{
+					"roleLangId": "incline_role_soprano_sax",
+					"playerLangId": "incline_player_brandon"
+				},
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_ric"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_joel"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_title_hemispheres",
+			"sampleMp3Url": "",
+			"personnel": [
+				{
+					"roleLangId": "incline_role_tenor_sax",
+					"playerLangId": "incline_player_brandon"
+				},
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_ric"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_joel"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_title_incline",
+			"sampleMp3Url": "",
+			"personnel": [
+				{
+					"roleLangId": "incline_role_vocals",
+					"playerLangId": "incline_player_woody"
+				},
+				{
+					"roleLangId": "incline_role_guitar_solos",
+					"playerLangId": "incline_player_toshi"
+				},
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_jimmy"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_vinnie"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_title_decker",
+			"sampleMp3Url": "",
+			"personnel": [
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_ric"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_vinnie"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_title_keep_climbing",
+			"sampleMp3Url": "",
+			"personnel": [
+				{
+					"roleLangId": "incline_role_guitar",
+					"playerLangId": "incline_player_yuya"
+				},
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_ric"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_thomas"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_title_timeline",
+			"sampleMp3Url": "",
+			"personnel": [
+				{
+					"roleLangId": "incline_role_guitar",
+					"playerLangId": "incline_player_toshi"
+				},
+				{
+					"roleLangId": "incline_role_alto_sax",
+					"playerLangId": "incline_player_brandon"
+				},
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_teppei"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_joel"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_title_staging_area",
+			"sampleMp3Url": "",
+			"personnel": [
+				{
+					"roleLangId": "incline_role_production",
+					"playerLangId": "incline_player_peter"
 				}
 			]
 		}

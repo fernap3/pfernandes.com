@@ -142,7 +142,7 @@ async function handleResourceGet(req, res)
 	let urlPathParts = urlPath.split("/");
 	let pathOnDisk = path.resolve(".", "static", ...urlPathParts);
 
-	const topLevelPages = new Set(["incline", "qed", "resume", "unsubscribe", "works"]);
+	const topLevelPages = new Set(["resume", "unsubscribe", "works", ...ALBUMS.map(a => a.page)]);
 
 	if (topLevelPages.has(urlPathParts.at(-1)))
 	{
@@ -156,6 +156,13 @@ async function handleResourceGet(req, res)
 		if (pageLang === "jp")
 			res.set("Content-Language", "ja");
 	}
+
+	const fileName = pathOnDisk.split("/").at(-1);
+	let templateName = path.parse(fileName).name;
+	
+	const album = ALBUMS.find(a => a.page === templateName);
+	if (album != null)
+		pathOnDisk = path.resolve(".", "static", "album.hbs");
 	
 	try
 	{
@@ -169,7 +176,8 @@ async function handleResourceGet(req, res)
 
 	if (urlPath.endsWith(".hbs"))
 	{
-		const fileName = pathOnDisk.split("/").at(-1);
+		if (album)
+			templateName = "album";
 
 		let page_path_without_lang_prefix = req.path.replace("/jp", "");
 		if (!page_path_without_lang_prefix.startsWith("/"))
@@ -183,8 +191,7 @@ async function handleResourceGet(req, res)
 			pageTranslations[key] = pageTranslations[key][pageLang === "jp" ? 1 : 0];
 
 		
-		const filenameWithoutExtension = path.parse(fileName).name;
-		res.render(filenameWithoutExtension, {
+		res.render(templateName, {
 			layout: false,
 			page_lang: pageLang === "jp" ? "ja" : "en",
 			site_root: pageLang === "jp" ? "/jp" : "/",
@@ -201,7 +208,7 @@ async function handleResourceGet(req, res)
 				main: await fs.readFile(path.join(__dirname, "static", "main.css"), { encoding: "utf8" }),
 			},
 			lang: pageTranslations,
-			album: ALBUMS.find(a => a.page === fileName),
+			album,
 			helpers: {
 				lang: (langId) => {
 					return pageTranslations[langId];

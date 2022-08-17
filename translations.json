@@ -37,7 +37,7 @@
 	"index_peter_lastname": ["Fernandes", "フェルナンデス"],
 	"index_musician": ["Musician", "ミュージシャン"],
 	"index_producer": ["Tech guy", "テクが好きな男"],
-	"incline_meta_title": ["Incline - Peter Fernandes", "インクライン - ピーター・フェルナンデス"],
+	"incline_meta_title": ["Listen to Incline by Peter Fernandes", "ピーター・フェルナンデスのインクラインを聞く"],
 	"incline_meta_description": [
 		"Online store page for Peter Fernandes' 2022 album, Incline", 
 		"「インクライン」というピーター・フェルナンデスの2022年のアルバムのウェブストア"
@@ -107,6 +107,7 @@
 	"incline_role_tenor_sax": ["Tenor Sax by ", "テナーサックスは"],
 	"incline_role_alto_sax": ["Alto Sax by ", "アルトサックスは"],
 	"incline_role_soprano_sax": ["Soprano Sax by ", "ソプラノサックスは"],
+	"incline_role_production": ["Production", "プロダクション"],
 	"incline_title_galaxy": ["Galaxy", "ギャラクシー"],
 	"incline_title_incline": ["Incline", "インクライン"],
 	"incline_title_western_capital": ["Western Capital", "西京"],
@@ -116,6 +117,7 @@
 	"incline_title_decker": ["Decker", "デッカー"],
 	"incline_title_keep_climbing": ["Keep Climbing", "頑張り続けて"],
 	"incline_title_timeline": ["Timeline", "タイムライン"],
+	"incline_title_staging_area": ["Staging Area", "ステイジング・エリア"],
 	"qed_meta_title": ["Listen to Q.E.D. by Peter Fernandes", "ピーター・フェルナンデスのQ.E.D.を聞く"],
 	"qed_meta_description": [
 		"Online store page for Peter Fernandes' 2014 album, Q.E.D.",
