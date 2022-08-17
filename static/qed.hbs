@@ -409,7 +409,7 @@
 				<h2 id="buy-options-title">{{{lang.global_buy_options_title}}}</h2>
 				{{#each album.products}}
 					<div class="buy-option-item">
-						<img id="buy-option-art" src="/images/qed-cover.jpg"></img>
+						<img id="buy-option-art" src="{{@root.album.coverUrl}}"></img>
 						<div class="buy-option-title">{{{lang this.titleLangId}}} - ${{this.price}}</div>
 						<div class="buy-option-desc">{{{lang this.descLangId}}}</div>
 						<form action="{{api_root}}/create-checkout-session?productId={{this.id}}" method="POST">
@@ -429,6 +429,9 @@
 			document.body.onscroll = evt => onPageScroll(evt);
 
 			const trackList = [
+			{{#each album.tracks}}
+				hithere
+			{{/each}}
 				{ title: "{{{lang.qed_title_destiny_controller}}}", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/01-destiny-controller-sample.mp3" },
 				{ title: "{{{lang.qed_title_nightbird}}}", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/02-nightbird-sample.mp3" },
 				{ title: "{{{lang.qed_title_grown_ups}}}", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/03-grown-ups-sample.mp3" },
