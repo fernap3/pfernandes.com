@@ -1,207 +1,193 @@
 {
-    "navbar.html": {
-        "home": ["Home", "ホーム"],
-        "mailing_list": ["Mailing list", "メーリングリスト"],
-        "works": ["Listen / Buy", "聞く・買う"],
-        "peter_name": ["Peter Fernandes", "ピーター・フェルナンデス"]
-    },
-    "footer.html": {
-        "home": ["Home", "ホーム"],
-        "works": ["Listen / Buy", "聞く・買う"]
-    },
-    "mailinglist_dialog.html": {
-        "name": ["Name", "お名前"],
-        "email": ["Email address", "メールアドレス"],
-        "submit": ["Submit", "行く"],
-        "mailing_list_desc": [
-            "Enter your name and email address to sign up for the mailing list. Frequency of communication is only occasional.",
-            "メーリングリスト加入のためにお名前とメールアドレスを入力してください。メールはたまです。"
-        ]
-    },
-    "index.html": {
-        "meta_title": ["Peter Fernandes - Musician, Tech guy", "ピーター・フェルナンデス - ミュージシャン・テクが好きな男"],
-        "meta_description": [
-            "The personal website of Peter Fernandes, musician and software person.", 
-            "ミュージシャン、ソフトウェアが好きな人であるピーター・フェルナンデスのサイト。"
-        ],
-        "peter_firstname": ["Peter", "ピーター"],
-        "peter_lastname": ["Fernandes", "フェルナンデス"],
-        "musician": ["Musician", "ミュージシャン"],
-        "producer": ["Tech guy", "テクが好きな男"]
-    },
-    "incline.html": {
-        "meta_title": ["Incline - Peter Fernandes", "インクライン - ピーター・フェルナンデス"],
-        "meta_description": [
-            "Online store page for Peter Fernandes' 2022 album, Incline", 
-            "「インクライン」というピーター・フェルナンデスの2022年のアルバムのウェブストア"
-        ],
-        "buy_options_title": ["How to listen", "聞く方法"],
-        "buy_signed": ["Buy signed", "サイン入るで買う"],
-        "buy_sealed": ["Buy sealed", "サインなしで買う"],
-        "buy_now": ["Buy now", "買う"],
-        "product_physical_cd_title": ["Physical CD - $20", "CD - $20"],
-        "product_physical_cd_desc": [
-            "Physical compact disc copy of &ldquo;Incline.&rdquo; Ships internationally. Available signed, or sealed without signature for the same price.",
-            "「インクライン」のCDです。国際で発送できます。サイン入るでもサインなしでも同じ値段です。"
-        ],
-        "product_album_download_title": ["Album download - $10", "アルバムダウンロード - $10"],
-        "product_album_download_desc": [
-            "Your choice of MP3, WAV, or FLAC files for each song. Available to download immediately after payment.",
-            "MP3とWAVとFLACでそれぞれの曲。支払い後で、すぐダウンロードできます。"
-        ],
-        "product_minusone_title": ["&ldquo;Minus one&rdquo; Package - $10", "「マイナス・ワン」のパッケージ - $10"],
-        "product_minusone_desc": [
-            "WAV and MP3 play-along versions of each song for drums, bass, solos, etc.",
-            "WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など"
-        ],
-        "product_sheetmusic_title": ["Sheet music Package - $10", "楽譜のパッケージ - $10"],
-        "product_sheetmusic_desc": [
-            "Lead sheets for each song, in PDF format",
-            "PDFでそれぞれの曲のリード・シート"
-        ],
-        "available_on": [
-            "Also available on <a class='nowrap' href='#'>Spotify</a>, <a class='nowrap' href='#'>Apple Music</a>, and other services.",
-            "<a class='nowrap' href='#'>スポティファイ</a>や<a class='nowrap' href='#'>アップルミュージック</a>などでも配信中です。"
-        ],
-        "purchase_success": [
-            "<p>Thank you for your purchase!</p> <p>If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships.</p>",
-            ""
-        ],
-        "album_title": ["Incline (2022)", "インクライン (2022年)"],
-        "miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
-        "touch": ["touch", "触って"],
-        "click": ["click", "クリックして"],
-        "player_yuya": ["Yuya Komoguchi", "菰口雄矢"],
-        "player_peter": ["Peter Fernandes", "ピーター・フェルナンデス"],
-        "player_ric": ["Ric Fierabracci", "リック・フィエラブラッチ"],
-        "player_thomas": ["Thomas Lang", "ドラムはトーマス・ラング"],
-        "player_woody": ["Woody Mankowski", "ボーカルはウッディ・マンコウスキー"],
-        "player_toshi": ["Toshi Yanagi", "としやなぎ"],
-        "player_jimmy": ["Jimmy Johnson", "ジミー・ジョンソン"],
-        "player_vinnie": ["Vinnie Colaiuta", "ビニー・カリウタ"],
-        "player_wayne": ["Wayne Bergeron", "ウェイン・バージェロン"],
-        "player_aaron": ["Aaron Janik", "アーロン・ジャニック"],
-        "player_andy": ["Andy Martin", "アンディ・マーティン"],
-        "player_brandon": ["Brandon Fields", "ブランドンフィールズ"],
-        "player_joel": ["Joel Rosenblatt", "ジョエル・ローゼンブラット"],
-        "player_richard": ["Richard Hallebeek", "リチャード・ハレべーク"],
-        "player_teppei": ["Teppei Kawasaki", "川崎哲平"],
-        "role_guitar": ["Guitar by ", "ギターは"],
-        "role_guitar_solo": ["Guitar solo by ", "ギターソロは"],
-        "role_guitar_solos": ["Guitar solos by ", "ギターソロは"],
-        "role_backing_guitars": ["Backing guitars by ", "他のギターは"],
-        "role_vocals": ["Vocals by ", "ボーカルは"],
-        "role_bass": ["Bass by ", "ベースは"],
-        "role_drums": ["Drums by ", "ドラムは"],
-        "role_ewi": ["EWI by ", "EWIは"],
-        "role_trumpet1": ["Trumpet 1 by ", "トランペット1は"],
-        "role_trumpet2": ["Trumpet 2 by ", "トランペット2は"],
-        "role_trombone": ["Trombone by ", "トロンボーンは"],
-        "role_tenor_sax": ["Tenor Sax by ", "テナーサックスは"],
-        "role_alto_sax": ["Alto Sax by ", "アルトサックスは"],
-        "role_soprano_sax": ["Soprano Sax by ", "ソプラノサックスは"],
-        "title_galaxy": ["Galaxy", "ギャラクシー"],
-        "title_incline": ["Incline", "インクライン"],
-        "title_western_capital": ["Western Capital", "西京"],
-        "title_sunday_errand": ["日曜日のお使い", "日曜日のお使い"],
-        "title_emmy": ["Emmy", "エミー"],
-        "title_hemispheres": ["Hemispheres", "半球"],
-        "title_decker": ["Decker", "デッカー"],
-        "title_keep_climbing": ["Keep Climbing", "頑張り続けて"],
-        "title_timeline": ["Timeline", "タイムライン"]
-    },
-    "qed.html": {
-        "meta_title": ["Listen to Q.E.D. by Peter Fernandes", "ピーター・フェルナンデスのQ.E.D.を聞く"],
-        "meta_description": [
-            "Online store page for Peter Fernandes' 2014 album, Q.E.D.",
-            "「Q.E.D.」というピーター・フェルナンデスの2014年のアルバムのウェブストア"
-        ],
-        "buy_options_title": ["How to listen", "聞く方法"],
-        "buy_now": ["Buy now", "買う"],
-        "product_album_download_title": ["Album download - $10", "アルバムダウンロード - $10"],
-        "product_album_download_desc": [
-            "Your choice of MP3, WAV, or FLAC files for each song. Available to download immediately after payment.",
-            "MP3とWAVとFLACでそれぞれの曲。支払い後で、すぐダウンロードできます。"
-        ],
-        "product_minusone_title": ["&ldquo;Minus one&rdquo; Package - $10", "「マイナス・ワン」のパッケージ - $10"],
-        "product_minusone_desc": [
-            "WAV and MP3 play-along versions of each song for drums, bass, solos, etc.",
-            "WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など"
-        ],
-        "available_on": [
-            "Also available on <a class='external-link nowrap' href='https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb?si=A80KOVpWTGawXxHNWmjNlg'>Spotify</a>, <a class='external-link nowrap' href='https://music.apple.com/us/album/q-e-d/898109831'>Apple Music</a>, and other services.",
-            "<a class='external-link nowrap' href='https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb?si=A80KOVpWTGawXxHNWmjNlg'>スポティファイ</a>や<a class='external-link nowrap' href='https://music.apple.com/us/album/q-e-d/898109831'>アップルミュージック</a>などでも配信中です。"
-        ],
-        "purchase_success": [
-            "<p style='font-weight:bold'>Thank you for your purchase!</p> <p>If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships.</p>",
-            ""
-        ],
-        "album_title": ["Q.E.D. (2014)", "Q.E.D. (2014年)"],
-        "miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
-        "touch": ["touch", "触って"],
-        "click": ["click", "クリックして"],
-        "player_peter": ["Peter Fernandes", "ピーター・フェルナンデス"],
-        "player_ric": ["Ric Fierabracci", "リック・フィエラブラッチ"],
-        "player_jimmy": ["Jimmy Johnson", "ジミー・ジョンソン"],
-        "player_steve": ["Steve Jankowski", "スティーブ・ジャンカウスキー"],
-        "player_jens": ["Jens Wendelboe", "ジェンス・ウェンデルボー"],
-        "player_tom": ["Tom Timko", "トム・ティンコ"],
-        "player_joel": ["Joel Rosenblatt", "ジョエル・ローゼンブラット"],
-        "player_richard": ["Richard Hallebeek", "リチャード・ハレべーク"],
-        "player_brett": ["Brett Garsed", "ブレット・ガースド"],
-        "player_derek": ["Derek Sherinian", "デリク・シェリニアン"],
-        "player_chris": ["Chris Bryant", "クリス・ブライアント"],
-        "player_shane": ["Shane Gaalaas", "シェーン・ガーラース"],
-        "player_marcus": ["Marcus Monteiro", "マーカス・モンテーロ"],
-        "player_johannes": ["Johannes Zetterberg", "ジョハネス・ゼターバーグ"],
-        "player_trevor": ["Trevor Kellum", "トレバー・ケラン"],
-        "player_john_pelosi": ["John Pelosi", "ジョン・ペロシ"],
-        "player_jason": ["Jason Roze", "ジェイソン・ローズ"],
-        "player_gary_husband": ["Gary Husband", "ゲイリー・ハズバンド"],
-        "player_greg_howe": ["Greg Howe", "グレッグ・ハウ"],
-        "player_kazuki": ["Kazuki Katsuta", "勝田一樹"],
-        "player_takashi": ["Takashi Masuzaki", "増崎孝司"],
-        "player_virgil": ["Virgil Donati", "バージル・ドナーティ"],
-        "role_guitar": ["Guitar by ", "ギターは"],
-        "role_guitar_solo": ["Guitar solo by ", "ギターソロは"],
-        "role_guitar_solos": ["Guitar solos by ", "ギターソロは"],
-        "role_g10_solo": ["Yamaha G10 solo by ", "ヤマハG10ソロは"],
-        "role_guitar_g10_solos": ["Guitar and Yamaha G10 solos by ", "ギターとヤマハG10ソロは"],
-        "role_backing_guitars": ["Backing guitars by ", "他のギターは"],
-        "role_synth_solos": ["Synth solos by ", "シンセサイザーソロは"],
-        "role_vocals": ["Vocals by ", "ボーカルは"],
-        "role_bass": ["Bass by ", "ベースは"],
-        "role_frettless_bass": ["Fretless Bass by ", "フレットレスベースは"],
-        "role_drums": ["Drums by ", "ドラムは"],
-        "role_drums_and_piano_solo": ["Drums and piano solo by ", "ドラム、ピアノソロは"],
-        "role_ewi": ["EWI by ", "EWIは"],
-        "role_trumpets": ["Trumpets by ", "トランペットは"],
-        "role_trombone": ["Trombone by ", "トロンボーンは"],
-        "role_tenor_sax": ["Tenor Sax by ", "テナーサックスは"],
-        "role_alto_sax": ["Alto Sax by ", "アルトサックスは"],
-        "title_destiny_controller": ["Destiny Controller", "デーステぃニー・コントローラー"],
-        "title_nightbird": ["Nightbird", "ナイト・バード"],
-        "title_grown_ups": ["Grown Ups", "グローンアップス"],
-        "title_sheffield_songo": ["Sheffield Songo", "シェフィールド・ソンゴ"],
-        "title_your_truth": ["Your Truth", "ヨーア・トルス"],
-        "title_dorothy": ["Dorothy", "ドロシー"],
-        "title_market_street": ["Market Street", "マーケット・ストリート"],
-        "title_flight_to_rio": ["Flight to Rio", "フライト・ツ・リオ"],
-        "title_qed_intro": ["Q.E.D. Intro", "キュー・イー・ディー・イントロ"],
-        "title_qed": ["Quod Erat Demonstrandum", "クオッド・エラト・デモンストランダム"]
-    },
-    "works.html": {
-        "meta_title": ["Works - Peter Fernandes", "音楽 - ピーター・フェルナンデス"],
-        "meta_description": [
-            "Releases by musician, Peter Fernandes", 
-            "ミュージシャンであるピーター・フェルナンデスの音楽"
-        ],
-        "title": ["Listen / Buy", "聞く・買う"],
-        "solo_albums": ["Solo Albums", "ソロアルバム"],
-        "singles": ["Selection of Singles", "シングル"],
-        "writing_credits": ["Writing Credits / Guest Appearances", "曲作り・ゲーストプレイ"],
-        "composition": ["Composition", "曲作り"],
-        "composition_keys": ["Composition, keyboards", "曲作り・キーボード"],
-        "year_suffix": ["", "年"]
-    }
+	"navbar_home": ["Home", "ホーム"],
+	"navbar_mailing_list": ["Mailing list", "メーリングリスト"],
+	"navbar_works": ["Listen / Buy", "聞く・買う"],
+	"navbar_peter_name": ["Peter Fernandes", "ピーター・フェルナンデス"],
+	"footer_home": ["Home", "ホーム"],
+	"footer_works": ["Listen / Buy", "聞く・買う"],
+	"mailinglist_dialog_name": ["Name", "お名前"],
+	"mailinglist_dialog_email": ["Email address", "メールアドレス"],
+	"mailinglist_dialog_submit": ["Submit", "行く"],
+	"mailinglist_dialog_mailing_list_desc": [
+		"Enter your name and email address to sign up for the mailing list. Frequency of communication is only occasional.",
+		"メーリングリスト加入のためにお名前とメールアドレスを入力してください。メールはたまです。"
+	],
+	"index_meta_title": ["Peter Fernandes - Musician, Tech guy", "ピーター・フェルナンデス - ミュージシャン・テクが好きな男"],
+	"index_meta_description": [
+		"The personal website of Peter Fernandes, musician and software person.", 
+		"ミュージシャン、ソフトウェアが好きな人であるピーター・フェルナンデスのサイト。"
+	],
+	"index_peter_firstname": ["Peter", "ピーター"],
+	"index_peter_lastname": ["Fernandes", "フェルナンデス"],
+	"index_musician": ["Musician", "ミュージシャン"],
+	"index_producer": ["Tech guy", "テクが好きな男"],
+	"incline_meta_title": ["Incline - Peter Fernandes", "インクライン - ピーター・フェルナンデス"],
+	"incline_meta_description": [
+		"Online store page for Peter Fernandes' 2022 album, Incline", 
+		"「インクライン」というピーター・フェルナンデスの2022年のアルバムのウェブストア"
+	],
+	"incline_buy_options_title": ["How to listen", "聞く方法"],
+	"incline_buy_signed": ["Buy signed", "サイン入るで買う"],
+	"incline_buy_sealed": ["Buy sealed", "サインなしで買う"],
+	"incline_buy_now": ["Buy now", "買う"],
+	"incline_product_physical_cd_title": ["Physical CD - $20", "CD - $20"],
+	"incline_product_physical_cd_desc": [
+		"Physical compact disc copy of &ldquo;Incline.&rdquo; Ships internationally. Available signed, or sealed without signature for the same price.",
+		"「インクライン」のCDです。国際で発送できます。サイン入るでもサインなしでも同じ値段です。"
+	],
+	"incline_product_album_download_title": ["Album download - $10", "アルバムダウンロード - $10"],
+	"incline_product_album_download_desc": [
+		"Your choice of MP3, WAV, or FLAC files for each song. Available to download immediately after payment.",
+		"MP3とWAVとFLACでそれぞれの曲。支払い後で、すぐダウンロードできます。"
+	],
+	"incline_product_minusone_title": ["&ldquo;Minus one&rdquo; Package - $10", "「マイナス・ワン」のパッケージ - $10"],
+	"incline_product_minusone_desc": [
+		"WAV and MP3 play-along versions of each song for drums, bass, solos, etc.",
+		"WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など"
+	],
+	"incline_product_sheetmusic_title": ["Sheet music Package - $10", "楽譜のパッケージ - $10"],
+	"incline_product_sheetmusic_desc": [
+		"Lead sheets for each song, in PDF format",
+		"PDFでそれぞれの曲のリード・シート"
+	],
+	"incline_available_on": [
+		"Also available on <a class='nowrap' href='#'>Spotify</a>, <a class='nowrap' href='#'>Apple Music</a>, and other services.",
+		"<a class='nowrap' href='#'>スポティファイ</a>や<a class='nowrap' href='#'>アップルミュージック</a>などでも配信中です。"
+	],
+	"incline_purchase_success": [
+		"<p>Thank you for your purchase!</p> <p>If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships.</p>",
+		""
+	],
+	"incline_album_title": ["Incline (2022)", "インクライン (2022年)"],
+	"incline_miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
+	"incline_touch": ["touch", "触って"],
+	"incline_click": ["click", "クリックして"],
+	"incline_player_yuya": ["Yuya Komoguchi", "菰口雄矢"],
+	"incline_player_peter": ["Peter Fernandes", "ピーター・フェルナンデス"],
+	"incline_player_ric": ["Ric Fierabracci", "リック・フィエラブラッチ"],
+	"incline_player_thomas": ["Thomas Lang", "ドラムはトーマス・ラング"],
+	"incline_player_woody": ["Woody Mankowski", "ボーカルはウッディ・マンコウスキー"],
+	"incline_player_toshi": ["Toshi Yanagi", "としやなぎ"],
+	"incline_player_jimmy": ["Jimmy Johnson", "ジミー・ジョンソン"],
+	"incline_player_vinnie": ["Vinnie Colaiuta", "ビニー・カリウタ"],
+	"incline_player_wayne": ["Wayne Bergeron", "ウェイン・バージェロン"],
+	"incline_player_aaron": ["Aaron Janik", "アーロン・ジャニック"],
+	"incline_player_andy": ["Andy Martin", "アンディ・マーティン"],
+	"incline_player_brandon": ["Brandon Fields", "ブランドンフィールズ"],
+	"incline_player_joel": ["Joel Rosenblatt", "ジョエル・ローゼンブラット"],
+	"incline_player_richard": ["Richard Hallebeek", "リチャード・ハレべーク"],
+	"incline_player_teppei": ["Teppei Kawasaki", "川崎哲平"],
+	"incline_role_guitar": ["Guitar by ", "ギターは"],
+	"incline_role_guitar_solo": ["Guitar solo by ", "ギターソロは"],
+	"incline_role_guitar_solos": ["Guitar solos by ", "ギターソロは"],
+	"incline_role_backing_guitars": ["Backing guitars by ", "他のギターは"],
+	"incline_role_vocals": ["Vocals by ", "ボーカルは"],
+	"incline_role_bass": ["Bass by ", "ベースは"],
+	"incline_role_drums": ["Drums by ", "ドラムは"],
+	"incline_role_ewi": ["EWI by ", "EWIは"],
+	"incline_role_trumpet1": ["Trumpet 1 by ", "トランペット1は"],
+	"incline_role_trumpet2": ["Trumpet 2 by ", "トランペット2は"],
+	"incline_role_trombone": ["Trombone by ", "トロンボーンは"],
+	"incline_role_tenor_sax": ["Tenor Sax by ", "テナーサックスは"],
+	"incline_role_alto_sax": ["Alto Sax by ", "アルトサックスは"],
+	"incline_role_soprano_sax": ["Soprano Sax by ", "ソプラノサックスは"],
+	"incline_title_galaxy": ["Galaxy", "ギャラクシー"],
+	"incline_title_incline": ["Incline", "インクライン"],
+	"incline_title_western_capital": ["Western Capital", "西京"],
+	"incline_title_sunday_errand": ["日曜日のお使い", "日曜日のお使い"],
+	"incline_title_emmy": ["Emmy", "エミー"],
+	"incline_title_hemispheres": ["Hemispheres", "半球"],
+	"incline_title_decker": ["Decker", "デッカー"],
+	"incline_title_keep_climbing": ["Keep Climbing", "頑張り続けて"],
+	"incline_title_timeline": ["Timeline", "タイムライン"],
+	"qed_meta_title": ["Listen to Q.E.D. by Peter Fernandes", "ピーター・フェルナンデスのQ.E.D.を聞く"],
+	"qed_meta_description": [
+		"Online store page for Peter Fernandes' 2014 album, Q.E.D.",
+		"「Q.E.D.」というピーター・フェルナンデスの2014年のアルバムのウェブストア"
+	],
+	"qed_buy_options_title": ["How to listen", "聞く方法"],
+	"qed_buy_now": ["Buy now", "買う"],
+	"qed_product_album_download_title": ["Album download - $10", "アルバムダウンロード - $10"],
+	"qed_product_album_download_desc": [
+		"Your choice of MP3, WAV, or FLAC files for each song. Available to download immediately after payment.",
+		"MP3とWAVとFLACでそれぞれの曲。支払い後で、すぐダウンロードできます。"
+	],
+	"qed_product_minusone_title": ["&ldquo;Minus one&rdquo; Package - $10", "「マイナス・ワン」のパッケージ - $10"],
+	"qed_product_minusone_desc": [
+		"WAV and MP3 play-along versions of each song for drums, bass, solos, etc.",
+		"WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など"
+	],
+	"qed_available_on": [
+		"Also available on <a class='external-link nowrap' href='https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb?si=A80KOVpWTGawXxHNWmjNlg'>Spotify</a>, <a class='external-link nowrap' href='https://music.apple.com/us/album/q-e-d/898109831'>Apple Music</a>, and other services.",
+		"<a class='external-link nowrap' href='https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb?si=A80KOVpWTGawXxHNWmjNlg'>スポティファイ</a>や<a class='external-link nowrap' href='https://music.apple.com/us/album/q-e-d/898109831'>アップルミュージック</a>などでも配信中です。"
+	],
+	"qed_purchase_success": [
+		"<p style='font-weight:bold'>Thank you for your purchase!</p> <p>If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships.</p>",
+		""
+	],
+	"qed_album_title": ["Q.E.D. (2014)", "Q.E.D. (2014年)"],
+	"qed_miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
+	"qed_touch": ["touch", "触って"],
+	"qed_click": ["click", "クリックして"],
+	"qed_player_peter": ["Peter Fernandes", "ピーター・フェルナンデス"],
+	"qed_player_ric": ["Ric Fierabracci", "リック・フィエラブラッチ"],
+	"qed_player_jimmy": ["Jimmy Johnson", "ジミー・ジョンソン"],
+	"qed_player_steve": ["Steve Jankowski", "スティーブ・ジャンカウスキー"],
+	"qed_player_jens": ["Jens Wendelboe", "ジェンス・ウェンデルボー"],
+	"qed_player_tom": ["Tom Timko", "トム・ティンコ"],
+	"qed_player_joel": ["Joel Rosenblatt", "ジョエル・ローゼンブラット"],
+	"qed_player_richard": ["Richard Hallebeek", "リチャード・ハレべーク"],
+	"qed_player_brett": ["Brett Garsed", "ブレット・ガースド"],
+	"qed_player_derek": ["Derek Sherinian", "デリク・シェリニアン"],
+	"qed_player_chris": ["Chris Bryant", "クリス・ブライアント"],
+	"qed_player_shane": ["Shane Gaalaas", "シェーン・ガーラース"],
+	"qed_player_marcus": ["Marcus Monteiro", "マーカス・モンテーロ"],
+	"qed_player_johannes": ["Johannes Zetterberg", "ジョハネス・ゼターバーグ"],
+	"qed_player_trevor": ["Trevor Kellum", "トレバー・ケラン"],
+	"qed_player_john_pelosi": ["John Pelosi", "ジョン・ペロシ"],
+	"qed_player_jason": ["Jason Roze", "ジェイソン・ローズ"],
+	"qed_player_gary_husband": ["Gary Husband", "ゲイリー・ハズバンド"],
+	"qed_player_greg_howe": ["Greg Howe", "グレッグ・ハウ"],
+	"qed_player_kazuki": ["Kazuki Katsuta", "勝田一樹"],
+	"qed_player_takashi": ["Takashi Masuzaki", "増崎孝司"],
+	"qed_player_virgil": ["Virgil Donati", "バージル・ドナーティ"],
+	"qed_role_guitar": ["Guitar by ", "ギターは"],
+	"qed_role_guitar_solo": ["Guitar solo by ", "ギターソロは"],
+	"qed_role_guitar_solos": ["Guitar solos by ", "ギターソロは"],
+	"qed_role_g10_solo": ["Yamaha G10 solo by ", "ヤマハG10ソロは"],
+	"qed_role_guitar_g10_solos": ["Guitar and Yamaha G10 solos by ", "ギターとヤマハG10ソロは"],
+	"qed_role_backing_guitars": ["Backing guitars by ", "他のギターは"],
+	"qed_role_synth_solos": ["Synth solos by ", "シンセサイザーソロは"],
+	"qed_role_vocals": ["Vocals by ", "ボーカルは"],
+	"qed_role_bass": ["Bass by ", "ベースは"],
+	"qed_role_frettless_bass": ["Fretless Bass by ", "フレットレスベースは"],
+	"qed_role_drums": ["Drums by ", "ドラムは"],
+	"qed_role_drums_and_piano_solo": ["Drums and piano solo by ", "ドラム、ピアノソロは"],
+	"qed_role_ewi": ["EWI by ", "EWIは"],
+	"qed_role_trumpets": ["Trumpets by ", "トランペットは"],
+	"qed_role_trombone": ["Trombone by ", "トロンボーンは"],
+	"qed_role_tenor_sax": ["Tenor Sax by ", "テナーサックスは"],
+	"qed_role_alto_sax": ["Alto Sax by ", "アルトサックスは"],
+	"qed_title_destiny_controller": ["Destiny Controller", "デーステぃニー・コントローラー"],
+	"qed_title_nightbird": ["Nightbird", "ナイト・バード"],
+	"qed_title_grown_ups": ["Grown Ups", "グローンアップス"],
+	"qed_title_sheffield_songo": ["Sheffield Songo", "シェフィールド・ソンゴ"],
+	"qed_title_your_truth": ["Your Truth", "ヨーア・トルス"],
+	"qed_title_dorothy": ["Dorothy", "ドロシー"],
+	"qed_title_market_street": ["Market Street", "マーケット・ストリート"],
+	"qed_title_flight_to_rio": ["Flight to Rio", "フライト・ツ・リオ"],
+	"qed_title_qed_intro": ["Q.E.D. Intro", "キュー・イー・ディー・イントロ"],
+	"qed_title_qed": ["Quod Erat Demonstrandum", "クオッド・エラト・デモンストランダム"],
+	"works_meta_title": ["Works - Peter Fernandes", "音楽 - ピーター・フェルナンデス"],
+	"works_meta_description": [
+		"Releases by musician, Peter Fernandes", 
+		"ミュージシャンであるピーター・フェルナンデスの音楽"
+	],
+	"works_title": ["Listen / Buy", "聞く・買う"],
+	"works_solo_albums": ["Solo Albums", "ソロアルバム"],
+	"works_singles": ["Selection of Singles", "シングル"],
+	"works_writing_credits": ["Writing Credits / Guest Appearances", "曲作り・ゲーストプレイ"],
+	"works_composition": ["Composition", "曲作り"],
+	"works_composition_keys": ["Composition, keyboards", "曲作り・キーボード"],
+	"works_year_suffix": ["", "年"]
 }

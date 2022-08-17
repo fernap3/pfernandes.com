@@ -6,6 +6,7 @@ const fs = require("fs").promises;
 const translations = require("./translations.json");
 const countryCodes = require("country-code-lookup");
 const compression = require("compression");
+const handlebars = require("express-handlebars");
 
 const TEST_MODE = process.env.LIVE_MODE == null || process.env.LIVE_MODE == "";
 
@@ -72,6 +73,14 @@ const bodyParser = require("body-parser");
 
 const EMAIL_REGEX = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
+
+app.engine(".hbs", handlebars.engine({
+	layout: false,
+	extname: "hbs",
+}));
+app.set("view engine", "hbs");
+app.set("view options", {layout: false});
+app.set("views", path.join(__dirname, "static"));
 app.use(bodyParser.json());
 app.use(compression());
 app.enable("trust proxy");
@@ -123,7 +132,7 @@ async function handleResourceGet(req, res)
 		urlPath = "/";
 
 	if (urlPath === "/")
-		urlPath = "/index.html";
+		urlPath = "/index.hbs";
 
 	let urlPathParts = urlPath.split("/");
 	let pathOnDisk = path.resolve(".", "static", ...urlPathParts);
@@ -132,12 +141,12 @@ async function handleResourceGet(req, res)
 
 	if (topLevelPages.has(urlPathParts.at(-1)))
 	{
-		urlPath = urlPath + ".html";
-		urlPathParts[urlPathParts.length - 1] = urlPathParts[urlPathParts.length - 1] + ".html";
-		pathOnDisk = pathOnDisk + ".html";
+		urlPath = urlPath + ".hbs";
+		urlPathParts[urlPathParts.length - 1] = urlPathParts[urlPathParts.length - 1] + ".hbs";
+		pathOnDisk = pathOnDisk + ".hbs";
 	}
 
-	if (urlPath.endsWith(".html"))
+	if (urlPath.endsWith(".hbs"))
 	{
 		if (pageLang === "jp")
 			res.set("Content-Language", "ja");
@@ -153,14 +162,56 @@ async function handleResourceGet(req, res)
 		return;
 	}
 
-	if (urlPath.endsWith(".html"))
+	if (urlPath.endsWith(".hbs"))
 	{
 		const fileName = pathOnDisk.split("/").at(-1);
-		let html = await replaceTemplates(pathOnDisk, pageLang)
-		html = await translateHtml(html, fileName, pageLang);
-		html = await replaceVariables(html, req, pageLang);
+		// const fileText = await fs.readFile(fullPath, { encoding: "utf8" });
+
+		// const compiledTemplate = handlebars.compile(fileText, { strict: true, });
+		// const html = compiledTemplate({
+		// 	lang: translations[fileName],
+		// });
+
+
+
 		
-		res.status(200).send(html);
+		// let html = await replaceTemplates(pathOnDisk, pageLang)
+		// html = await translateHtml(html, fileName, pageLang);
+		// html = await replaceVariables(html, req, pageLang);
+		
+		// res.status(200).send(html);
+
+		let page_path_without_lang_prefix = req.path.replace("/jp", "");
+		if (!page_path_without_lang_prefix.startsWith("/"))
+			page_path_without_lang_prefix = "/" + page_path_without_lang_prefix;
+
+		const origin = (req.headers["x-forwarded-proto"] ?? (TEST_MODE ? "http" : "https")) + "://" + req.get("host");
+		const webPageOrigin = origin.replace("api.", "");
+
+		const pageTranslations = { ...translations };
+		for (const key in pageTranslations)
+			pageTranslations[key] = pageTranslations[key][pageLang === "jp" ? 1 : 0];
+
+		
+		
+		const filenameWithoutExtension = path.parse(fileName).name;
+		res.render(filenameWithoutExtension, {
+			layout: false,
+			page_lang: pageLang === "jp" ? "ja" : "en",
+			site_root: pageLang === "jp" ? "/jp" : "/",
+			lang_prefix: pageLang === "jp" ? "/jp/" : "/",
+			page_path: req.path,
+			page_path_without_lang_prefix,
+			full_page_url: `${webPageOrigin}${req.url == "/" ? "" : req.url}`,
+			full_page_url_en: `${webPageOrigin}${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
+			full_page_url_jp: `${webPageOrigin}/jp${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
+			api_root: origin,
+			css: {
+				fonts: await fs.readFile(path.join(__dirname, "static", "fonts.css"), { encoding: "utf8" }),
+				main: await fs.readFile(path.join(__dirname, "static", "main.css"), { encoding: "utf8" }),
+			},
+			lang: pageTranslations,
+		});
 		return;
 	}
 

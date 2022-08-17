@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{page_lang}}">
 	<head>
-		<title>{{lang.meta_title}}</title>
-		<meta name="description" content="{{lang.meta_description}}">
+		<title>{{{lang.index_meta_title}}}</title>
+		<meta name="description" content="{{{lang.index_meta_description}}}">
 		<meta name="og:image" content="https://pfernandes.com/images/peter-headshot.jpg">
-		{{template=common_head_tags.html}}
+		{{>common_head_tags}}
 		<script src="main.js" defer></script>
-		{{template=fonts.css}}
-		{{template=main.css}}
+		<style>
+			{{{css.fonts}}}
+		</style>
+		<style>
+			{{{css.main}}}
+		</style>
 		<style>
 			body {
 				font-size: 16px;
@@ -238,13 +242,13 @@
 		</style>
 	</head>
 	<body>
-		{{template=navbar.html}}
+		{{>navbar}}
 		<div id="content">
 			<div id="content__header">
-				<h1 id="page-title"><span class="page-title-line animate-onload-fromleft">{{lang.peter_firstname}}</span><br><span class="page-title-line animate-onload-fromleft">{{lang.peter_lastname}}</span></h1>
+				<h1 id="page-title"><span class="page-title-line animate-onload-fromleft">{{{lang.index_peter_firstname}}}</span><br><span class="page-title-line animate-onload-fromleft">{{{lang.index_peter_lastname}}}</span></h1>
 				<div id="credentials">
-					<span class="credentials__title animate-onload-fromleft">{{lang.musician}}</span><!--  / <a class="credentials__company" href="https://www.glassdoor.com/Overview/Working-at-Exago-EI_IE1043495.11,16.htm">Exago, Inc.</a> --><br>
-					<a class="credentials__title animate-onload-fromleft" href="https://www.youtube.com/user/hypersonic12">{{lang.producer}}</a>
+					<span class="credentials__title animate-onload-fromleft">{{{lang.index_musician}}}</span><!--  / <a class="credentials__company" href="https://www.glassdoor.com/Overview/Working-at-Exago-EI_IE1043495.11,16.htm">Exago, Inc.</a> --><br>
+					<a class="credentials__title animate-onload-fromleft" href="https://www.youtube.com/user/hypersonic12">{{{lang.index_producer}}}</a>
 				</div>
 				<picture id="main-photo">
 					<source srcset="/images/peter-headshot.webp" type="image/webp">
@@ -269,7 +273,7 @@
 				</a> -->
 			</div>
 		</div>
-		{{template=footer.html}}
-		{{template=mailinglist_dialog.html}}
+		{{>footer}}
+		{{>mailinglist_dialog}}
 	</body>
 </html>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{page_lang}}">
 	<head>
-		<title>{{lang.meta_title}}</title>
-		<meta name="description" content="{{lang.meta_description}}">
+		<title>{{{lang.incline_meta_title}}}</title>
+		<meta name="description" content="{{{lang.incline_meta_description}}}">
 		{{template=common_head_tags.html}}
 		<script src="main.js" defer></script>
 		{{template=fonts.css}}
@@ -277,12 +277,12 @@
 			}
 
 			.click-text::before {
-				content: '{{lang.touch}}';
+				content: '{{{lang.incline_touch}}}';
 			}
 
 			@media (pointer: fine) {
 				.click-text::before {
-					content: '{{lang.click}}';
+					content: '{{{lang.incline_click}}}';
 				}
 			}
 
@@ -381,11 +381,11 @@
 	<body>
 		<div id="purchase-success-banner" hidden>
 			<button id="purchase-banner-close"></button>
-			{{lang.purchase_success}}
+			{{{lang.incline_purchase_success}}}
 		</div>
 		{{template=navbar.html}}
 		<div id="content">
-			<h1 id="page-title">{{lang.album_title}}</h1>
+			<h1 id="page-title">{{{lang.incline_album_title}}}</h1>
 			<div id="album-info">
 				<img id="main-cover" src="/images/incline-draft.png">
 				<div id="scroll-header" style="display: none">
@@ -396,106 +396,106 @@
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_galaxy}}</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{{lang.incline_title_galaxy}}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">{{lang.role_guitar_solos}}<span class="personnel-name">{{lang.player_yuya}}</span></span>,
-									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
-									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_thomas}}</span></span>
+									<span class="personnel-credit">{{{lang.incline_role_guitar_solos}}}<span class="personnel-name">{{{lang.incline_player_yuya}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_bass}}}<span class="personnel-name">{{{lang.incline_player_ric}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_drums}}}<span class="personnel-name">{{{lang.incline_player_thomas}}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_sunday_errand}}</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{{lang.incline_title_sunday_errand}}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">{{lang.role_guitar_solos}}<span class="personnel-name">{{lang.player_yuya}}</span></span>,
-									<span class="personnel-credit">{{lang.role_backing_guitars}}<span class="personnel-name">{{lang.player_toshi}}</span></span>,
-									<span class="personnel-credit">{{lang.role_trumpet1}}<span class="personnel-name">{{lang.player_wayne}}</span></span>,
-									<span class="personnel-credit">{{lang.role_trumpet2}}<span class="personnel-name">{{lang.player_aaron}}</span></span>,
-									<span class="personnel-credit">{{lang.role_trombone}}<span class="personnel-name">{{lang.player_andy}}</span></span>,
-									<span class="personnel-credit">{{lang.role_tenor_sax}} <span class="personnel-name">{{lang.player_brandon}}</span></span>,
-									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
-									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_joel}}</span></span>
+									<span class="personnel-credit">{{{lang.incline_role_guitar_solos}}}<span class="personnel-name">{{{lang.incline_player_yuya}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_backing_guitars}}}<span class="personnel-name">{{{lang.incline_player_toshi}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_trumpet1}}}<span class="personnel-name">{{{lang.incline_player_wayne}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_trumpet2}}}<span class="personnel-name">{{{lang.incline_player_aaron}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_trombone}}}<span class="personnel-name">{{{lang.incline_player_andy}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_tenor_sax}}} <span class="personnel-name">{{{lang.incline_player_brandon}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_bass}}}<span class="personnel-name">{{{lang.incline_player_ric}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_drums}}}<span class="personnel-name">{{{lang.incline_player_joel}}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_western_capital}}</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{{lang.incline_title_western_capital}}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">{{lang.role_ewi}}<span class="personnel-name">{{lang.player_peter}}</span></span>,
-									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
-									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_thomas}}</span></span>
+									<span class="personnel-credit">{{{lang.incline_role_ewi}}}<span class="personnel-name">{{{lang.incline_player_peter}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_bass}}}<span class="personnel-name">{{{lang.incline_player_ric}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_drums}}}<span class="personnel-name">{{{lang.incline_player_thomas}}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_emmy}}</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{{lang.incline_title_emmy}}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">{{lang.role_guitar_solo}}<span class="personnel-name">{{lang.player_richard}}</span></span>,
-									<span class="personnel-credit">{{lang.role_soprano_sax}}<span class="personnel-name">{{lang.player_brandon}}</span></span>,
-									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
-									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_joel}}</span></span>
+									<span class="personnel-credit">{{{lang.incline_role_guitar_solo}}}<span class="personnel-name">{{{lang.incline_player_richard}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_soprano_sax}}}<span class="personnel-name">{{{lang.incline_player_brandon}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_bass}}}<span class="personnel-name">{{{lang.incline_player_ric}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_drums}}}<span class="personnel-name">{{{lang.incline_player_joel}}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_hemispheres}}</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{{lang.incline_title_hemispheres}}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">{{lang.role_tenor_sax}}<span class="personnel-name">{{lang.player_brandon}}</span></span>,
-									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
-									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_joel}}</span></span>
+									<span class="personnel-credit">{{{lang.incline_role_tenor_sax}}}<span class="personnel-name">{{{lang.incline_player_brandon}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_bass}}}<span class="personnel-name">{{{lang.incline_player_ric}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_drums}}}<span class="personnel-name">{{{lang.incline_player_joel}}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_incline}}</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{{lang.incline_title_incline}}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">{{lang.role_vocals}}<span class="personnel-name">{{lang.player_woody}}</span></span>,
-									<span class="personnel-credit">{{lang.role_guitar_solos}}<span class="personnel-name">{{lang.player_toshi}}</span></span>,
-									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_jimmy}}</span></span>,
-									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_vinnie}}</span></span>
+									<span class="personnel-credit">{{{lang.incline_role_vocals}}}<span class="personnel-name">{{{lang.incline_player_woody}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_guitar_solos}}}<span class="personnel-name">{{{lang.incline_player_toshi}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_bass}}}<span class="personnel-name">{{{lang.incline_player_jimmy}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_drums}}}<span class="personnel-name">{{{lang.incline_player_vinnie}}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_decker}}</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{{lang.incline_title_decker}}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
-									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_vinnie}}</span></span>
+									<span class="personnel-credit">{{{lang.incline_role_bass}}}<span class="personnel-name">{{{lang.incline_player_ric}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_drums}}}<span class="personnel-name">{{{lang.incline_player_vinnie}}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_keep_climbing}}</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{{lang.incline_title_keep_climbing}}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">{{lang.role_guitar}}<span class="personnel-name">{{lang.player_yuya}}</span></span>,
-									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_ric}}</span></span>,
-									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_thomas}}</span></span>
+									<span class="personnel-credit">{{{lang.incline_role_guitar}}}<span class="personnel-name">{{{lang.incline_player_yuya}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_bass}}}<span class="personnel-name">{{{lang.incline_player_ric}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_drums}}}<span class="personnel-name">{{{lang.incline_player_thomas}}}</span></span>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="tracklist-item">
 								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{lang.title_timeline}}</span></div>
+								<div class="track-title"><div class="track-title-playing-icon"></div><span class="track-title-text">{{{lang.incline_title_timeline}}}</span></div>
 								<div class="track-personnel">
-									<span class="personnel-credit">{{lang.role_guitar}}<span class="personnel-name">{{lang.player_toshi}}</span></span>,
-									<span class="personnel-credit">{{lang.role_alto_sax}}<span class="personnel-name">{{lang.player_brandon}}</span></span>,
-									<span class="personnel-credit">{{lang.role_bass}}<span class="personnel-name">{{lang.player_teppei}}</span></span>,
-									<span class="personnel-credit">{{lang.role_drums}}<span class="personnel-name">{{lang.player_joel}}</span></span>
+									<span class="personnel-credit">{{{lang.incline_role_guitar}}}<span class="personnel-name">{{{lang.incline_player_toshi}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_alto_sax}}}<span class="personnel-name">{{{lang.incline_player_brandon}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_bass}}}<span class="personnel-name">{{{lang.incline_player_teppei}}}</span></span>,
+									<span class="personnel-credit">{{{lang.incline_role_drums}}}<span class="personnel-name">{{{lang.incline_player_joel}}}</span></span>
 								</div>
 							</div>
 						</li>
@@ -503,52 +503,52 @@
 				</div>
 				<div id="playback-controls">
 					<button id="play-button" type="button"></button>
-					<div id="playback-track-title">{{lang.miniplayer_instructions}}</div>
+					<div id="playback-track-title">{{{lang.incline_miniplayer_instructions}}}</div>
 					<div>
 						<progress id="track-progress" value="0"></progress>
 					</div>
 				</div>
 			</div>
 			<div id="buy-options">
-				<h2 id="buy-options-title">{{lang.buy_options_title}}</h2>
+				<h2 id="buy-options-title">{{{lang.incline_buy_options_title}}}</h2>
 				<div class="buy-option-item">
 					<div id="buy-option-art"></div>
-					<div class="buy-option-title">{{lang.product_physical_cd_title}}</div>
-					<div class="buy-option-desc">{{lang.product_physical_cd_desc}}</div>
+					<div class="buy-option-title">{{{lang.incline_product_physical_cd_title}}}</div>
+					<div class="buy-option-desc">{{{lang.incline_product_physical_cd_desc}}}</div>
 					<form action="{{api_root}}/create-checkout-session?productId=album-signed" method="POST">
-						<button type="submit" class="buy-button">{{lang.buy_signed}}</button>
+						<button type="submit" class="buy-button">{{{lang.incline_buy_signed}}}</button>
 					</form>
 					<form action="{{api_root}}/create-checkout-session?productId=album-sealed" method="POST">
-						<button type="submit" class="buy-button">{{lang.buy_sealed}}</button>
+						<button type="submit" class="buy-button">{{{lang.incline_buy_sealed}}}</button>
 					</form>
 				</div>
 				<div class="buy-option-item">
 					<div id="buy-option-art"></div>
-					<div class="buy-option-title">{{lang.product_album_download_title}}</div>
-					<div class="buy-option-desc">{{lang.product_album_download_desc}}</div>
+					<div class="buy-option-title">{{{lang.incline_product_album_download_title}}}</div>
+					<div class="buy-option-desc">{{{lang.incline_product_album_download_desc}}}</div>
 					<form action="{{api_root}}/create-checkout-session?productId=album-download" method="POST">
-						<button type="submit" class="buy-button">{{lang.buy_now}}</button>
+						<button type="submit" class="buy-button">{{{lang.incline_buy_now}}}</button>
 					</form>
 				</div>
 				<div class="buy-option-item">
 					<div id="buy-option-art"></div>
-					<div class="buy-option-title">{{lang.product_minusone_title}}</div>
-					<div class="buy-option-desc">{{lang.product_minusone_desc}}</div>
+					<div class="buy-option-title">{{{lang.incline_product_minusone_title}}}</div>
+					<div class="buy-option-desc">{{{lang.incline_product_minusone_desc}}}</div>
 					<form action="{{api_root}}/create-checkout-session?productId=minus-one" method="POST">
-						<button type="submit" class="buy-button">{{lang.buy_now}}</button>
+						<button type="submit" class="buy-button">{{{lang.incline_buy_now}}}</button>
 					</form>
 				</div>
 				<div class="buy-option-item">
 					<div id="buy-option-art"></div>
-					<div class="buy-option-title">{{lang.product_sheetmusic_title}}</div>
-					<div class="buy-option-desc">{{lang.product_sheetmusic_desc}}</div>
+					<div class="buy-option-title">{{{lang.incline_product_sheetmusic_title}}}</div>
+					<div class="buy-option-desc">{{{lang.incline_product_sheetmusic_desc}}}</div>
 					<form action="{{api_root}}/create-checkout-session?productId=pdf" method="POST">
-						<button type="submit" class="buy-button">{{lang.buy_now}}</button>
+						<button type="submit" class="buy-button">{{{lang.incline_buy_now}}}</button>
 					</form>
 				</div>
 			</div>
 			<div id="additional-buy-options">
-				{{lang.available_on}}
+				{{{lang.incline_available_on}}}
 			</div>
 		</div>
 		{{template=footer.html}}
