@@ -1,4 +1,16 @@
 {
+	"global_touch": ["touch", "触って"],
+	"global_click": ["click", "クリックして"],
+	"global_purchase_success": [
+		"<p style='font-weight:bold'>Thank you for your purchase!</p> <p>If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships.</p>",
+		""
+	],
+	"global_miniplayer_instructions": [
+		"<span class='click-text capital'></span> track titles to play samples",
+		"トラックタイトルを<span class='click-text'></span>再生します。"
+	],
+	"global_buy_options_title": ["How to listen", "聞く方法"],
+	"global_buy_now": ["Buy now", "買う"],
 	"navbar_home": ["Home", "ホーム"],
 	"navbar_mailing_list": ["Mailing list", "メーリングリスト"],
 	"navbar_works": ["Listen / Buy", "聞く・買う"],
@@ -105,14 +117,12 @@
 		"Online store page for Peter Fernandes' 2014 album, Q.E.D.",
 		"「Q.E.D.」というピーター・フェルナンデスの2014年のアルバムのウェブストア"
 	],
-	"qed_buy_options_title": ["How to listen", "聞く方法"],
-	"qed_buy_now": ["Buy now", "買う"],
-	"qed_product_album_download_title": ["Album download - $10", "アルバムダウンロード - $10"],
+	"qed_product_album_download_title": ["Album download", "アルバムダウンロード"],
 	"qed_product_album_download_desc": [
 		"Your choice of MP3, WAV, or FLAC files for each song. Available to download immediately after payment.",
 		"MP3とWAVとFLACでそれぞれの曲。支払い後で、すぐダウンロードできます。"
 	],
-	"qed_product_minusone_title": ["&ldquo;Minus one&rdquo; Package - $10", "「マイナス・ワン」のパッケージ - $10"],
+	"qed_product_minusone_title": ["&ldquo;Minus one&rdquo; Package", "「マイナス・ワン」のパッケージ"],
 	"qed_product_minusone_desc": [
 		"WAV and MP3 play-along versions of each song for drums, bass, solos, etc.",
 		"WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など"
@@ -121,14 +131,7 @@
 		"Also available on <a class='external-link nowrap' href='https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb?si=A80KOVpWTGawXxHNWmjNlg'>Spotify</a>, <a class='external-link nowrap' href='https://music.apple.com/us/album/q-e-d/898109831'>Apple Music</a>, and other services.",
 		"<a class='external-link nowrap' href='https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb?si=A80KOVpWTGawXxHNWmjNlg'>スポティファイ</a>や<a class='external-link nowrap' href='https://music.apple.com/us/album/q-e-d/898109831'>アップルミュージック</a>などでも配信中です。"
 	],
-	"qed_purchase_success": [
-		"<p style='font-weight:bold'>Thank you for your purchase!</p> <p>If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships.</p>",
-		""
-	],
 	"qed_album_title": ["Q.E.D. (2014)", "Q.E.D. (2014年)"],
-	"qed_miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
-	"qed_touch": ["touch", "触って"],
-	"qed_click": ["click", "クリックして"],
 	"qed_player_peter": ["Peter Fernandes", "ピーター・フェルナンデス"],
 	"qed_player_ric": ["Ric Fierabracci", "リック・フィエラブラッチ"],
 	"qed_player_jimmy": ["Jimmy Johnson", "ジミー・ジョンソン"],

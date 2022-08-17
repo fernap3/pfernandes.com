@@ -10,6 +10,7 @@ const handlebars = require("express-handlebars");
 
 const TEST_MODE = process.env.LIVE_MODE == null || process.env.LIVE_MODE == "";
 
+const ALBUMS = require("./albums.json");
 const PRODUCTS = [
 	{
 		title: "Q.E.D.",
@@ -165,21 +166,6 @@ async function handleResourceGet(req, res)
 	if (urlPath.endsWith(".hbs"))
 	{
 		const fileName = pathOnDisk.split("/").at(-1);
-		// const fileText = await fs.readFile(fullPath, { encoding: "utf8" });
-
-		// const compiledTemplate = handlebars.compile(fileText, { strict: true, });
-		// const html = compiledTemplate({
-		// 	lang: translations[fileName],
-		// });
-
-
-
-		
-		// let html = await replaceTemplates(pathOnDisk, pageLang)
-		// html = await translateHtml(html, fileName, pageLang);
-		// html = await replaceVariables(html, req, pageLang);
-		
-		// res.status(200).send(html);
 
 		let page_path_without_lang_prefix = req.path.replace("/jp", "");
 		if (!page_path_without_lang_prefix.startsWith("/"))
@@ -193,7 +179,6 @@ async function handleResourceGet(req, res)
 			pageTranslations[key] = pageTranslations[key][pageLang === "jp" ? 1 : 0];
 
 		
-		
 		const filenameWithoutExtension = path.parse(fileName).name;
 		res.render(filenameWithoutExtension, {
 			layout: false,
@@ -205,12 +190,19 @@ async function handleResourceGet(req, res)
 			full_page_url: `${webPageOrigin}${req.url == "/" ? "" : req.url}`,
 			full_page_url_en: `${webPageOrigin}${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
 			full_page_url_jp: `${webPageOrigin}/jp${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
+			origin: webPageOrigin,
 			api_root: origin,
 			css: {
 				fonts: await fs.readFile(path.join(__dirname, "static", "fonts.css"), { encoding: "utf8" }),
 				main: await fs.readFile(path.join(__dirname, "static", "main.css"), { encoding: "utf8" }),
 			},
 			lang: pageTranslations,
+			album: ALBUMS.find(a => a.page === fileName),
+			helpers: {
+				lang: (langId) => {
+					return pageTranslations[langId];
+				}
+			}
 		});
 		return;
 	}
@@ -447,80 +439,6 @@ async function getS3DownloadUrl(key)
 	});
 	
 	return await getSignedUrl(client, command, { expiresIn: 86400 });
-}
-
-async function replaceVariables(html, req, pageLang)
-{
-	let page_path_without_lang_prefix = req.path.replace("/jp", "");
-	if (!page_path_without_lang_prefix.startsWith("/"))
-		page_path_without_lang_prefix = "/" + page_path_without_lang_prefix;
-
-	const origin = (req.headers["x-forwarded-proto"] ?? (TEST_MODE ? "http" : "https")) + "://" + req.get("host");
-	const webPageOrigin = origin.replace("api.", "");
-	
-	const vars = {
-		page_lang: pageLang === "jp" ? "ja" : "en",
-		site_root: pageLang === "jp" ? "/jp" : "/",
-		lang_prefix: pageLang === "jp" ? "/jp/" : "/",
-		page_path: req.path,
-		page_path_without_lang_prefix,
-		full_page_url: `${webPageOrigin}${req.url == "/" ? "" : req.url}`,
-		full_page_url_en: `${webPageOrigin}${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
-		full_page_url_jp: `${webPageOrigin}/jp${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
-		api_root: origin,
-	};
-	
-	return html.replace(/\{\{(.+?)\}\}/g, (matchValue, propName) => {
-		return vars[propName] ?? matchValue;
-	});
-}
-
-async function replaceTemplates(fullPath, pageLang)
-{
-	const fileText = await fs.readFile(fullPath, { encoding: "utf8" });
-
-	const templateRegex = /\{\{template=(.+)\}\}/g;
-	const templateHtmls = {};
-	let match;
-
-	while ((match = templateRegex.exec(fileText)) != null)
-	{
-		const templateFilename = match[1];
-		const templateFullPath = path.resolve(".", "static", templateFilename);
-		const templateText = await fs.readFile(templateFullPath, { encoding: "utf8" });
-		templateHtmls[templateFilename] = templateText;
-	}
-
-	for (const templateFilename of Object.keys(templateHtmls))
-	{
-		templateHtmls[templateFilename] = await translateHtml(templateHtmls[templateFilename], templateFilename, pageLang);
-	}
-	
-	return fileText.replace(templateRegex, (matchValue, templateName) =>
-	{
-		if (templateName.endsWith(".css"))
-			return `<style>${templateHtmls[templateName]}</style>`;
-		else
-			return templateHtmls[templateName];
-	});
-}
-
-async function translateHtml(html, fileName, lang)
-{
-	const translationIndex = lang === "jp" ? 1 : 0;
-	const langObj = translations[fileName];
-
-	if (langObj == null)
-		return html;
-
-	return html.replace(/\{\{(.+?)\}\}/g, (matchValue, langKey) => {
-		const keyParts = langKey.split(".").slice(1); // Get rid of the "lang." prefix from the key
-
-		if (langObj[keyParts[0]] == null)
-			return matchValue;
-
-		return langObj[keyParts[0]][translationIndex] ?? matchValue;
-	});
 }
 
 const PORT = process.env.PORT || 5001;

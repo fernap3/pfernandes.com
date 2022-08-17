@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{page_lang}}">
 	<head>
-		<title>{{{lang.qed_meta_title}}}</title>
-		<meta name="description" content="{{{lang.qed_meta_description}}}">
-		<meta name="og:image" content="https://pfernandes.com/images/qed-cover.jpg">
+		<title>{{lang album.metaTitleLangId}}</title>
+		<meta name="description" content="{{lang album.metaDescLangId}}">
+		<meta name="og:image" content="{{origin}}{{album.coverUrl}}">
 		{{>common_head_tags}}
 		<script src="main.js" defer></script>
 		<style>
@@ -286,12 +286,12 @@
 			}
 
 			.click-text::before {
-				content: '{{{lang.qed_touch}}}';
+				content: '{{lang.global_touch}}';
 			}
 
 			@media (pointer: fine) {
 				.click-text::before {
-					content: '{{{lang.qed_click}}}';
+					content: '{{lang.global_click}}';
 				}
 			}
 
@@ -369,172 +369,54 @@
 	</head>
 	<body>
 		<dialog id="purchase-success-dialog">
-			{{{lang.qed_purchase_success}}}
+			{{{lang.global_purchase_success}}}
 			<button id="purchase-success-close"></button>
 		</dialog>
 		{{>navbar}}
 		<div id="content">
-			<h1 id="page-title">{{{lang.qed_album_title}}}</h1>
+			<h1 id="page-title">{{lang album.titleLangId}}</h1>
 			<div id="album-info">
-				<img id="main-cover" src="/images/qed-cover.jpg">
+				<img id="main-cover" src="{{album.coverUrl}}">
 				<div id="scroll-header" style="display: none">
-					<img id="main-cover-stuck" src="/images/qed-cover.jpg">
+					<img id="main-cover-stuck" src="{{album.coverUrl}}">
 				</div>
 				<div id="tracklist">
 					<ol>
-						<li>
-							<div class="tracklist-item">
-								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon white-icon"></div><span class="track-title-text">{{{lang.qed_title_destiny_controller}}}</span></div>
-								<div class="track-personnel">
-									<span class="personnel-credit">{{{lang.qed_role_guitar_solos}}}<span class="personnel-name">{{{lang.qed_player_brett}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_synth_solos}}}<span class="personnel-name">{{{lang.qed_player_derek}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_backing_guitars}}}<span class="personnel-name">{{{lang.qed_player_chris}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_bass}}}<span class="personnel-name">{{{lang.qed_player_ric}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_drums}}}<span class="personnel-name">{{{lang.qed_player_shane}}}</span></span>
+						{{#each album.tracks}}
+							<li>
+								<div class="tracklist-item">
+									<div class="track-number"></div>
+									<div class="track-title"><div class="track-title-playing-icon white-icon"></div><span class="track-title-text">{{lang this.titleLangId}}</span></div>
+									<div class="track-personnel">
+										{{#each this.personnel}}
+											<span class="personnel-credit">{{lang this.roleLangId}}<span class="personnel-name">{{lang this.playerLangId}}</span></span>,
+										{{/each}}
+									</div>
 								</div>
-							</div>
-						</li>
-						<li>
-							<div class="tracklist-item">
-								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon white-icon"></div><span class="track-title-text">{{{lang.qed_title_nightbird}}}</span></div>
-								<div class="track-personnel">
-									<span class="personnel-credit">{{{lang.qed_role_alto_sax}}}<span class="personnel-name">{{{lang.qed_player_marcus}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_guitar}}}<span class="personnel-name">{{{lang.qed_player_chris}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_bass}}}<span class="personnel-name">{{{lang.qed_player_johannes}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_drums}}}<span class="personnel-name">{{{lang.qed_player_joel}}}</span></span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="tracklist-item">
-								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon white-icon"></div><span class="track-title-text">{{{lang.qed_title_grown_ups}}}</span></div>
-								<div class="track-personnel">
-									<span class="personnel-credit">{{{lang.qed_role_tenor_sax}}}<span class="personnel-name">{{{lang.qed_player_trevor}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_ewi}}}<span class="personnel-name">{{{lang.qed_player_peter}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_guitar}}}<span class="personnel-name">{{{lang.qed_player_chris}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_bass}}}<span class="personnel-name">{{{lang.qed_player_ric}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_drums}}}<span class="personnel-name">{{{lang.qed_player_joel}}}</span></span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="tracklist-item">
-								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon white-icon"></div><span class="track-title-text">{{{lang.qed_title_sheffield_songo}}}</span></div>
-								<div class="track-personnel">
-									<span class="personnel-credit">{{{lang.qed_role_guitar_solo}}}<span class="personnel-name">{{{lang.qed_player_john_pelosi}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_ewi}}}<span class="personnel-name">{{{lang.qed_player_peter}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_guitar}}}<span class="personnel-name">{{{lang.qed_player_chris}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_trumpets}}}<span class="personnel-name">{{{lang.qed_player_steve}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_trombone}}}<span class="personnel-name">{{{lang.qed_player_jens}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_tenor_sax}}}<span class="personnel-name">{{{lang.qed_player_tom}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_bass}}}<span class="personnel-name">{{{lang.qed_player_ric}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_drums}}}<span class="personnel-name">{{{lang.qed_player_joel}}}</span></span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="tracklist-item">
-								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon white-icon"></div><span class="track-title-text">{{{lang.qed_title_your_truth}}}</span></div>
-								<div class="track-personnel">
-									<span class="personnel-credit">{{{lang.qed_role_vocals}}}<span class="personnel-name">{{{lang.qed_player_jason}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_guitar_g10_solos}}}<span class="personnel-name">{{{lang.qed_player_richard}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_bass}}}<span class="personnel-name">{{{lang.qed_player_jimmy}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_drums_and_piano_solo}}}<span class="personnel-name">{{{lang.qed_player_gary_husband}}}</span></span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="tracklist-item">
-								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon white-icon"></div><span class="track-title-text">{{{lang.qed_title_dorothy}}}</span></div>
-								<div class="track-personnel">
-									<span class="personnel-credit">{{{lang.qed_role_guitar}}}<span class="personnel-name">{{{lang.qed_player_greg_howe}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_bass}}}<span class="personnel-name">{{{lang.qed_player_ric}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_drums}}}<span class="personnel-name">{{{lang.qed_player_shane}}}</span></span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="tracklist-item">
-								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon white-icon"></div><span class="track-title-text">{{{lang.qed_title_market_street}}}</span></div>
-								<div class="track-personnel">
-									<span class="personnel-credit">{{{lang.qed_role_alto_sax}}}<span class="personnel-name">{{{lang.qed_player_kazuki}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_guitar}}}<span class="personnel-name">{{{lang.qed_player_takashi}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_bass}}}<span class="personnel-name">{{{lang.qed_player_ric}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_drums}}}<span class="personnel-name">{{{lang.qed_player_shane}}}</span></span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="tracklist-item">
-								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon white-icon"></div><span class="track-title-text">{{{lang.qed_title_flight_to_rio}}}</span></div>
-								<div class="track-personnel">
-									<span class="personnel-credit">{{{lang.qed_role_guitar_solos}}}<span class="personnel-name">{{{lang.qed_player_chris}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_trumpets}}}<span class="personnel-name">{{{lang.qed_player_steve}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_trombone}}}<span class="personnel-name">{{{lang.qed_player_jens}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_tenor_sax}}}<span class="personnel-name">{{{lang.qed_player_tom}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_bass}}}<span class="personnel-name">{{{lang.qed_player_johannes}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_drums}}}<span class="personnel-name">{{{lang.qed_player_joel}}}</span></span>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="tracklist-item">
-								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon white-icon"></div><span class="track-title-text">{{{lang.qed_title_qed_intro}}}</span></div>
-								<div class="track-personnel">
-									<span class="personnel-credit">{{{lang.qed_role_g10_solo}}}<span class="personnel-name">{{{lang.qed_player_richard}}}</span></span>
-								</div>
-							</div>
-						</li>
-                        <li>
-							<div class="tracklist-item">
-								<div class="track-number"></div>
-								<div class="track-title"><div class="track-title-playing-icon white-icon"></div><span class="track-title-text">{{{lang.qed_title_qed}}}</span></div>
-								<div class="track-personnel">
-									<span class="personnel-credit">{{{lang.qed_role_synth_solos}}}<span class="personnel-name">{{{lang.qed_player_derek}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_guitar_solo}}}<span class="personnel-name">{{{lang.qed_player_richard}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_guitar}}}<span class="personnel-name">{{{lang.qed_player_brett}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_bass}}}<span class="personnel-name">{{{lang.qed_player_jimmy}}}</span></span>,
-									<span class="personnel-credit">{{{lang.qed_role_drums}}}<span class="personnel-name">{{{lang.qed_player_virgil}}}</span></span>
-								</div>
-							</div>
-						</li>
+							</li>
+						{{/each}}
 					</ol>
 				</div>
 				<div id="playback-controls">
 					<button id="play-button" type="button"></button>
-					<div id="playback-track-title">{{{lang.qed_miniplayer_instructions}}}</div>
+					<div id="playback-track-title">{{{lang.global_miniplayer_instructions}}}</div>
 					<div>
 						<progress id="track-progress" value="0"></progress>
 					</div>
 				</div>
 			</div>
 			<div id="buy-options">
-				<h2 id="buy-options-title">{{{lang.qed_buy_options_title}}}</h2>
-				<div class="buy-option-item">
-					<img id="buy-option-art" src="/images/qed-cover.jpg"></img>
-					<div class="buy-option-title">{{{lang.qed_product_album_download_title}}}</div>
-					<div class="buy-option-desc">{{{lang.qed_product_album_download_desc}}}</div>
-					<form action="{{api_root}}/create-checkout-session?productId=12f33901-a02c-408d-95ca-2457cb176cb1" method="POST">
-						<button type="submit" class="buy-button">{{{lang.qed_buy_now}}}</button>
-					</form>
-				</div>
-				<div class="buy-option-item">
-					<img id="buy-option-art" src="/images/qed-cover.jpg"></img>
-					<div class="buy-option-title">{{{lang.qed_product_minusone_title}}}</div>
-					<div class="buy-option-desc">{{{lang.qed_product_minusone_desc}}}</div>
-					<form action="{{api_root}}/create-checkout-session?productId=07d5fee4-2f61-42de-847d-6dd60a5c6d2b" method="POST">
-						<button type="submit" class="buy-button">{{{lang.qed_buy_now}}}</button>
-					</form>
-				</div>
+				<h2 id="buy-options-title">{{{lang.global_buy_options_title}}}</h2>
+				{{#each album.products}}
+					<div class="buy-option-item">
+						<img id="buy-option-art" src="/images/qed-cover.jpg"></img>
+						<div class="buy-option-title">{{{lang this.titleLangId}}} - ${{this.price}}</div>
+						<div class="buy-option-desc">{{{lang this.descLangId}}}</div>
+						<form action="{{api_root}}/create-checkout-session?productId={{this.id}}" method="POST">
+							<button type="submit" class="buy-button">{{{@root.lang.global_buy_now}}}</button>
+						</form>
+					</div>
+				{{/each}}
 			</div>
 			<div id="additional-buy-options">
 				{{{lang.qed_available_on}}}
