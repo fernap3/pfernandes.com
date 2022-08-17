@@ -430,18 +430,8 @@
 
 			const trackList = [
 			{{#each album.tracks}}
-				hithere
+				{ title: "{{lang this.titleLangId}}", url: "{{this.sampleMp3Url}}" },
 			{{/each}}
-				{ title: "{{{lang.qed_title_destiny_controller}}}", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/01-destiny-controller-sample.mp3" },
-				{ title: "{{{lang.qed_title_nightbird}}}", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/02-nightbird-sample.mp3" },
-				{ title: "{{{lang.qed_title_grown_ups}}}", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/03-grown-ups-sample.mp3" },
-				{ title: "{{{lang.qed_title_sheffield_songo}}}", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/04-sheffield-songo-sample.mp3" },
-				{ title: "{{{lang.qed_title_your_truth}}}", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/05-your-truth-sample.mp3" },
-				{ title: "{{{lang.qed_title_dorothy}}}", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/06-dorothy-sample.mp3" },
-				{ title: "{{{lang.qed_title_market_street}}}", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/07-market-street-sample.mp3" },
-				{ title: "{{{lang.qed_title_flight_to_rio}}}", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/08-flight-to-rio-sample.mp3" },
-				{ title: "{{{lang.qed_title_qed_intro}}}", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/09-qed-intro-sample.mp3" },
-				{ title: "{{{lang.qed_title_qed}}}", url: "https://s3.amazonaws.com/pfernandes.com/track-downloads/qed/samples/10-quod-erat-demonstrandum-sample.mp3" },
 			];
 			let currentTrackIndex = null;
 
@@ -511,7 +501,7 @@
 					{
 						indicateNoTrackPlaying();
 						trackTitleText.classList.remove("song-loaded");
-						trackTitleText.innerHTML = "{{{lang.qed_miniplayer_instructions}}}";
+						trackTitleText.innerHTML = "{{{lang.global_miniplayer_instructions}}}";
 						playButton.style.backgroundImage = `url(/images/play.svg)`;
 						progressBar.value = 0;
 						currentTrackIndex = null;
