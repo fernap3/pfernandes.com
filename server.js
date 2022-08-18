@@ -289,6 +289,7 @@ app.post("/create-checkout-session", async (req, res) =>
 app.options("/mailing-list/subscribe", async (req, res) =>
 {
 	res.setHeader("Access-Control-Allow-Origin", "https://pfernandes.com");
+	res.status(200).send();
 });
 
 app.post("/mailing-list/subscribe", async (req, res) =>
