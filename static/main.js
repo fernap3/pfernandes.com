@@ -57,6 +57,8 @@ async function mailingListSignup(name, email)
 			console.log(`${response.status} ${response.statusText}: ${await response.text()}`)
 			return;
 		}
+
+		alert("All set!");
 	}
 	finally
 	{
