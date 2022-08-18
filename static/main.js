@@ -44,7 +44,7 @@ async function mailingListSignup(name, email)
 
 	try
 	{
-		const response = await fetch("/mailing-list/subscribe", {
+		const response = await fetch("https://api.pfernandes.com/mailing-list/subscribe", {
 			method: "POST",
 			body: JSON.stringify({name, email}),
 			headers: {
