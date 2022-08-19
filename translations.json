@@ -46,7 +46,7 @@
 	"incline_buy_signed": ["Buy signed", "サイン入るで買う"],
 	"incline_buy_sealed": ["Buy sealed", "サインなしで買う"],
 	"incline_buy_now": ["Buy now", "買う"],
-	"incline_product_physical_cd_title": ["Physical CD - $20", "CD - $20"],
+	"incline_product_physical_cd_title": ["Physical CD", "CD"],
 	"incline_product_physical_cd_desc": [
 		"Physical compact disc copy of &ldquo;Incline.&rdquo; Ships internationally. Available signed, or sealed without signature for the same price.",
 		"「インクライン」のCDです。国際で発送できます。サイン入るでもサインなしでも同じ値段です。"
@@ -107,7 +107,7 @@
 	"incline_role_tenor_sax": ["Tenor Sax by ", "テナーサックスは"],
 	"incline_role_alto_sax": ["Alto Sax by ", "アルトサックスは"],
 	"incline_role_soprano_sax": ["Soprano Sax by ", "ソプラノサックスは"],
-	"incline_role_production": ["Production", "プロダクション"],
+	"incline_role_production": ["Production by ", "プロダクション"],
 	"incline_title_galaxy": ["Galaxy", "ギャラクシー"],
 	"incline_title_incline": ["Incline", "インクライン"],
 	"incline_title_western_capital": ["Western Capital", "西京"],

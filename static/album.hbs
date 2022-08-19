@@ -389,7 +389,7 @@
 									<div class="track-title"><div class="track-title-playing-icon white-icon"></div><span class="track-title-text">{{lang this.titleLangId}}</span></div>
 									<div class="track-personnel">
 										{{#each this.personnel}}
-											<span class="personnel-credit">{{lang this.roleLangId}}<span class="personnel-name">{{lang this.playerLangId}}</span></span>,
+											<span class="personnel-credit">{{lang this.roleLangId}}<span class="personnel-name">{{lang this.playerLangId}}</span></span>{{#unless @last}}, {{/unless}}
 										{{/each}}
 									</div>
 								</div>
