@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	<url>
+		<loc>https://pfernandes.com</loc>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://pfernandes.com/jp"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://pfernandes.com"/>
+	</url>
+	<url>
+		<loc>https://pfernandes.com/jp</loc>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://pfernandes.com/jp"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://pfernandes.com"/>
+	</url>
+	<url>
+		<loc>https://pfernandes.com/works</loc>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://pfernandes.com/jp/works"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://pfernandes.com/works"/>
+	</url>
+	<url>
+		<loc>https://pfernandes.com/jp/works</loc>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://pfernandes.com/jp/works"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://pfernandes.com/works"/>
+	</url>
+	<url>
+		<loc>https://pfernandes.com/qed</loc>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://pfernandes.com/jp/qed"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://pfernandes.com/qed"/>
+	</url>
+	<url>
+		<loc>https://pfernandes.com/jp/qed</loc>
+		<xhtml:link rel="alternate" hreflang="ja" href="https://pfernandes.com/jp/qed"/>
+		<xhtml:link rel="alternate" hreflang="en" href="https://pfernandes.com/qed"/>
+	</url>
+</urlset>
