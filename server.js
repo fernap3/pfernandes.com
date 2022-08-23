@@ -220,7 +220,14 @@ async function handleResourceGet(req, res)
 		return;
 	}
 
-	res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+	if (urlPath.endsWith(".css") ||
+		urlPath.endsWith(".js") ||
+		urlPath.endsWith(".jpg") ||
+		urlPath.endsWith(".jpeg") ||
+		urlPath.endsWith(".png") ||
+		urlPath.endsWith(".webp") ||
+		urlPath.endsWith(".avif"))
+		res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
 
 	res.status(200).sendFile(pathOnDisk);
 }
