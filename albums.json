@@ -284,6 +284,24 @@
 	],
 	"tracks": [
 		{
+			"titleLangId": "incline_title_western_capital",
+			"sampleMp3Url": "",
+			"personnel": [
+				{
+					"roleLangId": "incline_role_ewi",
+					"playerLangId": "incline_player_peter"
+				},
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_ric"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_thomas"
+				}
+			]
+		},
+		{
 			"titleLangId": "incline_title_galaxy",
 			"sampleMp3Url": "",
 			"personnel": [
@@ -336,24 +354,6 @@
 				{
 					"roleLangId": "incline_role_drums",
 					"playerLangId": "incline_player_joel"
-				}
-			]
-		},
-		{
-			"titleLangId": "incline_title_western_capital",
-			"sampleMp3Url": "",
-			"personnel": [
-				{
-					"roleLangId": "incline_role_ewi",
-					"playerLangId": "incline_player_peter"
-				},
-				{
-					"roleLangId": "incline_role_bass",
-					"playerLangId": "incline_player_ric"
-				},
-				{
-					"roleLangId": "incline_role_drums",
-					"playerLangId": "incline_player_thomas"
 				}
 			]
 		},
@@ -420,20 +420,6 @@
 			]
 		},
 		{
-			"titleLangId": "incline_title_decker",
-			"sampleMp3Url": "",
-			"personnel": [
-				{
-					"roleLangId": "incline_role_bass",
-					"playerLangId": "incline_player_ric"
-				},
-				{
-					"roleLangId": "incline_role_drums",
-					"playerLangId": "incline_player_vinnie"
-				}
-			]
-		},
-		{
 			"titleLangId": "incline_title_keep_climbing",
 			"sampleMp3Url": "",
 			"personnel": [
@@ -480,6 +466,20 @@
 				{
 					"roleLangId": "incline_role_production",
 					"playerLangId": "incline_player_peter"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_title_decker",
+			"sampleMp3Url": "",
+			"personnel": [
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_ric"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_vinnie"
 				}
 			]
 		}
