@@ -189,7 +189,6 @@ async function handleResourceGet(req, res)
 		const pageTranslations = { ...translations };
 		for (const key in pageTranslations)
 			pageTranslations[key] = pageTranslations[key][pageLang === "jp" ? 1 : 0];
-
 		
 		res.render(templateName, {
 			layout: false,
@@ -198,7 +197,7 @@ async function handleResourceGet(req, res)
 			lang_prefix: pageLang === "jp" ? "/jp/" : "/",
 			page_path: req.path,
 			page_path_without_lang_prefix,
-			full_page_url: `${webPageOrigin}${req.url == "/" ? "" : req.url}`,
+			full_page_url: `${webPageOrigin}${req.url.replace(/\/$/, "")}`,
 			full_page_url_en: `${webPageOrigin}${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
 			full_page_url_jp: `${webPageOrigin}/jp${page_path_without_lang_prefix == "/" ? "" : page_path_without_lang_prefix}`,
 			origin: webPageOrigin,
