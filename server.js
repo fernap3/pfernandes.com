@@ -50,6 +50,74 @@ const PRODUCTS = [
 			},
 		]
 	},
+	{
+		title: `Incline Physical CD, Signed`,
+		id: "427c90d3-ed8a-4ff7-b368-fafacc8a0aaf",
+		productId: TEST_MODE ? "prod_MKd44D8EGStKMq" : "prod_MKd0JAF4l2Dyvi",
+		priceId: TEST_MODE ? "price_1LbxonE4w3gmRKqxMzE1AyQs" : "price_1LbxkyE4w3gmRKqxv4deNBho",
+		pageUrl: "/incline",
+		downloads: [
+			{
+				s3Key: "",
+				linkTitle: "Download as MP3"
+			},
+			{
+				s3Key: "",
+				linkTitle: "Download as WAV"
+			},
+		]
+	},
+	{
+		title: `Incline Physical CD, Sealed`,
+		id: "d58c4cf4-0376-4b82-bb4f-2a531bccb0b2",
+		productId: TEST_MODE ? "prod_MKd5trAVteFDLD" : "prod_MKd12E57ul1MoU",
+		priceId: TEST_MODE ? "price_1Lbxp5E4w3gmRKqxMxqOwET9" : "price_1LbxlFE4w3gmRKqxHVzpJXBw",
+		pageUrl: "/incline",
+		downloads: [
+			{
+				s3Key: "",
+				linkTitle: "Download as MP3"
+			},
+			{
+				s3Key: "",
+				linkTitle: "Download as WAV"
+			},
+		]
+	},
+	{
+		title: `Incline Album Download`,
+		id: "cc39b427-681a-4c4e-882c-148f36fb61d7",
+		productId: TEST_MODE ? "prod_MKd5xPIlyyijTR" : "prod_MKd1Y7B2xGQKuR",
+		priceId: TEST_MODE ? "price_1LbxpLE4w3gmRKqxUdXTPNqM" : "price_1LbxlYE4w3gmRKqxfsiq3LIq",
+		pageUrl: "/incline",
+		downloads: [
+			{
+				s3Key: "",
+				linkTitle: "Download as MP3"
+			},
+			{
+				s3Key: "",
+				linkTitle: "Download as WAV"
+			},
+		]
+	},
+	{
+		title: `Incline Complete Digital Package`,
+		id: "85e3617f-3bed-4917-aa85-2064eb5e7d8d",
+		productId: TEST_MODE ? "prod_MKd5W8dNrhb3d9" : "prod_MKd2Gi2GhaJn8F",
+		priceId: TEST_MODE ? "price_1LbxpeE4w3gmRKqxehTaozPB" : "price_1Lbxm4E4w3gmRKqxRIZdUdhc",
+		pageUrl: "/incline",
+		downloads: [
+			{
+				s3Key: "",
+				linkTitle: "Download as MP3"
+			},
+			{
+				s3Key: "",
+				linkTitle: "Download as WAV"
+			},
+		]
+	},
 ];
 
 const STRIPE_KEY = process.env.STRIPE_KEY;
