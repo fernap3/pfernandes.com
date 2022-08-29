@@ -407,14 +407,16 @@
 			</div>
 			<div id="buy-options">
 				<h2 id="buy-options-title">{{{lang.global_buy_options_title}}}</h2>
-				{{#each album.products}}
+				{{#each album.productGroups}}
 					<div class="buy-option-item">
 						<img id="buy-option-art" src="{{@root.album.coverUrl}}"></img>
 						<div class="buy-option-title">{{{lang this.titleLangId}}} - ${{this.price}}</div>
 						<div class="buy-option-desc">{{{lang this.descLangId}}}</div>
-						<form action="{{api_root}}/create-checkout-session?productId={{this.id}}" method="POST">
-							<button type="submit" class="buy-button">{{{@root.lang.global_buy_now}}}</button>
-						</form>
+						{{#each this.products}}
+							<form action="{{api_root}}/create-checkout-session?productId={{this.id}}" method="POST">
+								<button type="submit" class="buy-button">{{{lang this.buyButtonLangId}}}</button>
+							</form>
+						{{/each}}
 					</div>
 				{{/each}}
 			</div>

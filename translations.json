@@ -11,6 +11,8 @@
 	],
 	"global_buy_options_title": ["How to listen", "聞く方法"],
 	"global_buy_now": ["Buy now", "買う"],
+	"global_buy_signed": ["Buy signed", "サイン入るで買う"],
+	"global_buy_sealed": ["Buy sealed", "サインなしで買う"],
 	"global_available_on": [
 		"Also available on <a class='external-link nowrap' href='{{spotifyUrl}}'>Spotify</a>, <a class='external-link nowrap' href='{{appleMusicUrl}}'>Apple Music</a>, and other services.",
 		"<a class='external-link nowrap' href='{{spotifyUrl}}'>スポティファイ</a>や<a class='external-link nowrap' href='{{appleMusicUrl}}'>アップルミュージック</a>などでも配信中です。"
@@ -43,28 +45,26 @@
 		"「インクライン」というピーター・フェルナンデスの2022年のアルバムのウェブストア"
 	],
 	"incline_buy_options_title": ["How to listen", "聞く方法"],
-	"incline_buy_signed": ["Buy signed", "サイン入るで買う"],
-	"incline_buy_sealed": ["Buy sealed", "サインなしで買う"],
 	"incline_buy_now": ["Buy now", "買う"],
 	"incline_product_physical_cd_title": ["Physical CD", "CD"],
 	"incline_product_physical_cd_desc": [
-		"Physical compact disc copy of &ldquo;Incline.&rdquo; Ships internationally. Available signed, or sealed without signature for the same price.",
-		"「インクライン」のCDです。国際で発送できます。サイン入るでもサインなしでも同じ値段です。"
+		"Physical compact disc copy of &ldquo;Incline.&rdquo; Ships internationally. Available signed, or sealed without signature for the same price. Includes digital download available immediately after payment.",
+		""
 	],
-	"incline_product_album_download_title": ["Album download - $10", "アルバムダウンロード - $10"],
+	"incline_product_album_download_title": ["Album download", "アルバムダウンロード"],
 	"incline_product_album_download_desc": [
 		"Your choice of MP3, WAV, or FLAC files for each song. Available to download immediately after payment.",
-		"MP3とWAVとFLACでそれぞれの曲。支払い後で、すぐダウンロードできます。"
+		""
 	],
-	"incline_product_minusone_title": ["&ldquo;Minus one&rdquo; Package - $10", "「マイナス・ワン」のパッケージ - $10"],
+	"incline_product_minusone_title": ["&ldquo;Minus one&rdquo; Package", "「マイナス・ワン」のパッケージ"],
 	"incline_product_minusone_desc": [
-		"WAV and MP3 play-along versions of each song for drums, bass, solos, etc.",
-		"WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など"
+		"Digital album download, WAV and MP3 play-along versions of each song for drums, bass, solos, etc., PDF lead sheets for each track, plus bonus transcriptions for a selection of solos.",
+		""
 	],
-	"incline_product_sheetmusic_title": ["Sheet music Package - $10", "楽譜のパッケージ - $10"],
+	"incline_product_sheetmusic_title": ["Sheet music Package", "楽譜のパッケージ"],
 	"incline_product_sheetmusic_desc": [
-		"Lead sheets for each song, in PDF format",
-		"PDFでそれぞれの曲のリード・シート"
+		"PDF lead sheets for each track, transcriptions for a selection of solos, and sheet music parts for each instrument.",
+		""
 	],
 	"incline_available_on": [
 		"Also available on <a class='nowrap' href='#'>Spotify</a>, <a class='nowrap' href='#'>Apple Music</a>, and other services.",

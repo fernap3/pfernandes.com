@@ -8,18 +8,28 @@
 	"coverUrl": "/images/qed-cover.jpg",
 	"spotifyUrl": "https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb?si=A80KOVpWTGawXxHNWmjNlg",
 	"appleMusicUrl": "https://music.apple.com/us/album/q-e-d/898109831",
-	"products": [
+	"productGroups": [
 		{
-			"id": "12f33901-a02c-408d-95ca-2457cb176cb1",
 			"titleLangId": "qed_product_album_download_title",
 			"descLangId": "qed_product_album_download_desc",
-			"price": 10
+			"price": 10,
+			"products": [
+				{
+					"id": "12f33901-a02c-408d-95ca-2457cb176cb1",
+					"buyButtonLangId": "global_buy_now"
+				}
+			]
 		},
 		{
-			"id": "07d5fee4-2f61-42de-847d-6dd60a5c6d2b",
 			"titleLangId": "qed_product_minusone_title",
-			"descLangId": "qed_product_album_download_desc",
-			"price": 10
+			"descLangId": "qed_product_minusone_desc",
+			"price": 10,
+			"products": [
+				{
+					"id": "07d5fee4-2f61-42de-847d-6dd60a5c6d2b",
+					"buyButtonLangId": "global_buy_now"
+				}
+			]
 		}
 	],
 	"tracks": [
@@ -274,12 +284,54 @@
 	"coverUrl": "/images/incline-cover.webp",
 	"spotifyUrl": "https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb?si=A80KOVpWTGawXxHNWmjNlg",
 	"appleMusicUrl": "https://music.apple.com/us/album/q-e-d/898109831",
-	"products": [
+	"productGroups": [
 		{
-			"id": "427c90d3-ed8a-4ff7-b368-fafacc8a0aaf",
 			"titleLangId": "incline_product_physical_cd_title",
 			"descLangId": "incline_product_physical_cd_desc",
-			"price": 25
+			"price": 25,
+			"products": [
+				{
+					"id": "427c90d3-ed8a-4ff7-b368-fafacc8a0aaf",
+					"buyButtonLangId": "global_buy_signed"
+				},
+				{
+					"id": "d58c4cf4-0376-4b82-bb4f-2a531bccb0b2",
+					"buyButtonLangId": "global_buy_sealed"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_product_album_download_title",
+			"descLangId": "incline_product_album_download_desc",
+			"price": 10,
+			"products": [
+				{
+					"id": "cc39b427-681a-4c4e-882c-148f36fb61d7",
+					"buyButtonLangId": "global_buy_now"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_product_minusone_title",
+			"descLangId": "incline_product_minusone_desc",
+			"price": 15,
+			"products": [
+				{
+					"id": "85e3617f-3bed-4917-aa85-2064eb5e7d8d",
+					"buyButtonLangId": "global_buy_now"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_product_sheetmusic_title",
+			"descLangId": "incline_product_sheetmusic_desc",
+			"price": 10,
+			"products": [
+				{
+					"id": "a5988500-58e9-40c2-ab6f-10efd4823131",
+					"buyButtonLangId": "global_buy_now"
+				}
+			]
 		}
 	],
 	"tracks": [
