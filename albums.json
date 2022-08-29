@@ -451,6 +451,10 @@
 					"playerLangId": "incline_player_toshi"
 				},
 				{
+					"roleLangId": "incline_role_backing_guitars",
+					"playerLangId": "incline_player_chris"
+				},
+				{
 					"roleLangId": "incline_role_bass",
 					"playerLangId": "incline_player_jimmy"
 				},
