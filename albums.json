@@ -312,23 +312,12 @@
 			]
 		},
 		{
-			"titleLangId": "incline_product_minusone_title",
-			"descLangId": "incline_product_minusone_desc",
-			"price": 15,
+			"titleLangId": "incline_product_fulldigital_title",
+			"descLangId": "incline_product_fulldigital_desc",
+			"price": 20,
 			"products": [
 				{
 					"id": "85e3617f-3bed-4917-aa85-2064eb5e7d8d",
-					"buyButtonLangId": "global_buy_now"
-				}
-			]
-		},
-		{
-			"titleLangId": "incline_product_sheetmusic_title",
-			"descLangId": "incline_product_sheetmusic_desc",
-			"price": 10,
-			"products": [
-				{
-					"id": "a5988500-58e9-40c2-ab6f-10efd4823131",
 					"buyButtonLangId": "global_buy_now"
 				}
 			]

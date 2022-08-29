@@ -3,7 +3,7 @@
 	"global_click": ["click", "クリックして"],
 	"global_purchase_success": [
 		"<p style='font-weight:bold'>Thank you for your purchase!</p> <p>If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships.</p>",
-		""
+		"<p style='font-weight:bold'>買ってくれてありがとうございます！</p> <p>ダウンロードを買ったの場合は、メールをチェックしてください。CDを買ったの場合は、送ったらメールを届くはずです。</p>"
 	],
 	"global_miniplayer_instructions": [
 		"<span class='click-text capital'></span> track titles to play samples",
@@ -48,31 +48,22 @@
 	"incline_buy_now": ["Buy now", "買う"],
 	"incline_product_physical_cd_title": ["Physical CD", "CD"],
 	"incline_product_physical_cd_desc": [
-		"Physical compact disc copy of &ldquo;Incline.&rdquo; Ships internationally. Available signed, or sealed without signature for the same price. Includes digital download available immediately after payment.",
-		""
+		"Physical compact disc copy of &ldquo;Incline.&rdquo; Ships internationally for free. Available signed, or sealed without signature for the same price. Includes digital download available immediately.",
+		"「インクライン」のCDです。無料の国際の出荷するのができます。サインとサインなしで同じ値段です。支払い後ですぐダウンロードもできます。"
 	],
 	"incline_product_album_download_title": ["Album download", "アルバムダウンロード"],
 	"incline_product_album_download_desc": [
-		"Your choice of MP3, WAV, or FLAC files for each song. Available to download immediately after payment.",
-		""
+		"Your choice of MP3, WAV, or FLAC files for each song. Available to download immediately.",
+		"MP3とWAVとFLACでそれぞれの曲です。支払い後ですぐダウンロードできます。"
 	],
-	"incline_product_minusone_title": ["&ldquo;Minus one&rdquo; Package", "「マイナス・ワン」のパッケージ"],
-	"incline_product_minusone_desc": [
-		"Digital album download, WAV and MP3 play-along versions of each song for drums, bass, solos, etc., PDF lead sheets for each track, plus bonus transcriptions for a selection of solos.",
-		""
-	],
-	"incline_product_sheetmusic_title": ["Sheet music Package", "楽譜のパッケージ"],
-	"incline_product_sheetmusic_desc": [
-		"PDF lead sheets for each track, transcriptions for a selection of solos, and sheet music parts for each instrument.",
-		""
+	"incline_product_fulldigital_title": ["Complete digital package", "完全なデジタルのパッケージ"],
+	"incline_product_fulldigital_desc": [
+		"Digital album download, WAV and MP3 play-along versions of each song for drums, bass, solos, etc., PDF lead sheets and instrument parts for each track, plus bonus transcriptions for a selection of solos. Available to download immediately.",
+		"WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など、またそれぞれの曲のPDFリードシート、それぞれの楽器の譜面、あるソロの書き取りです。支払い後ですぐダウンロードできます。"
 	],
 	"incline_available_on": [
 		"Also available on <a class='nowrap' href='#'>Spotify</a>, <a class='nowrap' href='#'>Apple Music</a>, and other services.",
 		"<a class='nowrap' href='#'>スポティファイ</a>や<a class='nowrap' href='#'>アップルミュージック</a>などでも配信中です。"
-	],
-	"incline_purchase_success": [
-		"<p>Thank you for your purchase!</p> <p>If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships.</p>",
-		""
 	],
 	"incline_album_title": ["Incline (2022)", "インクライン (2022年)"],
 	"incline_miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
