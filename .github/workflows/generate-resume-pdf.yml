@@ -31,8 +31,8 @@ jobs:
           # Version Spec of the version to use.  Examples: 12.x, 10.15.1, >=10.15.0
           node-version: '>=17.0.0'
 
-      - name: Generate PDF using Puppeteer
-        run: npm i && node ./resume-to-pdf.mjs
+      # - name: Generate PDF using Puppeteer
+        # run: npm i && node ./resume-to-pdf.mjs
         
 #       - name: Copy static files to build directory
 #         run: mkdir -p build &&
