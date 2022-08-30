@@ -11,7 +11,7 @@
 	],
 	"global_buy_options_title": ["How to listen", "聞く方法"],
 	"global_buy_now": ["Buy now", "買う"],
-	"global_buy_signed": ["Buy signed", "サイン入るで買う"],
+	"global_buy_signed": ["Buy signed", "サイン入りで買う"],
 	"global_buy_sealed": ["Buy sealed", "サインなしで買う"],
 	"global_available_on": [
 		"Also available on <a class='external-link nowrap' href='{{spotifyUrl}}'>Spotify</a>, <a class='external-link nowrap' href='{{appleMusicUrl}}'>Apple Music</a>, and other services.",
@@ -49,17 +49,17 @@
 	"incline_product_physical_cd_title": ["Physical CD", "CD"],
 	"incline_product_physical_cd_desc": [
 		"Physical compact disc copy of &ldquo;Incline.&rdquo; Ships internationally for free. Available signed, or sealed without signature for the same price. Includes digital download available immediately.",
-		"「インクライン」のCDです。無料の国際の出荷するのができます。サインとサインなしで同じ値段です。支払い後ですぐダウンロードもできます。"
+		"「インクライン」のCDです。無料の国際の出荷するのができます。サインとサインなし同じ値段です。支払い後ですぐダウンロードできます。"
 	],
 	"incline_product_album_download_title": ["Album download", "アルバムダウンロード"],
 	"incline_product_album_download_desc": [
 		"Your choice of MP3, WAV, or FLAC files for each song. Available to download immediately.",
 		"MP3とWAVとFLACでそれぞれの曲です。支払い後ですぐダウンロードできます。"
 	],
-	"incline_product_fulldigital_title": ["Complete digital package", "完全なデジタルのパッケージ"],
+	"incline_product_fulldigital_title": ["Complete digital package", "コンプリートデジタルのパッケージ"],
 	"incline_product_fulldigital_desc": [
 		"Digital album download, WAV and MP3 play-along versions of each song for drums, bass, solos, etc., PDF lead sheets and instrument parts for each track, plus bonus transcriptions for a selection of solos. Available to download immediately.",
-		"WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など、またそれぞれの曲のPDFリードシート、それぞれの楽器の譜面、あるソロの書き取りです。支払い後ですぐダウンロードできます。"
+		"WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など、またそれぞれの曲のPDFリードシート、それぞれの楽器とソロ（1、3、5のみ）の譜面です。支払い後ですぐダウンロードできます。"
 	],
 	"incline_available_on": [
 		"Also available on <a class='nowrap' href='#'>Spotify</a>, <a class='nowrap' href='#'>Apple Music</a>, and other services.",
@@ -74,7 +74,7 @@
 	"incline_player_ric": ["Ric Fierabracci", "リック・フィエラブラッチ"],
 	"incline_player_thomas": ["Thomas Lang", "ドラムはトーマス・ラング"],
 	"incline_player_woody": ["Woody Mankowski", "ボーカルはウッディ・マンコウスキー"],
-	"incline_player_toshi": ["Toshi Yanagi", "としやなぎ"],
+	"incline_player_toshi": ["Toshi Yanagi", "トシヤナギ"],
 	"incline_player_jimmy": ["Jimmy Johnson", "ジミー・ジョンソン"],
 	"incline_player_vinnie": ["Vinnie Colaiuta", "ビニー・カリウタ"],
 	"incline_player_wayne": ["Wayne Bergeron", "ウェイン・バージェロン"],
