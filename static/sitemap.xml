@@ -30,4 +30,10 @@
 		<xhtml:link rel="alternate" hreflang="ja" href="https://pfernandes.com/jp/qed"/>
 		<xhtml:link rel="alternate" hreflang="en" href="https://pfernandes.com/qed"/>
 	</url>
+	<url>
+		<loc>https://pfernandes.com/resume.html</loc>
+	</url>
+	<url>
+		<loc>https://pfernandes.com/resume.pdf</loc>
+	</url>
 </urlset>
