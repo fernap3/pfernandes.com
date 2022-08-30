@@ -211,6 +211,7 @@ app.get("/resume.pdf", async (req, res) =>
 		await browser.close();
 	}
 
+	res.setHeader("Cache-Control", "public");
 	res.sendFile(path.resolve(__dirname, "static/resume.pdf"));
 });
 
