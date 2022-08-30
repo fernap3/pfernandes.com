@@ -7,6 +7,7 @@ const translations = require("./translations.json");
 const countryCodes = require("country-code-lookup");
 const compression = require("compression");
 const handlebars = require("express-handlebars");
+const puppeteer = require("puppeteer");
 
 const TEST_MODE = process.env.LIVE_MODE == null || process.env.LIVE_MODE == "";
 
@@ -190,6 +191,26 @@ app.get(/\/(jp\/)?unsubscribe/, async (req, res) =>
 	await client.send(new SendEmailCommand(params));
 
 	await handleResourceGet(req, res);
+});
+
+app.get("/resume.pdf", async (req, res) =>
+{
+	const browser = await puppeteer.launch({
+		headless: true
+	});
+
+	try
+	{
+		const page = await browser.newPage();
+		await page.goto("file://" + path.resolve(__dirname, "static/resume.html"), { waitUntil: "networkidle2" });
+		await page.pdf({ path: path.resolve(__dirname, "static/resume.pdf") });
+	}
+	finally
+	{
+		await browser.close();
+	}
+
+	res.sendFile(path.resolve(__dirname, "static/resume.pdf"));
 });
 
 app.get("/*", async (req, res) =>
