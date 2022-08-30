@@ -196,7 +196,8 @@ app.get(/\/(jp\/)?unsubscribe/, async (req, res) =>
 app.get("/resume.pdf", async (req, res) =>
 {
 	const browser = await puppeteer.launch({
-		headless: true
+		headless: true,
+		args: ["--no-sandbox"],
 	});
 
 	try
