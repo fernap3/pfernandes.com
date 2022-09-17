@@ -162,6 +162,12 @@
 					text-align: center;
 				}
 			}
+			#buy-options-availability-notice {
+				grid-row: 2;
+				grid-column: 1 / -1;
+				text-align: center;
+				font-weight: bold;
+			}
 			.buy-button {
 				cursor: pointer;
 				background-color: var(--color-brand);
@@ -407,6 +413,9 @@
 			</div>
 			<div id="buy-options">
 				<h2 id="buy-options-title">{{{lang.global_buy_options_title}}}</h2>
+				{{#if album.availabilityNoticeLangId}}
+					<div id="buy-options-availability-notice">{{lang album.availabilityNoticeLangId}}</div>
+				{{/if}}
 				{{#each album.productGroups}}
 					<div class="buy-option-item">
 						<img id="buy-option-art" src="{{@root.album.coverUrl}}"></img>
