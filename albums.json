@@ -328,7 +328,7 @@
 	"tracks": [
 		{
 			"titleLangId": "incline_title_western_capital",
-			"sampleMp3Url": "",
+			"sampleMp3Url": null,
 			"personnel": [
 				{
 					"roleLangId": "incline_role_ewi",
@@ -346,7 +346,7 @@
 		},
 		{
 			"titleLangId": "incline_title_galaxy",
-			"sampleMp3Url": "",
+			"sampleMp3Url": null,
 			"personnel": [
 				{
 					"roleLangId": "incline_role_guitar_solos",
@@ -364,7 +364,7 @@
 		},
 		{
 			"titleLangId": "incline_title_sunday_errand",
-			"sampleMp3Url": "",
+			"sampleMp3Url": null,
 			"personnel": [
 				{
 					"roleLangId": "incline_role_guitar_solos",
@@ -402,7 +402,7 @@
 		},
 		{
 			"titleLangId": "incline_title_emmy",
-			"sampleMp3Url": "",
+			"sampleMp3Url": null,
 			"personnel": [
 				{
 					"roleLangId": "incline_role_guitar_solo",
@@ -424,7 +424,7 @@
 		},
 		{
 			"titleLangId": "incline_title_hemispheres",
-			"sampleMp3Url": "",
+			"sampleMp3Url": null,
 			"personnel": [
 				{
 					"roleLangId": "incline_role_tenor_sax",
@@ -442,7 +442,7 @@
 		},
 		{
 			"titleLangId": "incline_title_incline",
-			"sampleMp3Url": "",
+			"sampleMp3Url": null,
 			"personnel": [
 				{
 					"roleLangId": "incline_role_vocals",
@@ -468,7 +468,7 @@
 		},
 		{
 			"titleLangId": "incline_title_keep_climbing",
-			"sampleMp3Url": "",
+			"sampleMp3Url": null,
 			"personnel": [
 				{
 					"roleLangId": "incline_role_guitar",
@@ -486,7 +486,7 @@
 		},
 		{
 			"titleLangId": "incline_title_timeline",
-			"sampleMp3Url": "",
+			"sampleMp3Url": null,
 			"personnel": [
 				{
 					"roleLangId": "incline_role_guitar",
@@ -508,7 +508,7 @@
 		},
 		{
 			"titleLangId": "incline_title_staging_area",
-			"sampleMp3Url": "",
+			"sampleMp3Url": null,
 			"personnel": [
 				{
 					"roleLangId": "incline_role_production",
@@ -518,7 +518,7 @@
 		},
 		{
 			"titleLangId": "incline_title_decker",
-			"sampleMp3Url": "",
+			"sampleMp3Url": null,
 			"personnel": [
 				{
 					"roleLangId": "incline_role_bass",

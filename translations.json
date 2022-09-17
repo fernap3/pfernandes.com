@@ -72,6 +72,7 @@
 	"incline_availability_notice": ["Preorder below. Estimated availability date is Nov. 2022.", "下記から予約注文ができます。配達とダウンロードは11月ごろにできます。"],
 	"incline_album_title": ["Incline (2022)", "インクライン (2022年)"],
 	"incline_miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
+	"incline_miniplayer_no_samples": ["No samples available yet", "まだサンプルがありません"],
 	"incline_touch": ["touch", "触って"],
 	"incline_click": ["click", "クリックして"],
 	"incline_player_yuya": ["Yuya Komoguchi", "菰口雄矢"],

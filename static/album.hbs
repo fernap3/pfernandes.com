@@ -113,6 +113,9 @@
 			.track-title-text {
 				transform: translateX(-21px);
 				transition: all .3s var(--easing-normal);
+				cursor: default;
+			}
+			.track-title-text.has-sample {
 				cursor: pointer;
 			}
 			.playing .track-title-text {
@@ -124,6 +127,7 @@
 				font-size: 80%;
 				margin-top: .3em;
 				line-height: 1.5em;
+				cursor: default;
 			}
 			.personnel-credit {
 				white-space: nowrap;
@@ -259,6 +263,11 @@
 				cursor: pointer;
 				grid-row: span 2;
 				filter: brightness(.1);
+			}
+
+			#play-button[disabled] {
+				opacity: .6;
+				cursor: default;
 			}
 
 			@media (prefers-color-scheme: dark) {
@@ -413,7 +422,10 @@
 							<li>
 								<div class="tracklist-item">
 									<div class="track-number"></div>
-									<div class="track-title"><div class="track-title-playing-icon white-icon"></div><span class="track-title-text">{{lang this.titleLangId}}</span></div>
+									<div class="track-title">
+										<div class="track-title-playing-icon white-icon"></div>
+										<span class="track-title-text {{#if this.sampleMp3Url}}has-sample{{/if}}">{{lang this.titleLangId}}</span>
+									</div>
 									<div class="track-personnel">
 										{{#each this.personnel}}
 											<span class="personnel-credit">{{lang this.roleLangId}}<span class="personnel-name">{{lang this.playerLangId}}</span></span>{{#unless @last}}, {{/unless}}
@@ -482,7 +494,19 @@
 			const progressBar = document.getElementById("track-progress");
 			progressBar.onclick = evt => onProgressBarClick(evt);
 
-			[...document.querySelectorAll(".track-title-text")].forEach((span, index) => span.onclick = () => playTrack(index));
+			const trackTitleElement = [...document.querySelectorAll(".track-title-text")];
+
+			for (let i = 0; i < trackList.length; i++)
+			{
+				if (trackList[i].url)
+					trackTitleElement[i].onclick = () => playTrack(i);
+			}
+
+			if (trackList.every(e => e.url == null || e.url == ""))
+			{
+				playButton.disabled = true;
+				trackTitleText.innerHTML = "{{lang.incline_miniplayer_no_samples}}";
+			}
 
 			playButton.onclick = () => {
 				if (currentTrackIndex == null)
