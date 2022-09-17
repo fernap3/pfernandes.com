@@ -196,5 +196,6 @@
 	"works_writing_credits": ["Writing Credits / Guest Appearances", "曲作り・ゲーストプレイ"],
 	"works_composition": ["Composition", "曲作り"],
 	"works_composition_keys": ["Composition, keyboards", "曲作り・キーボード"],
-	"works_year_suffix": ["", "年"]
+	"works_year_suffix": ["", "年"],
+	"works_preorder": ["(Preorder)", "（予約注文）"]
 }
