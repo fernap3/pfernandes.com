@@ -32,7 +32,7 @@
 
 			#album-info {
 				display: grid;
-				grid-template-columns: auto auto;
+				grid-template-columns: 400px auto;
 				grid-template-rows: 400px 50px auto;
 				justify-content: flex-start;
 				row-gap: 10px;
@@ -142,6 +142,12 @@
 				user-select: none;
 				-webkit-user-select: none;
 				cursor: default;
+			}
+			#additional-credits {
+				grid-row: 3;
+				grid-column: 1;
+				font-size: 80%;
+				padding-top: 2em;
 			}
 			#buy-options {
 				margin-top: 4em;
@@ -323,7 +329,7 @@
 				}
 
 				#playback-controls {
-					grid-row: 3;
+					grid-row: 2;
 					position: relative;
     				left: -25px;
 					margin-bottom: 20px;
@@ -332,6 +338,17 @@
 
 				#track-progress {
 					width: calc(100vw - 170px);
+				}
+
+				#main-cover {
+					grid-row: 1;
+				}
+				#tracklist {
+					grid-row: 3;
+				}
+				#additional-credits {
+					grid-row: 4;
+					max-width: calc(100vw - 85px);
 				}
 			}
 
@@ -414,6 +431,13 @@
 						<progress id="track-progress" value="0"></progress>
 					</div>
 				</div>
+				{{#if album.additionalCreditsLangIds}}
+					<div id="additional-credits">
+						{{#each album.additionalCreditsLangIds}}
+							<p>{{lang this}}</p>
+						{{/each}}
+					</div>
+				{{/if}}
 			</div>
 			<div id="buy-options">
 				<h2 id="buy-options-title">{{{lang.global_buy_options_title}}}</h2>

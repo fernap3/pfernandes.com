@@ -62,8 +62,8 @@
 	],
 	"incline_product_fulldigital_title": ["Complete digital package", "コンプリートデジタルのパッケージ"],
 	"incline_product_fulldigital_desc": [
-		"Digital album download, WAV and MP3 play-along versions of each song for drums, bass, solos, etc., PDF lead sheets and instrument parts for each track, plus bonus transcriptions for a selection of solos. Available to download immediately.",
-		"WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など、またそれぞれの曲のPDFリードシート、それぞれの楽器とソロ（1、3、5のみ）の譜面です。支払い後ですぐダウンロードできます。"
+		"Digital album download, WAV and MP3 play-along versions of each song for drums, bass, solos, etc., PDF lead sheets for each track, plus bonus transcriptions for a selection of solos. Available to download immediately.",
+		"WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など、またそれぞれの曲のPDFリードシート、それぞれの楽器とソロの譜面です。支払い後ですぐダウンロードできます。"
 	],
 	"incline_available_on": [
 		"Also available on <a class='nowrap' href='#'>Spotify</a>, <a class='nowrap' href='#'>Apple Music</a>, and other services.",
@@ -115,6 +115,9 @@
 	"incline_title_keep_climbing": ["Keep Climbing", "キープ・クライミング"],
 	"incline_title_timeline": ["Timeline", "タイムライン"],
 	"incline_title_staging_area": ["Staging Area", "ステイジング・エリア"],
+	"incline_credit_composer": ["All tracks composed, arranged, and produced by Peter Fernandes.", "全部のトラックの作曲家とプロデューサーはフェルナンデス・ピーターです。"],
+	"incline_credit_keyboards": ["All keyboard parts and solos played by Peter Fernandes.", "全部のキーボードのプレイとソロはフェルナンデス・ピーターです。"],
+	"incline_credit_horn_studio": ["Horns for 日曜日のお使い recorded at Stagg Street Studio, Van Nuys, CA, Engineered by Trent Slatton.", "「日曜日のお使い」の管楽器のレコーディングはヴァン・ナイスのスターグストイートでトレント・スラットンにエンジニアリングをされました。"],
 	"qed_meta_title": ["Listen to Q.E.D. by Peter Fernandes", "ピーター・フェルナンデスのQ.E.D.を聞く"],
 	"qed_meta_description": [
 		"Online store page for Peter Fernandes' 2014 album, Q.E.D.",
