@@ -285,7 +285,7 @@
 	"coverUrl": "/images/incline-cover.webp",
 	"spotifyUrl": null,
 	"appleMusicUrl": null,
-	"additionalCreditsLangIds": ["incline_credit_composer", "incline_credit_keyboards", "incline_credit_horn_studio"],
+	"additionalCreditsLangIds": ["incline_track_order_tentative", "incline_credit_composer", "incline_credit_keyboards", "incline_credit_horn_studio"],
 	"productGroups": [
 		{
 			"titleLangId": "incline_product_physical_cd_title",
