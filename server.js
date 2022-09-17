@@ -167,13 +167,16 @@ app.enable("trust proxy");
 
 app.get(/\/(jp\/)?unsubscribe/, async (req, res) =>
 {
-	const email = req.query.email;
+	let userId = req.query.userId;
 
-	console.log("unsubscribe:", email)
+	if (userId == null || userId == "")
+		userId = req.query.email; // legacy
 
-	if (email == "" || email == null || !EMAIL_REGEX.test(email))
+	console.log("unsubscribe:", userId)
+
+	if (userId == "" || userId == null)
 	{
-		res.status(400).send("'email' query parameter must be a valid email address");
+		res.status(400).send("'userId' query parameter must be present");
 		return;
 	}
 
@@ -186,12 +189,12 @@ app.get(/\/(jp\/)?unsubscribe/, async (req, res) =>
 			Body: {
 				Text: {
 					Charset: "UTF-8",
-					Data: `${email} has requested to be unsubscribed from the Peter Fernandes mailing list. Please remove the user from the list.`,
+					Data: `Mailing list subscriber with ID ${userId} has requested to be unsubscribed from the Peter Fernandes mailing list. Please remove the user from the list.`,
 				}
 			},
 			Subject: {
 				Charset: "UTF-8",
-				Data: `${email} has requested to be unsubscribed from the Peter Fernandes mailing list`,
+				Data: `A mailing list member has requested to be unsubscribed from the Peter Fernandes mailing list`,
 			}
 		}
 	};
