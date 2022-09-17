@@ -57,6 +57,7 @@ const PRODUCTS = [
 		productId: TEST_MODE ? "prod_MKd44D8EGStKMq" : "prod_MKd0JAF4l2Dyvi",
 		priceId: TEST_MODE ? "price_1LbxonE4w3gmRKqxMzE1AyQs" : "price_1LbxkyE4w3gmRKqxv4deNBho",
 		pageUrl: "/incline",
+		preorder: true,
 		downloads: [
 			{
 				s3Key: "",
@@ -74,6 +75,7 @@ const PRODUCTS = [
 		productId: TEST_MODE ? "prod_MKd5trAVteFDLD" : "prod_MKd12E57ul1MoU",
 		priceId: TEST_MODE ? "price_1Lbxp5E4w3gmRKqxMxqOwET9" : "price_1LbxlFE4w3gmRKqxHVzpJXBw",
 		pageUrl: "/incline",
+		preorder: true,
 		downloads: [
 			{
 				s3Key: "",
@@ -91,6 +93,7 @@ const PRODUCTS = [
 		productId: TEST_MODE ? "prod_MKd5xPIlyyijTR" : "prod_MKd1Y7B2xGQKuR",
 		priceId: TEST_MODE ? "price_1LbxpLE4w3gmRKqxUdXTPNqM" : "price_1LbxlYE4w3gmRKqxfsiq3LIq",
 		pageUrl: "/incline",
+		preorder: true,
 		downloads: [
 			{
 				s3Key: "",
@@ -108,6 +111,7 @@ const PRODUCTS = [
 		productId: TEST_MODE ? "prod_MKd5W8dNrhb3d9" : "prod_MKd2Gi2GhaJn8F",
 		priceId: TEST_MODE ? "price_1LbxpeE4w3gmRKqxehTaozPB" : "price_1Lbxm4E4w3gmRKqxRIZdUdhc",
 		pageUrl: "/incline",
+		preorder: true,
 		downloads: [
 			{
 				s3Key: "",
@@ -451,7 +455,9 @@ async function handleSale(checkoutSession)
 
 	try
 	{
-		await sendDownloadsEmail(customerEmail, product);
+		if (!product.preorder)
+			await sendDownloadsEmail(customerEmail, product);
+
 		await sendPeterEmail(session.customer_details, session.shipping, product, lineItem.description);
 	}
 	catch(e)
