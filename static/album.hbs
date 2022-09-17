@@ -511,7 +511,9 @@
 			playButton.onclick = () => {
 				if (currentTrackIndex == null)
 				{
-					currentTrackIndex = 0;
+					const firstSampleIndex = trackList.findIndex(t => t.url);
+
+					currentTrackIndex = firstSampleIndex;
 					playTrack(currentTrackIndex);
 				}
 				else if (audio.paused)
