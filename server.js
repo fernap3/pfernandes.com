@@ -455,7 +455,7 @@ async function handleSale(checkoutSession)
 
 	try
 	{
-		if (!product.preorder)
+		if (!product.preorder && product.downloads?.length > 0)
 			await sendDownloadsEmail(customerEmail, product);
 
 		await sendPeterEmail(session.customer_details, session.shipping, product, lineItem.description);

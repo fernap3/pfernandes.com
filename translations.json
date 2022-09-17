@@ -5,6 +5,10 @@
 		"<p style='font-weight:bold'>Thank you for your purchase!</p> <p>If you purchased downloads, please check your email for download links. If you purchased a physical item, please check your email for a receipt. You will receive an email when the product ships.</p>",
 		"<p style='font-weight:bold'>買ってくれてありがとうございます！</p> <p>ダウンロードを買ったの場合は、メールをチェックしてください。CDを買ったの場合は、送ったらメールを届くはずです。</p>"
 	],
+	"global_preorder_success": [
+		"<p style='font-weight:bold'>Thank you for your purchase!</p> <p>Please check your email for a receipt. You will receive another email when your product ships or is available for download.</p>",
+		"<p style='font-weight:bold'>買ってくれてありがとうございます！</p> <p>ダウンロードか配信ができたら、もう一件メールを来ます。</p>"
+	],
 	"global_miniplayer_instructions": [
 		"<span class='click-text capital'></span> track titles to play samples",
 		"トラックタイトルを<span class='click-text'></span>再生します。"

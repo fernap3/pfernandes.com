@@ -375,7 +375,11 @@
 	</head>
 	<body>
 		<dialog id="purchase-success-dialog">
-			{{{lang.global_purchase_success}}}
+			{{#if album.availabilityNoticeLangId}}
+				{{{lang.global_preorder_success}}}
+			{{else}}
+				{{{lang.global_purchase_success}}}
+			{{/if}}
 			<button id="purchase-success-close"></button>
 		</dialog>
 		{{>navbar}}
