@@ -561,9 +561,16 @@
 				progressBar.value = 0;
 				audio.src = trackList[index].url;
 				audio.ontimeupdate = () => onTimeUpdate();
-				audio.onended = () => {
-					if (index < trackList.length - 1)
-						playTrack(index + 1);
+				audio.onended = () =>
+				{
+					let nextSampleIndex = trackList.slice(index + 1).findIndex(t => t.url);
+
+					nextSampleIndex = nextSampleIndex == -1 ? -1 : index + 1 + nextSampleIndex;
+					
+					if (nextSampleIndex > -1 && nextSampleIndex <= trackList.length - 1)
+					{
+						playTrack(nextSampleIndex);
+					}
 					else
 					{
 						indicateNoTrackPlaying();
