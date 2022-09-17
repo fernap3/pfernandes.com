@@ -278,9 +278,7 @@ async function handleResourceGet(req, res)
 		if (!page_path_without_lang_prefix.startsWith("/"))
 			page_path_without_lang_prefix = "/" + page_path_without_lang_prefix;
 
-		console.log("proto:", req.headers["x-forwarded-proto"], req.headers["X-Forwarded-Proto"])
-
-		const origin = (req.headers["X-Forwarded-Proto"] ?? (TEST_MODE ? "http" : "https")) + "://" + req.get("host");
+		const origin = (req.headers["x-forwarded-proto"] ?? (TEST_MODE ? "http" : "https")) + "://" + req.get("host");
 		const webPageOrigin = origin.replace("api.", "");
 
 		const pageTranslations = { ...translations };

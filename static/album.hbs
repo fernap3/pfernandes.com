@@ -462,7 +462,7 @@
 						<div class="buy-option-title">{{{lang this.titleLangId}}} - ${{this.price}}</div>
 						<div class="buy-option-desc">{{{lang this.descLangId}}}</div>
 						{{#each this.products}}
-							<form action="{{api_root}}/create-checkout-session?productId={{this.id}}" method="POST">
+							<form action="{{@root.api_root}}/create-checkout-session?productId={{this.id}}" method="POST">
 								<button type="submit" class="buy-button">{{{lang this.buyButtonLangId}}}</button>
 							</form>
 						{{/each}}
