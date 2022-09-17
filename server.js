@@ -167,6 +167,8 @@ app.get(/\/(jp\/)?unsubscribe/, async (req, res) =>
 {
 	const email = req.query.email;
 
+	console.log("unsubscribe:", email)
+
 	if (email == "" || email == null || !EMAIL_REGEX.test(email))
 	{
 		res.status(400).send("'email' query parameter must be a valid email address");
