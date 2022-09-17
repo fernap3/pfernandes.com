@@ -433,9 +433,11 @@
 					</div>
 				{{/each}}
 			</div>
-			<div id="additional-buy-options">
-				{{{evalAsTemplate lang.global_available_on album}}}
-			</div>
+			{{#if album.spotifyUrl}}
+				<div id="additional-buy-options">
+					{{{evalAsTemplate lang.global_available_on album}}}
+				</div>
+			{{/if}}
 		</div>
 		{{>footer}}
 		{{>mailinglist_dialog}}

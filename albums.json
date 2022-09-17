@@ -283,8 +283,8 @@
 	"releaseYear": 2022,
 	"availabilityNoticeLangId": "incline_availability_notice",
 	"coverUrl": "/images/incline-cover.webp",
-	"spotifyUrl": "https://open.spotify.com/album/7LXaNqoPS7pTpZDwxhzRwb?si=A80KOVpWTGawXxHNWmjNlg",
-	"appleMusicUrl": "https://music.apple.com/us/album/q-e-d/898109831",
+	"spotifyUrl": null,
+	"appleMusicUrl": null,
 	"productGroups": [
 		{
 			"titleLangId": "incline_product_physical_cd_title",
