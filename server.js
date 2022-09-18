@@ -547,9 +547,9 @@ async function sendPeterEmail(customer, shipping, product, productDesc)
 		shippingAddressFormatted = `
 			${shipping.name}<br>
 			${shipping.address.line1}<br>
-			${shipping.address.line2}<br>
+			${shipping.address.line2 == null ? "" : `${shipping.address.line2}<br>`}
 			${shipping.address.city} ${shipping.address.state} ${shipping.address.postal_code}<br>
-			${countryCodes.byIso(shipping.address.country)}
+			${countryCodes.byIso(shipping.address.country)?.country}
 		`;
 	}
 
