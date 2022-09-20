@@ -16,10 +16,16 @@
 	</style>
 	<style>
 		body {
+			--background-color: #FFFFFFC0;
 			font-size: 16px;
 			margin: 0;
 			color: var(--text-color);
 			background: var(--background-color);
+		}
+		@media (prefers-color-scheme: dark) {
+			body {
+				--background-color: #101010C0;
+			}
 		}
 		#content {
 			max-width: 960px;
@@ -28,6 +34,9 @@
 		h2 {
 			margin-top: 2em;
 			display: inline;
+		}
+		.work-title {
+			margin-top: 2em;
 		}
 		.work-type {
 			opacity: .8;
@@ -52,6 +61,11 @@
 			top: 2px;
 			margin-left: 4px;
 		}
+		@media (prefers-color-scheme: light) {
+			.work-link::after {
+				filter: brightness(0);
+			}
+		}
 		.item-description {
 			line-height: 1.6em;
 		}
@@ -61,13 +75,51 @@
 			margin-top: 1.5em;
 			margin-bottom: 3em;
 		}
+		.thumbnail-external-indicator {
+			position: absolute;
+			inset: 0;
+			opacity: 0;
+			z-index: 2;
+			background-color: #101010C0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 7px;
+		}
+		.thumbnail-external-indicator.audio::before {
+			content: "";
+			display: block;
+			margin-right: 1em;
+			height: 26px;
+			aspect-ratio: 1;
+			background-image: url(/images/audio.svg);
+			background-size: 26px;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+		.thumbnail-external-indicator::after {
+			content: "";
+			display: block;
+			height: 26px;
+			aspect-ratio: 1;
+			background-image: url(/images/external.svg);
+			background-size: 26px;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+		.thumbnail-container a:hover .thumbnail-external-indicator {
+			opacity: 1;
+		}
+		.thumbnail-container a {
+			position: relative;
+			display: flex;
+		}
 		.image-thumbnail {
 			width: 200px;
 			aspect-ratio: 3 / 2;
 			object-fit: cover;
 			border-radius: 7px;
 			opacity: .8;
-			transition: opacity .3s var(--easing-normal);
 		}
 		.image-thumbnail:hover {
 			opacity: 1;
@@ -81,31 +133,36 @@
 <body>
 	<div id="content">
 		<h1>Selected Works</h1>
-		<div>
+		<div class="work-title">
 			<h2>Exago BI</h2>
-			<span class="work-type">Enterprise web app / platform</span>
+			<span class="work-type">Enterprise web app / BI platform (C#, TypeScript)</span>
 		</div>
 		<p class="item-description">
-			I worked at Exago, Inc. for almost ten years, from when it was an eight-person company to acquisition. The company built
+			I worked at Exago, Inc. for almost ten years, from when it was an eight-person company to the time of acquisition. The company built
 			and sold a web-based business intelligence product called Exago BI and competed with Tableau, Power BI, Logi Analytics, et al.
 			Pictured below are two of Exago BI's report designers. The Advanced Report Designer (left) I rewrote from scratch as part
-			of a company-wide initiative to overhaul the product's user interface. The ExpressView designer I wrote myself.
+			of a company-wide initiative to overhaul the product's user interface. The simple "ExpressView" report designer (right)
+			I wrote myself for its initial release.
 		</p>
 		<div class="thumbnail-container">
 			<a href="/images/portfolio/advanced-designer.png" target="_blank">
 				<img src="/images/portfolio/advanced-designer.png" class="image-thumbnail" alt="Exago BI's Advanced Report Designer">
+				<div class="thumbnail-external-indicator"></div>
 			</a>
 			<a href="/images/portfolio/design-grid.png" target="_blank">
 				<img src="/images/portfolio/design-grid.png" class="image-thumbnail" alt="Exago BI's Advanced Report design grid">
+				<div class="thumbnail-external-indicator"></div>
 			</a>
 			<a href="/images/portfolio/expressview.png" target="_blank">
 				<img src="/images/portfolio/expressview.png" class="image-thumbnail" alt="Exago BI's ExpressView data tool">
+				<div class="thumbnail-external-indicator"></div>
 			</a>
 			<a href="/images/portfolio/expressview-anim.gif" target="_blank">
 				<img src="/images/portfolio/expressview-anim-preview.png" class="image-thumbnail" alt="An animation of a user dragging data onto a canvas using Exago's ExpressView tool">
+				<div class="thumbnail-external-indicator"></div>
 			</a>
 		</div>
-		<div>
+		<div class="work-title">
 			<h2>Plugster</h2>
 			<span class="work-type">iOS Native App</span>
 		</div>
@@ -115,20 +172,24 @@
 			chargers to find all plugs already in use. The app allowed users to view charging stations on a map, and to add favorite
 			charging stations allowing for availability alerts, and geofenced push notifications to help the user choose which station
 			to navigate to when entering a certain area. Plug availability was sourced from several sources, including an (at the time) new
-			API from Tom Tom, and scraping public information from first-party sources like ChargePoint and Greenlots.
+			API from Tom Tom, and scraping public information from first-party sources like ChargePoint and Greenlots. I retired the app
+			after a while when I got too busy with my day job at Exago.
 		</p>
 		<div class="thumbnail-container">
-			<a href="/images/portfolio/plugster-promo.png" target="_blank">
-				<img src="/images/portfolio/plugster-promo.png" class="image-thumbnail" alt="Promotional artwork for Plugster">
+			<a href="/images/portfolio/plugster-promo.webp" target="_blank">
+				<img src="/images/portfolio/plugster-promo.webp" class="image-thumbnail" alt="Promotional artwork for Plugster">
+				<div class="thumbnail-external-indicator"></div>
 			</a>
-			<a href="/images/portfolio/plugster-map.png" target="_blank">
-				<img src="/images/portfolio/plugster-map.png" class="image-thumbnail" alt="A screenshot of Plugster, showing a map of nearby electric vehicle charging stations">
+			<a href="/images/portfolio/plugster-map.webp" target="_blank">
+				<img src="/images/portfolio/plugster-map.webp" class="image-thumbnail" alt="A screenshot of Plugster, showing a map of nearby electric vehicle charging stations">
+				<div class="thumbnail-external-indicator"></div>
 			</a>
 			<a href="/images/portfolio/plugster-share-demo.mp4" target="_blank">
 				<img src="/images/portfolio/plugster-share-demo-preview.png" class="image-thumbnail" alt="Screenshot of a video of a user using Plugster to share the location of an electric vehicle charging station to a Tesla">
+				<div class="thumbnail-external-indicator"></div>
 			</a>
 		</div>
-		<div>
+		<div class="work-title">
 			<h2>Kiku</h2>
 			<span class="work-type">Mobile/Desktop PWA</span>
 		</div>
@@ -142,14 +203,16 @@
 			playback. The app is multi-tenant, but so far I've only been using it for myself. :)
 		</p>
 		<div class="thumbnail-container">
-			<a href="/images/portfolio/kiku-home.png" target="_blank">
-				<img src="/images/portfolio/kiku-home.png" class="image-thumbnail" alt="A screenshot of the Kiku home screen">
+			<a href="/images/portfolio/kiku-home.webp" target="_blank">
+				<img src="/images/portfolio/kiku-home.webp" class="image-thumbnail" alt="A screenshot of the Kiku home screen">
+				<div class="thumbnail-external-indicator"></div>
 			</a>
 			<a href="/images/portfolio/kiku-demo.mp4" target="_blank">
-				<img src="/images/portfolio/kiku-demo-preview.png" class="image-thumbnail" alt="A screenshot of a demo video of Kiku">
+				<img src="/images/portfolio/kiku-demo-preview.webp" class="image-thumbnail" alt="A screenshot of a demo video of Kiku">
+				<div class="thumbnail-external-indicator audio"></div>
 			</a>
 		</div>
-		<div>
+		<div class="work-title">
 			<h2>Astr</h2>
 			<span class="work-type">JavaScript Library</span>
 			<a class="work-link" href="https://github.com/fernap3/astr" target="_blank">GitHub</a>
@@ -161,7 +224,7 @@
 			important for us to test in up-to-date versions of Chromium. So I built this library to run tests in Chromium using
 			Puppeteer. Astr was integrated into our CI pipeline where it was used daily.
 		</p>
-		<div>
+		<div class="work-title">
 			<h2>node-mysql wrapper</h2>
 			<span class="work-type">JavaScript Library</span>
 			<a class="work-link" href="https://github.com/fernap3/node-mysql" target="_blank">GitHub</a>
