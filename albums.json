@@ -424,7 +424,7 @@
 		},
 		{
 			"titleLangId": "incline_title_hemispheres",
-			"sampleMp3Url": "https://s3.amazonaws.com/pfernandes.com/track-downloads/incline/samples/hemispheres-sample.mp3",
+			"sampleMp3Url": null,
 			"personnel": [
 				{
 					"roleLangId": "incline_role_tenor_sax",
