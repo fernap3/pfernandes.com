@@ -285,7 +285,7 @@
 	"coverUrl": "/images/incline-cover.webp",
 	"spotifyUrl": null,
 	"appleMusicUrl": null,
-	"additionalCreditsLangIds": ["incline_track_order_tentative", "incline_credit_composer", "incline_credit_keyboards", "incline_credit_horn_studio"],
+	"additionalCreditsLangIds": ["incline_credit_composer", "incline_credit_keyboards", "incline_credit_horn_studio"],
 	"productGroups": [
 		{
 			"titleLangId": "incline_product_physical_cd_title",
@@ -341,62 +341,6 @@
 				{
 					"roleLangId": "incline_role_drums",
 					"playerLangId": "incline_player_thomas"
-				}
-			]
-		},
-		{
-			"titleLangId": "incline_title_galaxy",
-			"sampleMp3Url": null,
-			"personnel": [
-				{
-					"roleLangId": "incline_role_guitar_solos",
-					"playerLangId": "incline_player_yuya"
-				},
-				{
-					"roleLangId": "incline_role_bass",
-					"playerLangId": "incline_player_ric"
-				},
-				{
-					"roleLangId": "incline_role_drums",
-					"playerLangId": "incline_player_thomas"
-				}
-			]
-		},
-		{
-			"titleLangId": "incline_title_sunday_errand",
-			"sampleMp3Url": null,
-			"personnel": [
-				{
-					"roleLangId": "incline_role_guitar_solos",
-					"playerLangId": "incline_player_yuya"
-				},
-				{
-					"roleLangId": "incline_role_backing_guitars",
-					"playerLangId": "incline_player_toshi"
-				},
-				{
-					"roleLangId": "incline_role_trumpet1",
-					"playerLangId": "incline_player_wayne"
-				},
-				{
-					"roleLangId": "incline_role_trumpet2",
-					"playerLangId": "incline_player_aaron"
-				},
-				{
-					"roleLangId": "incline_role_trombone",
-					"playerLangId": "incline_player_andy"
-				},
-				{
-					"roleLangId": "incline_role_tenor_sax",
-					"playerLangId": "incline_player_brandon"
-				},
-				{
-					"roleLangId": "incline_role_bass",
-					"playerLangId": "incline_player_ric"
-				},
-				{
-					"roleLangId": "incline_role_drums",
-					"playerLangId": "incline_player_joel"
 				}
 			]
 		},
@@ -467,24 +411,6 @@
 			]
 		},
 		{
-			"titleLangId": "incline_title_keep_climbing",
-			"sampleMp3Url": null,
-			"personnel": [
-				{
-					"roleLangId": "incline_role_guitar",
-					"playerLangId": "incline_player_yuya"
-				},
-				{
-					"roleLangId": "incline_role_bass",
-					"playerLangId": "incline_player_ric"
-				},
-				{
-					"roleLangId": "incline_role_drums",
-					"playerLangId": "incline_player_thomas"
-				}
-			]
-		},
-		{
 			"titleLangId": "incline_title_timeline",
 			"sampleMp3Url": null,
 			"personnel": [
@@ -503,6 +429,24 @@
 				{
 					"roleLangId": "incline_role_drums",
 					"playerLangId": "incline_player_joel"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_title_galaxy",
+			"sampleMp3Url": null,
+			"personnel": [
+				{
+					"roleLangId": "incline_role_guitar_solos",
+					"playerLangId": "incline_player_yuya"
+				},
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_ric"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_thomas"
 				}
 			]
 		},
@@ -527,6 +471,62 @@
 				{
 					"roleLangId": "incline_role_drums",
 					"playerLangId": "incline_player_vinnie"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_title_sunday_errand",
+			"sampleMp3Url": null,
+			"personnel": [
+				{
+					"roleLangId": "incline_role_guitar_solos",
+					"playerLangId": "incline_player_yuya"
+				},
+				{
+					"roleLangId": "incline_role_backing_guitars",
+					"playerLangId": "incline_player_toshi"
+				},
+				{
+					"roleLangId": "incline_role_trumpet1",
+					"playerLangId": "incline_player_wayne"
+				},
+				{
+					"roleLangId": "incline_role_trumpet2",
+					"playerLangId": "incline_player_aaron"
+				},
+				{
+					"roleLangId": "incline_role_trombone",
+					"playerLangId": "incline_player_andy"
+				},
+				{
+					"roleLangId": "incline_role_tenor_sax",
+					"playerLangId": "incline_player_brandon"
+				},
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_ric"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_joel"
+				}
+			]
+		},
+		{
+			"titleLangId": "incline_title_keep_climbing",
+			"sampleMp3Url": null,
+			"personnel": [
+				{
+					"roleLangId": "incline_role_guitar",
+					"playerLangId": "incline_player_yuya"
+				},
+				{
+					"roleLangId": "incline_role_bass",
+					"playerLangId": "incline_player_ric"
+				},
+				{
+					"roleLangId": "incline_role_drums",
+					"playerLangId": "incline_player_thomas"
 				}
 			]
 		}
