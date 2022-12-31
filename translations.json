@@ -52,8 +52,8 @@
 	"incline_buy_now": ["Buy now", "買う"],
 	"incline_product_physical_cd_title": ["Physical CD", "CD"],
 	"incline_product_physical_cd_desc": [
-		"Physical compact disc copy of &ldquo;Incline.&rdquo; Ships internationally for free. Available signed, or sealed without signature for the same price. Includes digital download available immediately.",
-		"「インクライン」のCDです。無料の国際の出荷するのができます。サインとサインなし同じ値段です。支払い後ですぐダウンロードできます。"
+		"PREORDER (available Jan 2023): Physical compact disc copy of &ldquo;Incline.&rdquo; Ships internationally for free. Available signed, or sealed without signature for the same price. Includes digital download available immediately.",
+		"PREORDER (available Jan 2023): 「インクライン」のCDです。無料の国際の出荷するのができます。サインとサインなし同じ値段です。支払い後ですぐダウンロードできます。"
 	],
 	"incline_product_album_download_title": ["Album download", "アルバムダウンロード"],
 	"incline_product_album_download_desc": [
@@ -62,14 +62,14 @@
 	],
 	"incline_product_fulldigital_title": ["Complete digital package", "コンプリートデジタルのパッケージ"],
 	"incline_product_fulldigital_desc": [
-		"Digital album download, WAV and MP3 play-along versions of each song for drums, bass, solos, etc., PDF lead sheets for each track, plus bonus transcriptions for a selection of solos. Available to download immediately.",
-		"WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など、またそれぞれの曲のPDFリードシート、それぞれの楽器とソロの譜面です。支払い後ですぐダウンロードできます。"
+		"PREORDER (available Jan 2023): Digital album download, WAV and MP3 play-along versions of each song for drums, bass, solos, etc., PDF lead sheets for each track, plus bonus transcriptions for a selection of solos. Available to download immediately.",
+		"PREORDER (available Jan 2023): WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など、またそれぞれの曲のPDFリードシート、それぞれの楽器とソロの譜面です。支払い後ですぐダウンロードできます。"
 	],
 	"incline_available_on": [
 		"Also available on <a class='nowrap' href='#'>Spotify</a>, <a class='nowrap' href='#'>Apple Music</a>, and other services.",
 		"<a class='nowrap' href='#'>スポティファイ</a>や<a class='nowrap' href='#'>アップルミュージック</a>などでも配信中です。"
 	],
-	"incline_availability_notice": ["Preorder below. Estimated availability date is Nov. 2022.", "下記から予約注文ができます。配達とダウンロードは11月ごろにできます。"],
+	"incline_availability_notice": ["Preorder below. Estimated availability date is Jan. 2023.", "下記から予約注文ができます。配達とダウンロードは1月ごろにできます。"],
 	"incline_album_title": ["Incline (2022)", "インクライン (2022年)"],
 	"incline_miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
 	"incline_miniplayer_no_samples": ["No samples available yet", "まだサンプルがありません"],
