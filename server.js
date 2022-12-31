@@ -61,12 +61,16 @@ const PRODUCTS = [
 		requiresShippingAddress: true,
 		downloads: [
 			{
-				s3Key: "",
+				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (mp3_256).zip",
 				linkTitle: "Download as MP3"
 			},
 			{
-				s3Key: "",
+				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (wav).zip",
 				linkTitle: "Download as WAV"
+			},
+			{
+				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (flac).zip",
+				linkTitle: "Download as FLAC"
 			},
 		]
 	},
@@ -80,12 +84,16 @@ const PRODUCTS = [
 		requiresShippingAddress: true,
 		downloads: [
 			{
-				s3Key: "",
+				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (mp3_256).zip",
 				linkTitle: "Download as MP3"
 			},
 			{
-				s3Key: "",
+				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (wav).zip",
 				linkTitle: "Download as WAV"
+			},
+			{
+				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (flac).zip",
+				linkTitle: "Download as FLAC"
 			},
 		]
 	},
@@ -95,15 +103,18 @@ const PRODUCTS = [
 		productId: TEST_MODE ? "prod_MKd5xPIlyyijTR" : "prod_MKd1Y7B2xGQKuR",
 		priceId: TEST_MODE ? "price_1LbxpLE4w3gmRKqxUdXTPNqM" : "price_1LbxlYE4w3gmRKqxfsiq3LIq",
 		pageUrl: "/incline",
-		preorder: true,
 		downloads: [
 			{
-				s3Key: "",
+				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (mp3_256).zip",
 				linkTitle: "Download as MP3"
 			},
 			{
-				s3Key: "",
+				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (wav).zip",
 				linkTitle: "Download as WAV"
+			},
+			{
+				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (flac).zip",
+				linkTitle: "Download as FLAC"
 			},
 		]
 	},
@@ -116,12 +127,16 @@ const PRODUCTS = [
 		preorder: true,
 		downloads: [
 			{
-				s3Key: "",
+				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (mp3_256).zip",
 				linkTitle: "Download as MP3"
 			},
 			{
-				s3Key: "",
+				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (wav).zip",
 				linkTitle: "Download as WAV"
+			},
+			{
+				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (flac).zip",
+				linkTitle: "Download as FLAC"
 			},
 		]
 	},
@@ -518,7 +533,7 @@ async function sendDownloadsEmail(toAddress, product)
 					Data: `
 						<p>
 							Thank you for purchasing ${product.title}!  Links to download are below. 
-							The links will work for 24 hours from the time this email was sent.  
+							The links will work for 30 days from the time this email was sent.  
 							If you have any issues, just reply to this email and I’ll help you out.
 						</p>
 						<p>Peter</p>
@@ -588,7 +603,7 @@ async function getS3DownloadUrl(key)
 		Key: `${key}`,
 	});
 	
-	return await getSignedUrl(client, command, { expiresIn: 86400 });
+	return await getSignedUrl(client, command, { expiresIn: 2_592_000 }); // one month expiry
 }
 
 const PORT = process.env.PORT || 5001;
