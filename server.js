@@ -533,7 +533,7 @@ async function sendDownloadsEmail(toAddress, product)
 					Data: `
 						<p>
 							Thank you for purchasing ${product.title}!  Links to download are below. 
-							The links will work for 30 days from the time this email was sent.  
+							The links will work for 7 days from the time this email was sent.  
 							If you have any issues, just reply to this email and I’ll help you out.
 						</p>
 						<p>Peter</p>
@@ -603,7 +603,7 @@ async function getS3DownloadUrl(key)
 		Key: `${key}`,
 	});
 	
-	return await getSignedUrl(client, command, { expiresIn: 2_592_000 }); // one month expiry
+	return await getSignedUrl(client, command, { expiresIn: 604_800 }); // one month expiry
 }
 
 const PORT = process.env.PORT || 5001;
