@@ -57,7 +57,6 @@ const PRODUCTS = [
 		productId: TEST_MODE ? "prod_MKd44D8EGStKMq" : "prod_MKd0JAF4l2Dyvi",
 		priceId: TEST_MODE ? "price_1LbxonE4w3gmRKqxMzE1AyQs" : "price_1LbxkyE4w3gmRKqxv4deNBho",
 		pageUrl: "/incline",
-		preorder: true,
 		requiresShippingAddress: true,
 		downloads: [
 			{
@@ -80,7 +79,6 @@ const PRODUCTS = [
 		productId: TEST_MODE ? "prod_MKd5trAVteFDLD" : "prod_MKd12E57ul1MoU",
 		priceId: TEST_MODE ? "price_1Lbxp5E4w3gmRKqxMxqOwET9" : "price_1LbxlFE4w3gmRKqxHVzpJXBw",
 		pageUrl: "/incline",
-		preorder: true,
 		requiresShippingAddress: true,
 		downloads: [
 			{
@@ -124,7 +122,6 @@ const PRODUCTS = [
 		productId: TEST_MODE ? "prod_MKd5W8dNrhb3d9" : "prod_MKd2Gi2GhaJn8F",
 		priceId: TEST_MODE ? "price_1LbxpeE4w3gmRKqxehTaozPB" : "price_1Lbxm4E4w3gmRKqxRIZdUdhc",
 		pageUrl: "/incline",
-		preorder: true,
 		downloads: [
 			{
 				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (mp3_256).zip",
