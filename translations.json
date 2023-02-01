@@ -62,14 +62,13 @@
 	],
 	"incline_product_fulldigital_title": ["Complete digital package", "コンプリートデジタルのパッケージ"],
 	"incline_product_fulldigital_desc": [
-		"PREORDER (available Jan 2023): Digital album download, WAV and MP3 play-along versions of each song for drums, bass, solos, etc., PDF lead sheets for each track, plus bonus transcriptions for a selection of solos. Available to download immediately.",
-		"PREORDER (available Jan 2023): WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など、またそれぞれの曲のPDFリードシート、それぞれの楽器とソロの譜面です。支払い後ですぐダウンロードできます。"
+		"Digital album download, WAV and MP3 play-along versions of each song for drums, bass, solos, etc., PDF lead sheets for each track, plus bonus transcriptions for a selection of solos. Available to download immediately.",
+		"WAVとMP3でそれぞれの曲の「マイナス・ベース」、「マイナス・ドラム」、「マイナス・ソロ」、など、またそれぞれの曲のPDFリードシート、それぞれの楽器とソロの譜面です。支払い後ですぐダウンロードできます。"
 	],
 	"incline_available_on": [
 		"Also available on <a class='nowrap' href='#'>Spotify</a>, <a class='nowrap' href='#'>Apple Music</a>, and other services.",
 		"<a class='nowrap' href='#'>スポティファイ</a>や<a class='nowrap' href='#'>アップルミュージック</a>などでも配信中です。"
 	],
-	"incline_availability_notice": ["Preorder below. Estimated availability date is Jan. 2023.", "下記から予約注文ができます。配達とダウンロードは1月ごろにできます。"],
 	"incline_album_title": ["Incline (2022)", "インクライン (2022年)"],
 	"incline_miniplayer_instructions": ["<span class='click-text capital'></span> track titles to play samples", "トラックタイトルを<span class='click-text'></span>再生します。"],
 	"incline_miniplayer_no_samples": ["No samples available yet", "まだサンプルがありません"],
@@ -195,6 +194,5 @@
 	"works_writing_credits": ["Writing Credits / Guest Appearances", "曲作り・ゲーストプレイ"],
 	"works_composition": ["Composition", "曲作り"],
 	"works_composition_keys": ["Composition, keyboards", "曲作り・キーボード"],
-	"works_year_suffix": ["", "年"],
-	"works_preorder": ["(Preorder)", "（予約注文）"]
+	"works_year_suffix": ["", "年"]
 }

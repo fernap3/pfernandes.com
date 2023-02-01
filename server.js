@@ -124,17 +124,13 @@ const PRODUCTS = [
 		pageUrl: "/incline",
 		downloads: [
 			{
-				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (mp3_256).zip",
+				s3Key: "track-downloads/incline/complete-digital-package/Peter Fernandes - Incline Complete Digital Package (mp3_256).zip",
 				linkTitle: "Download as MP3"
 			},
 			{
-				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (wav).zip",
+				s3Key: "track-downloads/incline/complete-digital-package/Peter Fernandes - Incline Complete Digital Package (wav).zip",
 				linkTitle: "Download as WAV"
-			},
-			{
-				s3Key: "track-downloads/incline/full-album/Peter Fernandes - Incline (flac).zip",
-				linkTitle: "Download as FLAC"
-			},
+			}
 		]
 	},
 ];
