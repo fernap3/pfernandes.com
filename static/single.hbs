@@ -32,32 +32,22 @@
 
 			#album-info {
 				display: grid;
-				grid-template-columns: 400px auto;
-				grid-template-rows: 400px 50px auto;
-				justify-content: flex-start;
-				row-gap: 10px;
+				grid-template-columns: 300px auto;
+				column-gap: 20px;
 			}
 
-			#tracklist {
-				display: grid;
-				grid-template-columns: auto auto;
-				grid-row: span 3;
-			}
+			#listen-links {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
 
-			#tracklist ol {
-				margin-top: 0;
-			}
-
-			#tracklist li {
-				list-style-type: none;
-			}
-
-			#tracklist li:nth-child(n+2) {
-				margin-top: 1em;
+				.apple-music {
+					margin-left: 2px;
+				}
 			}
 
 			#main-cover {
-				width: 400px;
+				width: 300px;
 				aspect-ratio: 1;
 				max-width: calc(100vw - 100px);
 				background: gray;
@@ -289,13 +279,6 @@
 				color: var(--text-color);
 			}
 
-			.tracklist-item {
-				display: grid;
-				column-gap: 10px;
-				grid-template-columns: 24px auto;
-				grid-template-rows: auto auto;
-			}
-
 			.track-number {
 				grid-column: 1;
 				grid-row: span 2;
@@ -352,7 +335,7 @@
 				#main-cover {
 					grid-row: 1;
 				}
-				#tracklist {
+				#listen-links {
 					grid-row: 3;
 				}
 				#additional-credits {
@@ -397,23 +380,52 @@
 			#purchase-success-close:focus {
 				outline: none;
 			}
+			.listen-on-badge {
+				height: 32px;
+			}
+			.credit-name {
+				font-weight: bold;
+			}
+			#page-title:has(~ #page-subtitle) {
+				margin-bottom: 4px;
+			}
+			#page-subtitle {
+				font-size: 90%;
+				margin-bottom: 20px;
+				margin-left: 2px;
+			}
+			.credits {
+				display: flex;
+				flex-direction: column;
+				gap: .2em;
+				font-size: 86%;
+				margin-top: auto;
+			}
 		</style>
 	</head>
 	<body>
 		{{>navbar}}
 		<div id="content">
 			<h1 id="page-title">{{lang single.titleLangId}}</h1>
+			<div id="page-subtitle">{{lang single.writtenBy}}</div>
 			<div id="album-info">
 				<img id="main-cover" src="{{single.coverUrl}}">
 				<div id="scroll-header" style="display: none">
 					<img id="main-cover-stuck" src="{{single.coverUrl}}">
 				</div>
-				<div id="tracklist">
+				<div id="listen-links">
 					{{#if single.spotifyUrl}}
-						<div id="additional-buy-options">
-							{{{evalAsTemplate lang.global_available_on album}}}
-						</div>
+						<a href="{{single.spotifyUrl}}" class="spotify"><img class="listen-on-badge" src="/images/listen-on-spotify.png"></a>
 					{{/if}}
+					{{#if single.appleMusicUrl}}
+						<a href="{{single.appleMusicUrl}}" class="apple-music"><img class="listen-on-badge" src="/images/listen-on-apple-music.svg"></a>
+					{{/if}}
+					<div class="credits">
+						<div><span class="credit-name">Alex Hutchings</span> / Guitar</div>
+						<div><span class="credit-name">Peter Fernandes</span> / <span class="credit-role">Keyboards, Production</span></div>
+						<div><span class="credit-name">Ric Fierabracci</span> / <span class="credit-role">Electric Bass</span></div>
+						<div><span class="credit-name">Maoki Yamamoto</span> / <span class="credit-role">Drums</span></div>
+					</div>
 				</div>
 			</div>
 		</div>

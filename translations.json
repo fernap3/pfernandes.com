@@ -194,5 +194,12 @@
 	"works_writing_credits": ["Writing Credits / Guest Appearances", "曲作り・ゲーストプレイ"],
 	"works_composition": ["Composition", "曲作り"],
 	"works_composition_keys": ["Composition, keyboards", "曲作り・キーボード"],
-	"works_year_suffix": ["", "年"]
+	"works_year_suffix": ["", "年"],
+	"hurricane_meta_title": ["Listen to Taming the Hurricane by Peter Fernandes and Alex Hutchings", "Taming the Hurricaneを聞く"],
+	"hurricane_meta_description": [
+		"Links to listen to the 2026 single, \"Taming the Hurricane\"", 
+		"「Taming the Hurricane」という2026年のシングルのリンク"
+	],
+	"hurricane_album_title": ["Taming the Hurricane (2026)", "Taming the Hurricane (2026年)"],
+	"hurricane_album_written_by": ["Fernandes / Hutchings", "Fernandes / Hutchings"]
 }
