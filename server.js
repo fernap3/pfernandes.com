@@ -12,6 +12,7 @@ const puppeteer = require("puppeteer");
 const TEST_MODE = process.env.LIVE_MODE == null || process.env.LIVE_MODE == "";
 
 const ALBUMS = require("./albums.json");
+const SINGLES = require("./singles.json");
 const PRODUCTS = [
 	{
 		title: "Q.E.D.",
@@ -252,7 +253,7 @@ async function handleResourceGet(req, res)
 	let urlPathParts = urlPath.split("/");
 	let pathOnDisk = path.resolve(".", "static", ...urlPathParts);
 
-	const topLevelPages = new Set(["resume", "unsubscribe", "works", "portfolio", ...ALBUMS.map(a => a.page)]);
+	const topLevelPages = new Set(["resume", "unsubscribe", "works", "portfolio", ...ALBUMS.map(a => a.page), ...SINGLES.map(a => a.page)]);
 
 	if (topLevelPages.has(urlPathParts.at(-1)))
 	{
@@ -273,7 +274,11 @@ async function handleResourceGet(req, res)
 	const album = ALBUMS.find(a => a.page === templateName);
 	if (album != null)
 		pathOnDisk = path.resolve(".", "static", "album.hbs");
-	
+
+	const single = SINGLES.find(a => a.page === templateName);
+	if (single != null)
+		pathOnDisk = path.resolve(".", "static", "single.hbs");
+
 	try
 	{
 		await fs.stat(pathOnDisk);
@@ -288,6 +293,8 @@ async function handleResourceGet(req, res)
 	{
 		if (album)
 			templateName = "album";
+		else if (single)
+			templateName = "single";
 
 		let page_path_without_lang_prefix = req.path.replace("/jp", "");
 		if (!page_path_without_lang_prefix.startsWith("/"))
@@ -318,6 +325,7 @@ async function handleResourceGet(req, res)
 			},
 			lang: pageTranslations,
 			album,
+			single,
 			helpers: {
 				lang: (langId) => {
 					return pageTranslations[langId];
@@ -345,8 +353,6 @@ async function handleResourceGet(req, res)
 app.post("/webhook", (req, res) =>
 {
 	const event = req.body;
-
-	// console.log(event)
 
 	// Handle the event
 	switch (event.type)

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="{{page_lang}}">
+	<head>
+		<title>{{lang single.metaTitleLangId}}</title>
+		<meta name="description" content="{{lang single.metaDescLangId}}">
+		<meta name="og:image" content="{{origin}}{{single.coverUrl}}">
+		{{>common_head_tags}}
+		<script src="main.js" defer></script>
+		<style>
+			{{{css.fonts}}}
+		</style>
+		<style>
+			{{{css.main}}}
+		</style>
+		<style>
+			body {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: stretch;
+				font-size: 16px;
+				margin: 0;
+				color: var(--text-color);
+				background-color: var(--background-color);
+			}
+
+			#content {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			#album-info {
+				display: grid;
+				grid-template-columns: 400px auto;
+				grid-template-rows: 400px 50px auto;
+				justify-content: flex-start;
+				row-gap: 10px;
+			}
+
+			#tracklist {
+				display: grid;
+				grid-template-columns: auto auto;
+				grid-row: span 3;
+			}
+
+			#tracklist ol {
+				margin-top: 0;
+			}
+
+			#tracklist li {
+				list-style-type: none;
+			}
+
+			#tracklist li:nth-child(n+2) {
+				margin-top: 1em;
+			}
+
+			#main-cover {
+				width: 400px;
+				aspect-ratio: 1;
+				max-width: calc(100vw - 100px);
+				background: gray;
+				top: 20px;
+				z-index: 10;
+				transform-origin: top;
+			}
+			#scroll-header {
+				background: black;
+				position: fixed;
+				inset: 0;
+				height: 110px;
+				display: flex;
+				justify-content: center;
+				padding-top: 20px;
+				z-index: 9;
+				background-color: var(--color-frosted-background);
+    			-webkit-backdrop-filter: blur(30px);
+    			backdrop-filter: blur(30px);
+			}
+			#main-cover-stuck {
+				width: 400px;
+				height: 400px;
+				background: gray;
+				top: 20px;
+				z-index: 9;
+				transform-origin: top;
+				transform: scale(.2);
+			}
+			@media screen and (max-width: 900px) {
+				#main-cover {
+					position: sticky;
+				}
+			}
+			.track-title {
+				display: flex;
+				align-items: center;
+				gap: 4px;
+			}
+			.track-title-playing-icon {
+				opacity: 0;
+				height: 16px;
+				width: 16px;
+				background-size: 9px;
+				background-image: url(/images/playing-track.svg);
+				background-repeat: no-repeat;
+				background-position: center;
+				transition: opacity .3s var(--easing-normal);
+			}
+			.playing .track-title-playing-icon {
+				opacity: 1;
+			}
+			.track-title-text {
+				transform: translateX(-21px);
+				transition: all .3s var(--easing-normal);
+				cursor: default;
+			}
+			.track-title-text.has-sample {
+				cursor: pointer;
+			}
+			.playing .track-title-text {
+				transform: translateX(0);
+				color: var(--color-brand);
+			}
+			.track-personnel {
+				color: var(--text-color-secondary);
+				font-size: 80%;
+				margin-top: .3em;
+				line-height: 1.5em;
+				cursor: default;
+			}
+			.personnel-credit {
+				white-space: nowrap;
+			}
+			.personnel-name {
+				font-weight: bold;
+				color: var(--text-color);
+			}
+			#playback-controls {
+				grid-column: 1;
+				display: grid;
+				grid-template-columns: min-content auto;
+				grid-template-rows: auto auto;
+				align-items: flex-end;
+				font-size: 85%;
+				user-select: none;
+				-webkit-user-select: none;
+				cursor: default;
+			}
+			#additional-credits {
+				grid-row: 3;
+				grid-column: 1;
+				font-size: 80%;
+				padding-top: 2em;
+			}
+			#buy-options {
+				margin-top: 4em;
+				display: grid;
+				grid-template-columns: repeat(auto-fill, calc(50% - 20px));
+				gap: 40px;
+				margin-bottom: 40px;
+			}
+			#buy-options-title {
+				grid-row: 1;
+				grid-column: 1 / -1;
+				justify-self: center;
+			}
+			@media screen and (max-width: 520px) {
+				#buy-options-title {
+					justify-self: stretch;
+					margin-right: 34px;
+					text-align: center;
+				}
+			}
+			#buy-options-availability-notice {
+				grid-row: 2;
+				grid-column: 1 / -1;
+				text-align: center;
+				font-weight: bold;
+			}
+			.buy-button {
+				cursor: pointer;
+				background-color: var(--color-brand);
+				font-family: inherit;
+				border: none;
+				border-radius: 5px;
+				font-size: 100%;
+				padding: 0.4em 0.7em;
+				font-weight: bold;
+				max-width: 200px;
+				white-space: nowrap;
+			}
+			.buy-button:hover {
+				background-color: var(--color-brand-hover);
+			}
+			#buy-option-art {
+				background: gray;
+				grid-row: 1 / span 3;
+				aspect-ratio: 1;
+				width: 100%
+			}
+			.buy-option-item {
+				display: grid;
+				grid-template-columns: 150px min-content auto;
+				grid-template-rows: 1.5em auto 1fr;
+				column-gap: 10px;
+				row-gap: .2em;
+			}
+			.buy-option-item form {
+				margin: 0;
+				align-self: center;
+			}
+			.buy-option-title {
+				font-weight: bold;
+				grid-column: 2 / span 2;
+			}
+			.buy-option-desc {
+				font-weight: 300;
+				font-size: 90%;
+				line-height: 1.3em;
+				grid-column: 2 / span 2;
+				margin-bottom: .4em;
+			}
+			@media screen and (max-width: 520px) {
+				#buy-options {
+					padding-left: 34px;
+				}
+				.buy-option-item {
+					grid-template-columns: min-content auto;
+				}
+				#buy-option-art {
+					display: none;
+				}
+				.buy-option-title {
+					grid-column: 1 / span 2;
+				}
+				.buy-option-desc {
+					grid-column: 1 / span 2;
+				}
+			}
+			.sample-play-button {
+				background-image: url(/images/play.svg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 20px;
+				border: none;
+				background-color: transparent;
+				height: 30px;
+				width: 30px;
+				cursor: pointer;
+				grid-row: span 2;
+			}
+			#play-button {
+				height: 50px;
+				width: 50px;
+				border-radius: 25px;
+				background-image: url(/images/play.svg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 20px;
+				border: none;
+				background-color: transparent;
+				cursor: pointer;
+				grid-row: span 2;
+				filter: brightness(.1);
+			}
+
+			#play-button[disabled] {
+				opacity: .6;
+				cursor: default;
+			}
+
+			@media (prefers-color-scheme: dark) {
+				#play-button {
+					filter: none;
+				}
+			}
+
+			#track-progress {
+				cursor: pointer;
+				width: 100%;
+			}
+
+			#playback-track-title {
+				color: var(--text-color-secondary);
+			}
+
+			#playback-track-title.song-loaded {
+				color: var(--text-color);
+			}
+
+			.tracklist-item {
+				display: grid;
+				column-gap: 10px;
+				grid-template-columns: 24px auto;
+				grid-template-rows: auto auto;
+			}
+
+			.track-number {
+				grid-column: 1;
+				grid-row: span 2;
+				text-align: right;
+			}
+
+			.track-number::before {
+				content: counter(list-item) ".";
+			}
+
+			.click-text::before {
+				content: '{{lang.global_touch}}';
+			}
+
+			@media (pointer: fine) {
+				.click-text::before {
+					content: '{{lang.global_click}}';
+				}
+			}
+
+			.click-text.capital::before {
+				text-transform: capitalize;
+			}
+
+			@media screen and (max-width: 900px) {
+				#album-info {
+					grid-template-columns: auto;
+					grid-template-rows: auto auto auto auto;
+					justify-items: center;
+					row-gap: 10px;
+				}
+
+				#album-info ol {
+					padding: 0;
+				}
+
+				#buy-options {
+					grid-row: 2;
+					grid-template-columns: auto;
+				}
+
+				#playback-controls {
+					grid-row: 2;
+					position: relative;
+    				left: -25px;
+					margin-bottom: 20px;
+					margin-top: 10px;
+				}
+
+				#track-progress {
+					width: calc(100vw - 170px);
+				}
+
+				#main-cover {
+					grid-row: 1;
+				}
+				#tracklist {
+					grid-row: 3;
+				}
+				#additional-credits {
+					grid-row: 4;
+					max-width: calc(100vw - 85px);
+				}
+			}
+
+			#additional-buy-options {
+				margin: 4em 0;
+				text-align: center;
+				line-height: 1.4;
+			}
+
+			#additional-buy-options a {
+				font-weight: bold;
+			}
+
+			#purchase-success-dialog {
+				max-width: 800px;
+				line-height: 1.4em;
+				border: none;
+			}
+			#purchase-success-dialog p {
+				margin-top: 0;
+				margin-bottom: .5em;
+			}
+			#purchase-success-close {
+				position: absolute;
+				top: 0;
+				right: 0;
+				background-image: url(/images/close.svg);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-color: transparent;
+				border: none;
+				height: 40px;
+				width: 40px;
+				background-size: 14px;
+				cursor: pointer;
+			}
+			#purchase-success-close:focus {
+				outline: none;
+			}
+		</style>
+	</head>
+	<body>
+		{{>navbar}}
+		<div id="content">
+			<h1 id="page-title">{{lang single.titleLangId}}</h1>
+			<div id="album-info">
+				<img id="main-cover" src="{{single.coverUrl}}">
+				<div id="scroll-header" style="display: none">
+					<img id="main-cover-stuck" src="{{single.coverUrl}}">
+				</div>
+				<div id="tracklist">
+					{{#if single.spotifyUrl}}
+						<div id="additional-buy-options">
+							{{{evalAsTemplate lang.global_available_on album}}}
+						</div>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+		{{>footer}}
+		{{>mailinglist_dialog}}
+	</body>
+</html>
