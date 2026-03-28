@@ -39,10 +39,19 @@
 			#listen-links {
 				display: flex;
 				flex-direction: column;
+				align-items: flex-start;
 				gap: 20px;
 
 				.apple-music {
 					margin-left: 2px;
+				}
+
+				.apple-music, .spotify {
+					padding: 6px 0;
+				}
+
+				.youtube {
+					margin-top: -6px;
 				}
 			}
 
@@ -386,7 +395,17 @@
 				outline: none;
 			}
 			.listen-on-badge {
-				height: 32px;
+				overflow: hidden;
+				display: flex;
+
+				img {
+					height: 32px;
+				}
+
+				&.youtube img {
+					height: 46px;
+					margin-left: -16px;
+				}
 			}
 			.credit-name {
 				font-weight: bold;
@@ -419,11 +438,14 @@
 					<img id="main-cover-stuck" src="{{single.coverUrl}}">
 				</div>
 				<div id="listen-links">
+					{{#if single.youtubeUrl}}
+						<a href="{{single.youtubeUrl}}" class="listen-on-badge youtube"><img src="/images/listen-on-youtube.png"></a>
+					{{/if}}
 					{{#if single.spotifyUrl}}
-						<a href="{{single.spotifyUrl}}" class="spotify"><img class="listen-on-badge" src="/images/listen-on-spotify.png"></a>
+						<a href="{{single.spotifyUrl}}" class="listen-on-badge spotify"><img src="/images/listen-on-spotify.png"></a>
 					{{/if}}
 					{{#if single.appleMusicUrl}}
-						<a href="{{single.appleMusicUrl}}" class="apple-music"><img class="listen-on-badge" src="/images/listen-on-apple-music.svg"></a>
+						<a href="{{single.appleMusicUrl}}" class="listen-on-badge apple-music"><img src="/images/listen-on-apple-music.svg"></a>
 					{{/if}}
 					<div class="credits">
 						<div><span class="credit-name">Alex Hutchings</span> / Guitar</div>
